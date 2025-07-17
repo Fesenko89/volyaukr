@@ -1,105 +1,402 @@
 <!DOCTYPE html>
-<html lang="uk"> 
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ВОЛЯ — Гра про душу нації</title>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Unbounded', sans-serif;
-      background-color: #0e0e0e;
-      color: #f1f1f1;
-      line-height: 1.6;
-    }
-    header {
-      background-image: url('https://example.com/skythian-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-    header h1 {
-      font-size: 4rem;
-      color: #ffd700;
-      margin-bottom: 1rem;
-    }
-    header p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .highlight {
-      color: #ffd700;
-      font-weight: bold;
-    }
-    .cta {
-      text-align: center;
-      margin-top: 3rem;
-    }
-    .cta a {
-      background-color: #ffd700;
-      color: #0e0e0e;
-      padding: 1rem 2rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #1a1a1a;
-      font-size: 0.9rem;
-      color: #999;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ВОЛЯ — Гра про душу нації</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #0e0e0e;
+            --darker-bg: #1a1a1a;
+            --accent-color: #ffd700; /* Золотий */
+            --text-color: #f1f1f1;
+            --light-grey: #999;
+            --section-padding: 4rem 2rem;
+            --max-width: 1200px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Unbounded', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Плавна прокрутка до якоря */
+        }
+
+        /* Навігація */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center; /* Центрування меню */
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        nav .nav-container {
+            max-width: var(--max-width);
+            width: 100%;
+            display: flex;
+            justify-content: space-between; /* Лого зліва, меню справа */
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 2rem; /* Відступ від меню */
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 2.5rem; /* Збільшений відступ між пунктами */
+        }
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        header {
+            background-image: url('path/to/your/hero-background.jpg'); /* Потрібно замінити на реальне зображення */
+            background-size: cover;
+            background-position: center;
+            height: 100vh; /* Збільшив до 100vh для кращого враження */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        header::before { /* Напівпрозорий оверлей для кращої читабельності тексту */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        header div {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            font-size: 5.5rem; /* Збільшив розмір */
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Тінь для читабельності */
+        }
+        header p {
+            font-size: 1.8rem; /* Збільшив розмір */
+            max-width: 800px; /* Збільшив ширину */
+            margin: 0 auto 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Загальні секції */
+        section {
+            padding: var(--section-padding);
+            max-width: var(--max-width);
+            margin: auto;
+            text-align: center; /* Центрування заголовків */
+        }
+        section h2 {
+            font-size: 3rem; /* Збільшив розмір заголовків */
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            text-align: center; /* Заголовки секцій по центру */
+        }
+        section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left; /* Текст списків зліва */
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        section ul li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Стилізація зображень у секціях */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            flex-wrap: wrap; /* Для адаптивності */
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .image-description {
+            font-size: 0.95rem;
+            color: var(--light-grey);
+            margin-top: 0.5rem;
+        }
+
+        /* Секції з описом епох */
+        .era-section {
+            background-color: var(--darker-bg);
+            padding: var(--section-padding);
+            margin-bottom: 2rem; /* Відступ між секціями епох */
+            border-radius: 10px;
+            text-align: left; /* Текст всередині секції зліва */
+        }
+        .era-section h3 {
+            font-size: 2.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-align: center; /* Заголовок епохи по центру */
+        }
+        .era-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .era-section ul {
+            list-style: disc; /* Маркери для списків механік */
+            margin-left: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding: var(--section-padding);
+            background-color: var(--darker-bg);
+            border-radius: 10px;
+        }
+        .cta h2 {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        .cta p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+        }
+        .cta a {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px; /* Більш округла кнопка */
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cta a:hover {
+            background-color: #e6c200; /* Темніший золотий при наведенні */
+            transform: translateY(-3px); /* Легкий підйом кнопки */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: var(--darker-bg);
+            font-size: 0.95rem;
+            color: var(--light-grey);
+            margin-top: 3rem;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3.5rem;
+            }
+            header p {
+                font-size: 1.2rem;
+            }
+            nav ul {
+                flex-direction: column;
+                margin-top: 1rem;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            nav .nav-container {
+                flex-direction: column;
+            }
+            nav .logo {
+                margin-bottom: 1rem;
+            }
+            section {
+                padding: 2.5rem 1rem;
+            }
+            section h2 {
+                font-size: 2.2rem;
+            }
+            .era-section h3 {
+                font-size: 1.8rem;
+            }
+            .cta a {
+                font-size: 1.2rem;
+                padding: 1rem 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div>
-      <h1>ВОЛЯ</h1>
-      <p>Одна душа. Один народ. <br />Історія України крізь очі її воїнів.</p>
-    </div>
-  </header>
+    <nav>
+        <div class="nav-container">
+            <a href="#top" class="logo">ВОЛЯ</a>
+            <ul>
+                <li><a href="#about">Про проєкт</a></li>
+                <li><a href="#features">Особливості</a></li>
+                <li><a href="#heroes">Герої</a></li>
+                <li><a href="#eras">Епохи</a></li>
+                <li><a href="#volya-mechanics">Механіка "Волі"</a></li>
+                <li><a href="#team">Команда</a></li>
+                <li><a href="#contact">Контакти</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <section>
-    <h2>Про проєкт</h2>
-    <p><span class="highlight">ВОЛЯ</span> — це сюжетна 3D action-adventure гра про незламність українського духу. Гравець проходить крізь віки, перевтілюючись у воїнів різних епох — від скіфів до сучасності. Але в кожному з них живе одна душа. Одна мета — боротися за волю.</p>
-  </section>
+    <header id="top">
+        <div>
+            <h1>ВОЛЯ</h1>
+            <p>Одна душа. Один народ. <br />Історія України крізь очі її воїнів.<br/>Епічна Action-Adventure гра.</p>
+        </div>
+    </header>
 
-  <section>
-    <h2>Особливості гри</h2>
-    <ul>
-      <li><span class="highlight">16+ годин геймплею</span> з унікальними мінісвітами для кожної епохи</li>
-      <li><span class="highlight">Складна бойова система</span>, що змінюється відповідно до доби</li>
-      <li><span class="highlight">Кінематографічна подача</span> з глибоким наративом</li>
-      <li><span class="highlight">Дослідження, стелс, реальні історичні події</span></li>
-    </ul>
-  </section>
+    <section id="about">
+        <h2>Про проєкт</h2>
+        <p><span class="highlight">ВОЛЯ</span> — це глибоко сюжетна 3D Action-Adventure гра, що занурює гравця у тисячолітню історію боротьби українського народу за свою свободу. Це не просто гра, це емоційна подорож крізь віки, де гравець перевтілюється у ключових предків головного героя — сучасного українського воїна.</p>
+        <p>Від мирних землеробів Трипілля до незламних лицарів Київської Русі, від відважних козаків до повстанців XX століття — у кожному з цих героїв живе одна незмінна сила, одна мета: боротися за <span class="highlight">ВОЛЮ</span>. Це сага про нерозривний зв'язок поколінь, про пам'ять крові та духу, що передається крізь віки, щоб ожити в найкритичніший момент сучасності.</p>
+    </section>
 
-  <section>
-    <h2>Початок: Скіфія</h2>
-    <p>Перша місія переносить гравця у 514 р. до н.е., коли скіфи перемагають армію Дарія І. Гравець навчається партизанській тактиці, знищує ресурси ворога та повертається до свого племені, щоб обрати шлях землероба — замість війни.</p>
-  </section>
+    <section id="features">
+        <h2>Особливості гри</h2>
+        <ul>
+            <li><span class="highlight">Масштабний Наратив:</span> Більше <span class="highlight">16+ годин</span> захопливого геймплею, що охоплює декілька ключових історичних епох України.</li>
+            <li><span class="highlight">Унікальні Мінісвіти:</span> Кожна епоха є напіввідкритим світом зі своїми автентичними локаціями, візуальним стилем та атмосферною музикою.</li>
+            <li><span class="highlight">Еволюція Геймплею:</span> Динамічна зміна ігрових механік від мирного будівництва та виживання до складної бойової системи, стратегічного планування та стелсу, адаптованих до особливостей кожної доби.</li>
+            <li><span class="highlight">Кінематографічна Подача:</span> Глибокий, емоційний сюжет, розкритий через високоякісні катсцени та діалоги, що передають драму та героїзм кожної епохи.</li>
+            <li><span class="highlight">Історична Достовірність:</span> Ретельне вивчення та інтеграція реальних історичних подій, побуту, культури та міфології, що робить гру не лише розвагою, а й освітнім досвідом.</li>
+            <li><span class="highlight">Моральні Вибори:</span> Гравцю доведеться робити важкі моральні вибори, які впливатимуть на розвиток сюжету, долю персонажів та, що найважливіше, на рівень "Волі" — ключової внутрішньої сили.</li>
+        </ul>
+    </section>
 
-  <section class="cta">
-    <h2>Хочеш стати частиною команди?</h2>
-    <p>Ми шукаємо розробників, художників, сценаристів та істориків. Приєднуйся до гри, що розповість світові про силу українського духу.</p>
-    <a href="mailto:join@volya-game.com">Написати нам</a>
-  </section>
+    <section id="heroes">
+        <h2>Наші Герої</h2>
+        <div class="image-container">
+            <div>
+                <img src="image_e66d9d.jpg" alt="Олесь - Козак" style="max-width: 400px;"> <p class="image-description">Олесь ("Козак") — сучасний воїн, що несе на собі тисячоліття боротьби.</p>
+            </div>
+            <div>
+                <img src="image_610fbc.jpg" alt="Ляля - Трипілька" style="max-width: 300px;"> <p class="image-description">Ляля — трипілька, чиє серце вперше відчуло невідомий поклик Волі.</p>
+            </div>
+            </div>
+        <p>Кожен герой — це пращур Олеся, і саме через їхні долі гравець переживе історію незламного духу українського народу.</p>
+    </section>
 
-  <footer>
-    &copy; 2025 ВОЛЯ. Усі права захищено. Проєкт створюється з любов’ю до України.
-  </footer>
+    <section id="eras">
+        <h2>Епохи "ВОЛІ"</h2>
+
+        <div class="era-section">
+            <h3>Епоха 1: Кам'яний Вік та Енеоліт (Трипільська Культура) – "Колиска Гармонії"</h3>
+            <p>Гра починається у мирний час, де гравець перевтілюється в **Лялю** — молоду, допитливу трипільку. Її світ — це гармонія з природою, життя у великому поселенні, ремесла та перші відкриття. Ця епоха навчає базовим механікам виживання, збору ресурсів, крафту кераміки та одягу, а також важливим соціальним взаємодіям. Це світ без війни, але з першими випробуваннями для внутрішньої сили та співчуття.</p>
+            <h4>Перша Місія: "Шлях Співчуття"</h4>
+            <p>Після вступної катсцени з Олесем, гравець опиняється в тілі Лялі. Місія починається з навчання базовим навичкам — збору ресурсів (ягоди, трави, глина) та взаємодії з громадою. Під час звичайної прогулянки Ляля стикається з пораненим кочівником, Степаном, за яким женуться вороги. Ляля, керуючись внутрішньою <span class="highlight">Волею до Співчуття</span>, повинна врятувати його. Це завдання вимагатиме від гравця використання стелсу, втечі від переслідувачів та надання першої допомоги. Місія завершується, коли Степан у відносній безпеці, і закладає основу для подальшого розвитку їхніх стосунків та морального вибору Лялі — залишитися у громаді чи піти за покликом серця у невідомі степи.</p>
+            <ul>
+                <li>**Геймплей:** Мирне дослідження, збирання ресурсів, базовий крафт, стелс (втеча), соціальна взаємодія.</li>
+                <li>**Ключове поняття "Волі":** Воля до Гармонії та Вибору (Співчуття, Творення, Слідування за Покликом Серця).</li>
+            </ul>
+        </div>
+
+        <div class="era-section">
+            <h3>Епоха 2: Скіфська Доба (VII-III ст. до н.е.) – "Дух Степу"</h3>
+            <p>У цій епосі гравець перевтілюється у пращура, який веде кочовий спосіб життя. Світ значно розширюється, акцент зміщується на виживання у безкрайніх степах, мисливство, верхову їзду та основи кочового бою. З'являються перші сутички з ворогами, що загартовують дух та готують до майбутніх випробувань. Це період формування <span class="highlight">Волі до Свободи та Незалежності</span>.</p>
+            <ul>
+                <li>**Геймплей:** Дослідження відкритого світу, полювання, кінний бій, виживання, базові тактичні битви.</li>
+                <li>**Ключове поняття "Волі":** Воля до Свободи та Незалежності (відкритий простір, відмова від гніту).</li>
+            </ul>
+        </div>
+
+        <div class="era-section">
+            <h3>Епоха 3: Київська Русь (IX-XIII століття) – "Золоті Ворота"</h3>
+            <p>Гравець стає лицарем або дружинником, який захищає першу українську державу. Механіки фокусуються на ближньому бою з використанням меча, сокири, щита. З'являються елементи облоги міст, захисту фортець та масштабних битв. Це епоха будівництва, дипломатії та запеклої боротьби за віру та державність. Тут загартовується <span class="highlight">Воля до Державотворення та Віри</span>.</p>
+            <ul>
+                <li>**Геймплей:** Ближній бій, тактичні битви, облоги, захист фортець, дипломатія.</li>
+                <li>**Ключове поняття "Волі":** Воля до Державотворення та Віри (захист землі, будівництво країни).</li>
+            </ul>
+        </div>
+
+        </section>
+
+    <section id="volya-mechanics">
+        <h2>Механіка "Волі"</h2>
+        <p>Ключовою особливістю гри є механіка <span class="highlight">"Волі"</span> — це не просто сюжетний елемент, а інтегрована частина геймплею, що відображає внутрішню силу, рішучість та незламність духу героїв.</p>
+        <ul>
+            <li>**Накопичення "Волі":** "Воля" накопичується за рахунок:
+                <ul>
+                    <li>Прийняття важливих <span class="highlight">моральних виборів</span> (наприклад, співчуття до ворога, жертва заради інших, відстоювання принципів).</li>
+                    <li>Виконання завдань, що вимагають <span class="highlight">рішучості та самопожертви</span>.</li>
+                    <li>Успішного завершення складних боїв або місій.</li>
+                    <li>Дослідження світу та знаходження прихованих артефактів або знань предків.</li>
+                </ul>
+            </li>
+            <li>**Вплив на Геймплей:** Накопичена "Воля" може:
+                <ul>
+                    <li><span class="highlight">Відкривати нові здібності</span> (наприклад, посилені атаки, короткочасна невразливість, підвищена точність).</li>
+                    <li><span class="highlight">Розблоковувати унікальні діалогові опції</span>, що впливають на хід подій.</li>
+                    <li><span class="highlight">Змінювати ставлення NPC</span> до героя.</li>
+                    <li>Бути ключовим ресурсом для активації певних містичних чи "характерницьких" здібностей у пізніших епохах.</li>
+                </ul>
+            </li>
+            <li>**Фінальна Кульмінація:** Рівень накопиченої "Волі" протягом усіх епох безпосередньо вплине на фінал гри. Достатня "Воля" дозволить Олесю закликати <span class="highlight">"Легіон Предків"</span> — духовних провідників та воїнів з минулого — для вирішального бою, змінюючи хід сучасної битви.</li>
+        </ul>
+    </section>
+
+    <section id="team">
+        <h2>Наша Команда</h2>
+        <p>Ми — команда ентузіастів, об'єднаних спільною мрією: створити гру, яка не лише розважатиме, а й розповість світові про незламний дух та багатовікову історію України. Наша мета — втілити в життя унікальний геймплейний та наративний досвід.</p>
+        <p>Наразі ми активно шукаємо талановитих фахівців, щоб посилити наш проєкт. Якщо ви маєте пристрасть до ігор, історії та вірите у силу українського духу, ми запрошуємо вас приєднатися!</p>
+        </section>
+
+    <section class="cta" id="contact">
+        <h2>Стань частиною "ВОЛІ"!</h2>
+        <p>Приєднуйся до команди розробників, художників, сценаристів, істориків чи інвесторів. Разом ми створимо гру, що назавжди закарбує ім'я України в ігровій індустрії.</p>
+        <a href="mailto:contact@volya-game.com">Написати нам</a> <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-color);">або зв'яжіться з нами через соціальні мережі:</p>
+        </section>
+
+    <footer>
+        &copy; 2025 ВОЛЯ. Усі права захищено. Проєкт створюється з любов’ю до України.
+    </footer>
 </body>
-</html>  
+</html>
