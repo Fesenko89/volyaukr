@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8" />
@@ -25,7 +25,8 @@
             scroll-behavior: smooth; /* Плавна прокрутка до якоря */
         }
 
-        /* Навігація */
+        /* Навігація - ВИДАЛЕНО */
+        /*
         nav {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 1rem 2rem;
@@ -35,7 +36,7 @@
             left: 0;
             z-index: 1000;
             display: flex;
-            justify-content: center; /* Центрування меню */
+            justify-content: center;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         }
@@ -43,7 +44,7 @@
             max-width: var(--max-width);
             width: 100%;
             display: flex;
-            justify-content: space-between; /* Лого зліва, меню справа */
+            justify-content: space-between;
             align-items: center;
         }
         nav .logo {
@@ -51,7 +52,7 @@
             font-weight: 700;
             color: var(--accent-color);
             text-decoration: none;
-            margin-right: 2rem; /* Відступ від меню */
+            margin-right: 2rem;
         }
         nav ul {
             list-style: none;
@@ -60,7 +61,7 @@
             display: flex;
         }
         nav ul li {
-            margin-left: 2.5rem; /* Збільшений відступ між пунктами */
+            margin-left: 2.5rem;
         }
         nav ul li a {
             color: var(--text-color);
@@ -72,13 +73,14 @@
         nav ul li a:hover {
             color: var(--accent-color);
         }
+        */
 
         /* Hero Section */
         header {
             background-image: url('path/to/your/hero-background.jpg'); /* Потрібно замінити на реальне зображення */
             background-size: cover;
             background-position: center;
-            height: 100vh; /* Збільшив до 100vh для кращого враження */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -86,7 +88,7 @@
             padding: 2rem;
             position: relative;
         }
-        header::before { /* Напівпрозорий оверлей для кращої читабельності тексту */
+        header::before {
             content: "";
             position: absolute;
             top: 0;
@@ -101,14 +103,14 @@
             z-index: 2;
         }
         header h1 {
-            font-size: 5.5rem; /* Збільшив розмір */
+            font-size: 5.5rem;
             color: var(--accent-color);
             margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Тінь для читабельності */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
         }
         header p {
-            font-size: 1.8rem; /* Збільшив розмір */
-            max-width: 800px; /* Збільшив ширину */
+            font-size: 1.8rem;
+            max-width: 800px;
             margin: 0 auto 2rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
@@ -118,13 +120,13 @@
             padding: var(--section-padding);
             max-width: var(--max-width);
             margin: auto;
-            text-align: center; /* Центрування заголовків */
+            text-align: center;
         }
         section h2 {
-            font-size: 3rem; /* Збільшив розмір заголовків */
+            font-size: 3rem;
             color: var(--accent-color);
             margin-bottom: 2rem;
-            text-align: center; /* Заголовки секцій по центру */
+            text-align: center;
         }
         section p {
             font-size: 1.1rem;
@@ -133,7 +135,7 @@
         section ul {
             list-style: none;
             padding: 0;
-            text-align: left; /* Текст списків зліва */
+            text-align: left;
             margin: 2rem auto;
             max-width: 800px;
         }
@@ -152,7 +154,7 @@
             justify-content: center;
             gap: 2rem;
             margin: 3rem 0;
-            flex-wrap: wrap; /* Для адаптивності */
+            flex-wrap: wrap;
         }
         .image-container img {
             max-width: 100%;
@@ -170,22 +172,22 @@
         .era-section {
             background-color: var(--darker-bg);
             padding: var(--section-padding);
-            margin-bottom: 2rem; /* Відступ між секціями епох */
+            margin-bottom: 2rem;
             border-radius: 10px;
-            text-align: left; /* Текст всередині секції зліва */
+            text-align: left;
         }
         .era-section h3 {
             font-size: 2.2rem;
             color: var(--accent-color);
             margin-bottom: 1.5rem;
-            text-align: center; /* Заголовок епохи по центру */
+            text-align: center;
         }
         .era-section p {
             font-size: 1.1rem;
             margin-bottom: 1rem;
         }
         .era-section ul {
-            list-style: disc; /* Маркери для списків механік */
+            list-style: disc;
             margin-left: 20px;
             margin-bottom: 1.5rem;
         }
@@ -213,14 +215,14 @@
             color: var(--dark-bg);
             padding: 1.2rem 3rem;
             text-decoration: none;
-            border-radius: 50px; /* Більш округла кнопка */
+            border-radius: 50px;
             font-weight: 700;
             font-size: 1.4rem;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .cta a:hover {
-            background-color: #e6c200; /* Темніший золотий при наведенні */
-            transform: translateY(-3px); /* Легкий підйом кнопки */
+            background-color: #e6c200;
+            transform: translateY(-3px);
         }
 
         /* Footer */
@@ -233,27 +235,13 @@
             margin-top: 3rem;
         }
 
-        /* Адаптивність */
+        /* Адаптивність (без навігації) */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 3.5rem;
             }
             header p {
                 font-size: 1.2rem;
-            }
-            nav ul {
-                flex-direction: column;
-                margin-top: 1rem;
-                align-items: center;
-            }
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-            nav .nav-container {
-                flex-direction: column;
-            }
-            nav .logo {
-                margin-bottom: 1rem;
             }
             section {
                 padding: 2.5rem 1rem;
@@ -272,21 +260,6 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="#top" class="logo">ВОЛЯ</a>
-            <ul>
-                <li><a href="#about">Про проєкт</a></li>
-                <li><a href="#features">Особливості</a></li>
-                <li><a href="#heroes">Герої</a></li>
-                <li><a href="#eras">Епохи</a></li>
-                <li><a href="#volya-mechanics">Механіка "Волі"</a></li>
-                <li><a href="#team">Команда</a></li>
-                <li><a href="#contact">Контакти</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <header id="top">
         <div>
             <h1>ВОЛЯ</h1>
@@ -316,10 +289,12 @@
         <h2>Наші Герої</h2>
         <div class="image-container">
             <div>
-                <img src="image_e66d9d.jpg" alt="Олесь - Козак" style="max-width: 400px;"> <p class="image-description">Олесь ("Козак") — сучасний воїн, що несе на собі тисячоліття боротьби.</p>
+                <img src="image_e66d9d.jpg" alt="Олесь - Козак" style="max-width: 400px;">
+                <p class="image-description">Олесь ("Козак") — сучасний воїн, що несе на собі тисячоліття боротьби.</p>
             </div>
             <div>
-                <img src="image_610fbc.jpg" alt="Ляля - Трипілька" style="max-width: 300px;"> <p class="image-description">Ляля — трипілька, чиє серце вперше відчуло невідомий поклик Волі.</p>
+                <img src="image_610fbc.jpg" alt="Ляля - Трипілька" style="max-width: 300px;">
+                <p class="image-description">Ляля — трипілька, чиє серце вперше відчуло невідомий поклик Волі.</p>
             </div>
             </div>
         <p>Кожен герой — це пращур Олеся, і саме через їхні долі гравець переживе історію незламного духу українського народу.</p>
@@ -392,7 +367,8 @@
     <section class="cta" id="contact">
         <h2>Стань частиною "ВОЛІ"!</h2>
         <p>Приєднуйся до команди розробників, художників, сценаристів, істориків чи інвесторів. Разом ми створимо гру, що назавжди закарбує ім'я України в ігровій індустрії.</p>
-        <a href="mailto:contact@volya-game.com">Написати нам</a> <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-color);">або зв'яжіться з нами через соціальні мережі:</p>
+        <a href="mailto:contact@volya-game.com">Написати нам</a>
+        <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-color);">або зв'яжіться з нами через соціальні мережі:</p>
         </section>
 
     <footer>
