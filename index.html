@@ -106,25 +106,35 @@
             margin: 3rem 0;
             flex-wrap: wrap;
         }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
+        /* Усі зображення мають масштабуватися */
+        .image-container img,
+        .centered-image-wrapper img {
+            max-width: 100%; /* Забезпечує, що зображення не виходять за межі батьківського контейнера */
+            height: auto; /* Зберігає пропорції зображення */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         }
+        /* Конкретні розміри для зображень героїв, адаптовані до загальної max-width: 100% */
+        .image-container .hero-image {
+            width: 100%; /* щоб зображення займали всю ширину свого flex-item */
+            max-width: 400px; /* обмеження максимального розміру на великих екранах */
+        }
+        /* Для Аргіса та Зоряни, щоб їхні розміри були меншими за Олеся */
+        .image-container .hero-image.small {
+            max-width: 300px;
+        }
+
+
         .image-description {
             font-size: 0.95rem;
             color: var(--light-grey);
             margin-top: 0.5rem;
         }
-        .centered-image-wrapper { /* New style for centering single image */
+        .centered-image-wrapper { /* Style for centering images in eras section */
             display: flex;
             justify-content: center;
-            margin: 2rem auto; /* Ensures the wrapper itself is centered if it doesn't take full width */
-        }
-        .centered-image-wrapper img {
-            display: block; /* To apply margin auto if inside flex for individual centering */
-            margin: 0 auto; /* Centering the image within its flex container or if it's block */
+            margin: 2rem auto;
+            max-width: 600px; /* Обмежуємо ширину обгортки для зображень у секції епох */
         }
 
 
@@ -195,7 +205,7 @@
             margin-top: 3rem;
         }
 
-        /* Адаптивність (без навігації) */
+        /* Адаптивність */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 3.5rem;
@@ -215,6 +225,11 @@
             .cta a {
                 font-size: 1.2rem;
                 padding: 1rem 2.5rem;
+            }
+            /* На мобільних екранах обмежуємо максимальну ширину зображень героїв до 100% */
+            .image-container .hero-image,
+            .image-container .hero-image.small {
+                max-width: 100%;
             }
         }
     </style>
@@ -250,15 +265,15 @@
         <h2>Наші Герої</h2>
         <div class="image-container">
             <div>
-                <img src="image_e66d9d.jpg" alt="Олесь - Козак" style="max-width: 400px;">
+                <img src="image_e66d9d.jpg" alt="Олесь - Козак" class="hero-image">
                 <p class="image-description">Олесь ("Козак") — сучасний воїн, що несе на собі тисячоліття боротьби.</p>
             </div>
             <div>
-                <img src="image_610fbc.jpg" alt="Зоряна - Трипілька" style="max-width: 300px;">
+                <img src="image_610fbc.jpg" alt="Зоряна - Трипілька" class="hero-image small">
                 <p class="image-description">Зоряна — трипілька, чиє серце вперше відчуло невідомий поклик Волі.</p>
             </div>
             <div>
-                <img src="image_50ac3f.jpg" alt="Аргіс - Скіфський воїн" style="max-width: 350px;">
+                <img src="image_50ac3f.jpg" alt="Аргіс - Скіфський воїн" class="hero-image small">
                 <p class="image-description">Аргіс — скіфський воїн, що втілює дух свободи та степу.</p>
             </div>
         </div>
@@ -272,13 +287,13 @@
             <p>Зануртесь у сім докорінно різних, але взаємопов'язаних епох української історії. Кожна доба — це не просто декорація, а цілісний ігровий світ зі своїми унікальними викликами, персонажами та геймплейними можливостями.</p>
             <div class="centered-image-wrapper">
                 <div>
-                    <img src="image_503f29.jpg" alt="Трипільське поселення" style="max-width: 600px;">
+                    <img src="image_503f29.jpg" alt="Трипільське поселення">
                     <p class="image-description">Вид на одне з давніх трипільських поселень.</p>
                 </div>
             </div>
             <div class="centered-image-wrapper">
                 <div>
-                    <img src="image_0ed175.jpg" alt="Скіфський Арт" style="max-width: 600px;">
+                    <img src="image_0ed175.jpg" alt="Скіфський Арт">
                     <p class="image-description">Мистецьке зображення скіфського воїна на коні — символ духу степу та волі.</p>
                 </div>
             </div>
