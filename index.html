@@ -189,11 +189,33 @@
             font-weight: 700;
             font-size: 1.4rem;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block; /* Щоб можна було застосувати margin-bottom до кнопки */
+            margin-bottom: 1.5rem; /* Відступ від кнопки до тексту */
         }
         .cta a:hover {
             background-color: #e6c200;
             transform: translateY(-3px);
         }
+        
+        /* New style for Join Us button */
+        .join-us-button {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            margin-top: 2rem; /* Відступ зверху */
+        }
+
+        .join-us-button:hover {
+            background-color: #e6c200;
+            transform: translateY(-3px);
+        }
+
 
         /* Footer */
         footer {
@@ -223,6 +245,10 @@
                 font-size: 1.8rem;
             }
             .cta a {
+                font-size: 1.2rem;
+                padding: 1rem 2.5rem;
+            }
+            .join-us-button {
                 font-size: 1.2rem;
                 padding: 1rem 2.5rem;
             }
@@ -338,7 +364,13 @@
         <h2>Наша Команда: Створюючи Майбутнє Ігор</h2>
         <p>Ми — команда інноваторів та ентузіастів, об'єднаних спільною мрією: створити гру, яка не лише розважатиме, а й змінить уявлення про наративні ігри, розповівши світові про незламний дух та багатовікову історію України.</p>
         <p>Наразі ми активно шукаємо талановитих фахівців, що готові прийняти виклик розробки гри з проривними ШІ-технологіями та глибоким змістом. Якщо ви маєте пристрасть до ігор, історії, інновацій та вірите у силу українського духу, ми запрошуємо вас приєднатися до створення чогось справді великого!</p>
-    </section>
+        <p style="margin-top: 2rem;">
+            Ми формуємо стартову команду для пре-продакшну.
+            Якщо ви досвідчений фахівець і хочете стати частиною "ВОЛІ",
+            перегляньте наші вакансії:
+        </p>
+        <a href="vacancies.html" class="join-us-button">Приєднатися до команди</a>
+        </section>
 
     <section class="cta" id="contact">
         <h2>Стань частиною "ВОЛІ"!</h2>
