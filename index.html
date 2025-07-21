@@ -162,7 +162,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Call to Action */
+        /* Call to Action (CTA) - тепер для всіх закликів */
         .cta {
             text-align: center;
             margin-top: 4rem;
@@ -180,25 +180,8 @@
             max-width: 800px;
             margin: 0 auto 2.5rem;
         }
-        .cta a {
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 1.2rem 3rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.4rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            display: inline-block; /* Щоб можна було застосувати margin-bottom до кнопки */
-            margin-bottom: 1.5rem; /* Відступ від кнопки до тексту */
-        }
-        .cta a:hover {
-            background-color: #e6c200;
-            transform: translateY(-3px);
-        }
-        
-        /* New style for Join Us button */
-        .join-us-button {
+        /* Стиль для кнопки Приєднатися */
+        .cta .main-cta-button {
             background-color: var(--accent-color);
             color: var(--dark-bg);
             padding: 1.2rem 3rem;
@@ -208,12 +191,30 @@
             font-size: 1.4rem;
             transition: background-color 0.3s ease, transform 0.3s ease;
             display: inline-block;
-            margin-top: 2rem; /* Відступ зверху */
+            margin-bottom: 1.5rem; /* Відступ від кнопки до тексту */
         }
-
-        .join-us-button:hover {
+        .cta .main-cta-button:hover {
             background-color: #e6c200;
             transform: translateY(-3px);
+        }
+
+        /* Стиль для посилання на пошту, щоб воно було меншим */
+        .cta .email-link {
+            font-size: 1.1rem; /* Зменшити розмір для посилання на пошту */
+            padding: 0.8rem 2rem; /* Менший паддінг */
+            background-color: var(--dark-bg); /* Інший фон для відмінності */
+            color: var(--accent-color); /* Колір тексту як акцентний */
+            border: 2px solid var(--accent-color); /* Обведення */
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem; /* Відступ від попереднього елемента */
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        }
+        .cta .email-link:hover {
+            background-color: var(--accent-color);
+            color: var(--dark-bg);
+            transform: translateY(-2px);
         }
 
 
@@ -244,13 +245,13 @@
             .era-section h3 {
                 font-size: 1.8rem;
             }
-            .cta a {
+            .cta .main-cta-button {
                 font-size: 1.2rem;
                 padding: 1rem 2.5rem;
             }
-            .join-us-button {
-                font-size: 1.2rem;
-                padding: 1rem 2.5rem;
+            .cta .email-link {
+                font-size: 0.95rem;
+                padding: 0.6rem 1.5rem;
             }
             /* На мобільних екранах обмежуємо максимальну ширину зображень героїв до 100% */
             .image-container .hero-image,
@@ -364,19 +365,17 @@
         <h2>Наша Команда: Створюючи Майбутнє Ігор</h2>
         <p>Ми — команда інноваторів та ентузіастів, об'єднаних спільною мрією: створити гру, яка не лише розважатиме, а й змінить уявлення про наративні ігри, розповівши світові про незламний дух та багатовікову історію України.</p>
         <p>Наразі ми активно шукаємо талановитих фахівців, що готові прийняти виклик розробки гри з проривними ШІ-технологіями та глибоким змістом. Якщо ви маєте пристрасть до ігор, історії, інновацій та вірите у силу українського духу, ми запрошуємо вас приєднатися до створення чогось справді великого!</p>
-        <p style="margin-top: 2rem;">
-            Ми формуємо стартову команду для пре-продакшну.
-            Якщо ви досвідчений фахівець і хочете стати частиною "ВОЛІ",
-            перегляньте наші вакансії:
-        </p>
-        <a href="vacancies.html" class="join-us-button">Приєднатися до команди</a>
-        </section>
+    </section>
 
     <section class="cta" id="contact">
         <h2>Стань частиною "ВОЛІ"!</h2>
         <p>Приєднуйся до команди розробників, ШІ-спеціалістів, художників, сценаристів, істориків чи інвесторів. Разом ми створимо гру, що назавжди закарбує ім'я України в ігровій індустрії та встановить нові стандарти занурення.</p>
-        <a href="mailto:ukrvolley@gmail.com">Написати нам</a>
-        <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-color);">або зв'яжіться з нами через соціальні мережі:</p>
+        
+        <a href="vacancies.html" class="main-cta-button">Переглянути Вакансії</a>
+        
+        <p style="margin-top: 1.5rem; font-size: 1.1rem; color: var(--text-color);">або зв'яжіться з нами напряму:</p>
+        <a href="mailto:ukrvolley@gmail.com" class="email-link">ukrvolley@gmail.com</a>
+        <p style="margin-top: 1.5rem; font-size: 1rem; color: var(--text-color);">та через соціальні мережі (посилання можна додати тут, якщо є).</p>
     </section>
 
     <footer>
