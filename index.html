@@ -1,5 +1,5 @@
-<!DOCTYPE html>     
-<html lang="uk"> 
+<!DOCTYPE html>      
+<html lang="uk">  
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -216,6 +216,28 @@
             color: var(--dark-bg);
             transform: translateY(-2px);
         }
+        
+        /* НОВИЙ СТИЛЬ ДЛЯ ПОСИЛАНЬ НА ІСТОРІЇ ГЕРОЇВ */
+        .hero-story-link {
+            display: inline-block; /* Щоб можна було застосовувати padding та трансформації */
+            background-color: var(--darker-bg); /* Темніший фон, щоб виділявся */
+            color: var(--accent-color); /* Золотий текст */
+            padding: 0.6rem 1.2rem; /* Невеликий внутрішній відступ */
+            text-decoration: none; /* Прибрати підкреслення */
+            border-radius: 25px; /* Заокруглені кути */
+            font-weight: bold; /* Жирний шрифт */
+            font-size: 0.95rem; /* Трохи менший шрифт */
+            border: 1px solid var(--accent-color); /* Тонка золота рамка */
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Плавні переходи */
+            margin-top: 1rem; /* Відступ від опису зображення */
+        }
+
+        .hero-story-link:hover {
+            background-color: var(--accent-color); /* Золотий фон при наведенні */
+            color: var(--dark-bg); /* Темний текст при наведенні */
+            transform: translateY(-2px); /* Невеликий підйом кнопки */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Тінь при наведенні */
+        }
 
 
         /* Footer */
@@ -257,6 +279,10 @@
             .image-container .hero-image,
             .image-container .hero-image.small {
                 max-width: 100%;
+            }
+            .hero-story-link {
+                font-size: 0.85rem; /* Зменшити розмір шрифту на мобільних */
+                padding: 0.5rem 1rem; /* Зменшити паддінг на мобільних */
             }
         }
     </style>
@@ -308,70 +334,70 @@
                 <img src="image_e66d9d.jpg" alt="Олесь - Козак" class="hero-image">
                 <p class="image-description">Олесь ("Козак") — сучасний воїн, що несе на собі тисячоліття боротьби за Волю.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="oles_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Олеся &gt;&gt;</a>
+                    <a href="oles_backstory.html" class="hero-story-link">Дізнатися більше про Олеся</a>
                 </p>
             </div>
-             <div>
+            <div>
                 <img src="image_610fbc.jpg" alt="Зоряна - Трипілька" class="hero-image small">
                 <p class="image-description">Зоряна — трипілька, чиє серце вперше відчуло невідомий поклик Волі, що з'єднав покоління.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="zoryana_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Зоряну &gt;&gt;</a>
+                    <a href="zoryana_backstory.html" class="hero-story-link">Дізнатися більше про Зоряну</a>
                 </p>
             </div>
-              <div>
+            <div>
                 <img src="image_50ac3f.jpg" alt="Аргіс - Скіфський воїн" class="hero-image small">
                 <p class="image-description">Аргіс — скіфський воїн, що втілює дух свободи та безмежного степу.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="argis_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Аргіса &gt;&gt;</a>
+                    <a href="argis_backstory.html" class="hero-story-link">Дізнатися більше про Аргіса</a>
                 </p>
             </div>
-             <div>
+            <div>
                 <img src="image_e4f08e.jpg" alt="Радим - Слов'янський гончар-дипломат" class="hero-image small">
                 <p class="image-description">Радим — слов'янський гончар-дипломат, що згуртував народ у боротьбі з кочовиками.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="radym_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Радима &gt;&gt;</a>
+                    <a href="radym_backstory.html" class="hero-story-link">Дізнатися більше про Радима</a>
                 </p>
             </div>
             <div>
                 <img src="image_ac3072.jpg" alt="Володимир - Воїн Київської Русі" class="hero-image">
                 <p class="image-description">Володимир — воїн Київської Русі, що стояв на захисті хрещеної землі та нової віри.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="volodymyr_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Володимира &gt;&gt;</a>
+                    <a href="volodymyr_backstory.html" class="hero-story-link">Дізнатися більше про Володимира</a>
                 </p>
             </div>
             <div>
                 <img src="image_miroslav.jpg" alt="Мирослав - Воїн-дипломат Київської Русі" class="hero-image">
                 <p class="image-description">Мирослав — воїн-дипломат Київської Русі, що об'єднував князів перед лицем спільної загрози.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="miroslav_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Мирослава &gt;&gt;</a>
+                    <a href="miroslav_backstory.html" class="hero-story-link">Дізнатися більше про Мирослава</a>
                 </p>
             </div>
-             <div>
+            <div>
                 <img src="image_sviatoslav.jpg" alt="Святослав - Богатир Київської Русі" class="hero-image">
                 <p class="image-description">Святослав — непереможний богатир, що уособлював незламний дух Русі перед монгольською навалою.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="sviatoslav_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Святослава &gt;&gt;</a>
+                    <a href="sviatoslav_backstory.html" class="hero-story-link">Дізнатися більше про Святослава</a>
                 </p>
             </div>
             <div>
                 <img src="image_ivan.jpg" alt="Іван - Звичайний козак" class="hero-image">
                 <p class="image-description">Іван — звичайний козак доби Сагайдачного, втілення незламної волі до свободи.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="ivan_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Івана &gt;&gt;</a>
+                    <a href="ivan_backstory.html" class="hero-story-link">Дізнатися більше про Івана</a>
                 </p>
             </div>
             <div>
                 <img src="image_orest.jpg" alt="Орест - Старшина-розвідник Чорної Ради" class="hero-image">
                 <p class="image-description">Орест — мудрий полковник-розвідник, що боровся за єдність України під час Руїни.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="orest_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Ореста &gt;&gt;</a>
+                    <a href="orest_backstory.html" class="hero-story-link">Дізнатися більше про Ореста</a>
                 </p>
             </div>
             <div>
                 <img src="image_kalyna.jpg" alt="Калина - Дідо-повстанець УПА" class="hero-image">
                 <p class="image-description">Калина — простий повстанець УПА, втілення вікової, незламної Волі українського народу.</p>
                 <p style="margin-top: 1rem;">
-                    <a href="kalyna_backstory.html" style="color: var(--accent-color); text-decoration: none; font-weight: bold; font-size: 1rem; transition: color 0.3s ease;">Дізнатися більше про Калину &gt;&gt;</a>
+                    <a href="kalyna_backstory.html" class="hero-story-link">Дізнатися більше про Калину</a>
                 </p>
             </div>
         </div>
