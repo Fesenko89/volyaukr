@@ -47,7 +47,8 @@ header {
 
 header h1 {
     margin-bottom: 10px;
-    font-size: 3em;
+    font-size: 4em;
+    color: #ffd700;
 }
 
 header p {
