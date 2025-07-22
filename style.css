@@ -125,11 +125,17 @@ section p {
 }
 
 #heroes .image-container > div {
-    background-color: #3a3a3a; /* Змінено: Темніший фон для карток героїв */
+    background-color: #3a3a3a; /* Темніший фон для карток героїв */
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Змінено: Темніша тінь */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     text-align: center;
+
+    /* ---- Додані властивості для Flexbox, щоб вирівняти кнопки ---- */
+    display: flex;
+    flex-direction: column; /* Елементи будуть розташовані вертикально */
+    justify-content: space-between; /* Розподіляє простір, штовхаючи останній елемент донизу */
+    /* ----------------------------------------------------------------- */
 }
 
 .hero-image {
@@ -147,24 +153,39 @@ section p {
 
 .image-description {
     font-size: 0.95em;
-    color: #ccc; /* Змінено: Світліший сірий для опису зображень */
+    color: #ccc;
     margin-bottom: 10px;
+    /* Якщо описи дуже довгі, і це єдина річ, яка не дає кнопкам вирівнятися,
+       можна спробувати встановити min-height для .image-description,
+       або просто довіритися flexbox та margin-top: auto на кнопці. */
 }
 
+/* ---- Оновлені стилі для кнопок "Дізнатися більше про..." ---- */
 .hero-story-link {
-    display: inline-block;
-    background-color: #555; /* Змінено: Темніший сірий для посилань на історію */
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
+    display: inline-block; /* Залишаємо inline-block для можливості центрування, але також працює як блок в flex-контейнері */
+    background-color: #ffd700; /* Змінено: Золотисто-жовтий колір, як у головних CTA */
+    color: #1a1a1a; /* Змінено: Темний текст на жовтих кнопках */
+    padding: 10px 20px; /* Змінено: Трохи менший розмір, ніж основні CTA */
+    border-radius: 8px; /* Радіус, як у інших кнопок */
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 0.95em; /* Трохи менший шрифт */
+    font-weight: bold; /* Жирний шрифт */
+
+    /* ---- Важливо для вирівнювання: ---- */
+    margin-top: auto; /* Це "відштовхує" кнопку до нижньої частини flex-контейнера */
+    /* ------------------------------------ */
+
+    /* Можливо, для більш рівномірного вигляду, можна додати min-width або width */
+    /* width: 100%;  -- Якщо ви хочете, щоб кнопка займала всю ширину картки */
+    /* min-width: 150px; -- Якщо ви хочете, щоб всі кнопки мали хоча б таку ширину */
+    /* max-width: 100%; -- Щоб не виходили за межі */
 }
 
 .hero-story-link:hover {
-    background-color: #777; /* Змінено: Світліший сірий при наведенні */
+    background-color: #e0b800; /* Темніший жовтий при наведенні */
+    transform: translateY(-2px);
 }
-
 /* Roadmap specific styles */
 .roadmap-section {
     margin-bottom: 40px;
