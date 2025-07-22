@@ -1,161 +1,59 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DDBP5R3S1B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDBP5R3S1B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'G-DDBP5R3S1B');
-</script>
+        gtag('config', 'G-DDBP5R3S1B');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Передісторія Олеся — ВОЛЯ</title>
+    <title data-translate="olesBackstoryPageTitle">Передісторія Олеся — ВОЛЯ</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --dark-bg: #0e0e0e;
-            --darker-bg: #1a1a1a;
-            --accent-color: #ffd700; /* Золотий */
-            --text-color: #f1f1f1;
-            --light-grey: #999;
-            --section-padding: 4rem 2rem;
-            --max-width: 1200px;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Unbounded', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        /* Hero-подібний заголовок для окремої сторінки */
-        .page-header {
-            background-color: var(--darker-bg);
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        .page-header h1 {
-            font-size: 4rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-        }
-        .page-header p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        section {
-            padding: var(--section-padding);
-            max-width: var(--max-width);
-            margin: auto;
-            text-align: left; /* Текст передісторії має бути вирівняний по лівому краю */
-        }
-        section h2 {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-        .highlight {
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        /* Кнопка повернення */
-        .back-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 0.8rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 2rem;
-        }
-        .back-button:hover {
-            background-color: #e6c200;
-            transform: translateY(-3px);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem;
-            background-color: var(--darker-bg);
-            font-size: 0.95rem;
-            color: var(--light-grey);
-            margin-top: 3rem;
-        }
-
-        /* Адаптивність */
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-            .page-header p {
-                font-size: 1.2rem;
-            }
-            section {
-                padding: 2.5rem 1rem;
-            }
-            section h2 {
-                font-size: 2rem;
-            }
-            .back-button {
-                font-size: 1rem;
-                padding: 0.7rem 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="page-header">
-        <h1>Передісторія Олеся</h1>
-        <p>Сучасний воїн, що несе на собі тисячоліття боротьби за Волю.</p>
-    </div>
+    <header class="page-header">
+        <div class="header-content">
+            <h1 data-translate="olesBackstoryMainHeading">Передісторія Олеся</h1>
+            <p data-translate="olesBackstoryHeroTagline">Сучасний воїн, що несе на собі тисячоліття боротьби за Волю.</p>
+        </div>
+        <nav class="language-switcher">
+            <button id="lang-uk" data-lang="uk">Українська</button>
+            <button id="lang-en" data-lang="en">English</button>
+        </nav>
+    </header>
 
     <section id="backstory-content">
-        <h2>Гартований Воїн Сучасності</h2>
+        <h2 data-translate="olesBackstorySectionTitle">Гартований Воїн Сучасності</h2>
 
-        <p><span class="highlight">Дата народження:</span> Приблизно 2000 рік.</p>
+        <p><span class="highlight" data-translate="olesBackstoryBirthDateLabel">Дата народження:</span> <span data-translate="olesBackstoryBirthDateValue">Приблизно 2000 рік.</span></p>
 
-        <h3>Дитинство та Юність (2000-2022):</h3>
-        <p>Олесь народився і виріс у звичайній українській родині. Це була типова проукраїнська сім'я, яка глибоко цінувала свою історію, мову, культуру та традиції. Його виховували на принципах патріотизму, поваги до старших та любові до рідної землі. У дитинстві Олесь був активним і допитливим хлопцем, захоплювався спортом та історією, особливо козацькою добою. Він ріс у світі відносної стабільності, мріяв про звичайне життя, можливо, пов'язане з інженерією або ІТ – тим, що давало б конкретний результат і покращувало життя. Він не був військовим за покликом, але цінності, закладені родиною, сформували його характер – відповідальний, наполегливий, з почуттям справедливості.</p>
+        <h3 data-translate="olesBackstoryChildhoodHeading">Дитинство та Юність (2000-2022):</h3>
+        <p data-translate="olesBackstoryChildhoodText">Олесь народився і виріс у звичайній українській родині. Це була типова проукраїнська сім'я, яка глибоко цінувала свою історію, мову, культуру та традиції. Його виховували на принципах патріотизму, поваги до старших та любові до рідної землі. У дитинстві Олесь був активним і допитливим хлопцем, захоплювався спортом та історією, особливо козацькою добою. Він ріс у світі відносної стабільності, мріяв про звичайне життя, можливо, пов'язане з інженерією або ІТ – тим, що давало б конкретний результат і покращувало життя. Він не був військовим за покликом, але цінності, закладені родиною, сформували його характер – відповідальний, наполегливий, з почуттям справедливості.</p>
 
-        <h3>Початок Війни та Шлях Воїна (2022):</h3>
-        <p>Коли в лютому 2022 року розпочалося повномасштабне вторгнення, життя Олеся, як і мільйонів українців, змінилося назавжди. Без вагань, одразу після перших ударів, він пішов добровольцем до військкомату. Його мотивація була кришталево чистою – захистити свій дім, свою родину, свою країну від ворога, який прагнув знищити все, що він любив. Початкова підготовка була інтенсивною, але Олесь, завдяки своїй фізичній формі та внутрішній зібраності, швидко адаптувався до суворих реалій.</p>
+        <h3 data-translate="olesBackstoryWarBeginningHeading">Початок Війни та Шлях Воїна (2022):</h3>
+        <p data-translate="olesBackstoryWarBeginningText">Коли в лютому 2022 року розпочалося повномасштабне вторгнення, життя Олеся, як і мільйонів українців, змінилося назавжди. Без вагань, одразу після перших ударів, він пішов добровольцем до військкомату. Його мотивація була кришталево чистою – захистити свій дім, свою родину, свою країну від ворога, який прагнув знищити все, що він любив. Початкова підготовка була інтенсивною, але Олесь, завдяки своїй фізичній формі та внутрішній зібраності, швидко адаптувався до суворих реалій.</p>
 
-        <h3>Загартування Вогнем (2022-2030):</h3>
-        <p>Протягом восьми років війни, до 2030 року, Олесь пройшов шлях від новобранця до справді <span class="highlight">професійного та прожореного воїна</span>. Він бачив на власні очі пекло найжорстокіших битв, втрачав побратимів, переживав найважчі обстріли та окопну війну. Його шлях проліг через оборону Києва, кровопролитні бої на сході, контрнаступи та місяці виснажливого протистояння.</p>
-        <p>Його спеціалізацією стала <span class="highlight">розвідка та штурмові операції</span> – він був там, де потрібно було проникнути найглибше в тил ворога або прорвати найміцнішу оборону. Олесь навчився мислити нестандартно, приймати миттєві рішення під шаленим тиском, а його навички виживання та бою в найскладніших умовах стали легендарними серед побратимів. Його внутрішній світ, хоч і був загартований і посірілий від війни, ніколи не втрачав тієї іскри "Волі" – незламної віри у перемогу та готовності йти до кінця. Він став живим втіленням козацького духу – не тільки через бойові навички, а й через внутрішню свободу, непокору та вірність своїй землі.</p>
+        <h3 data-translate="olesBackstoryWarHardeningHeading">Загартування Вогнем (2022-2030):</h3>
+        <p data-translate="olesBackstoryWarHardeningText1">Протягом восьми років війни, до 2030 року, Олесь пройшов шлях від новобранця до справді <span class="highlight" data-translate="olesBackstoryWarHardeningHighlight1">професійного та прожореного воїна</span>. Він бачив на власні очі пекло найжорстокіших битв, втрачав побратимів, переживав найважчі обстріли та окопну війну. Його шлях проліг через оборону Києва, кровопролитні бої на сході, контрнаступи та місяці виснажливого протистояння.</p>
+        <p data-translate="olesBackstoryWarHardeningText2">Його спеціалізацією стала <span class="highlight" data-translate="olesBackstoryWarHardeningHighlight2">розвідка та штурмові операції</span> – він був там, де потрібно було проникнути найглибше в тил ворога або прорвати найміцнішу оборону. Олесь навчився мислити нестандартно, приймати миттєві рішення під шаленим тиском, а його навички виживання та бою в найскладніших умовах стали легендарними серед побратимів. Його внутрішній світ, хоч і був загартований і посірілий від війни, ніколи не втрачав тієї іскри "Волі" – незламної віри у перемогу та готовності йти до кінця. Він став живим втіленням козацького духу – не тільки через бойові навички, а й через внутрішню свободу, непокору та вірність своїй землі.</p>
 
-        <h3>Напередодні Фінального Бою (2030, Мар'їнка):</h3>
-        <p>До 2030 року, коли Україна розпочала свій вирішальний наступ, Олесь став одним з найдосвідченіших і найцінніших бійців. Він мав звання, повагу командирів та негласне лідерство серед своїх. Біль, втома та численні шрами були частиною його сутності, але його очі горіли тією ж рішучістю, що й на початку, лише тепер до неї додалася глибина знання ціни боротьби. Він перебував у Мар'їнці, на передовій українського наступу, готовий до фінального, вирішального бою за Донбас. Саме тут, у цьому історичному і символічному місці, йому судилося зіткнутися не лише з останніми викликами війни, а й з покликом тисячолітньої "Волі" своїх предків, що має проявитися в критичний момент.</p>
+        <h3 data-translate="olesBackstoryFinalBattleHeading">Напередодні Фінального Бою (2030, Мар'їнка):</h3>
+        <p data-translate="olesBackstoryFinalBattleText">До 2030 року, коли Україна розпочала свій вирішальний наступ, Олесь став одним з найдосвідченіших і найцінніших бійців. Він мав звання, повагу командирів та негласне лідерство серед своїх. Біль, втома та численні шрами були частиною його сутності, але його очі горіли тією ж рішучістю, що й на початку, лише тепер до неї додалася глибина знання ціни боротьби. Він перебував у Мар'їнці, на передовій українського наступу, готовий до фінального, вирішального бою за Донбас. Саме тут, у цьому історичному і символічному місці, йому судилося зіткнутися не лише з останніми викликами війни, а й з покликом тисячолітньої "Волі" своїх предків, що має проявитися в критичний момент.</p>
 
         <div style="text-align: center;">
-            <a href="index.html#heroes" class="back-button">← Повернутися до головної сторінки</a>
+            <a href="index.html#heroes" class="back-button" data-translate="olesBackstoryBackButton">← Повернутися до головної сторінки</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Проєкт "ВОЛЯ". Всі права захищені.</p>
+        <p data-translate="footerText">&copy; 2025 Проєкт "ВОЛЯ". Всі права захищені.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
