@@ -26,6 +26,16 @@ header {
     margin-bottom: 30px;
 }
 
+.fullscreen-hero {
+    height: 100vh; /* Робить його висотою усього екрану */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрує вміст по вертикалі */
+    align-items: center; /* Центрує вміст по горизонталі */
+    padding: 0 20px; /* Додайте внутрішній відступ для тексту */
+    box-sizing: border-box; /* Враховує padding у висоті */
+}
+
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -89,6 +99,11 @@ header p {
     transform: translateY(-2px);
 }
 
+.roadmap-cta-container {
+    text-align: center; /* Центруємо кнопку всередині контейнера */
+    margin-top: 50px; /* Додаємо відступ зверху, щоб вона з'явилася після прокрутки */
+    margin-bottom: 50px; /* Відступ знизу */
+}
 /* Секції */
 section {
     padding: 40px 20px;
