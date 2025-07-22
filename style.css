@@ -1,0 +1,319 @@
+:root {
+    --dark-bg: #0e0e0e;
+    --darker-bg: #1a1a1a;
+    --accent-color: #ffd700; /* Золотий */
+    --text-color: #f1f1f1;
+    --light-grey: #999;
+    --section-padding: 4rem 2rem;
+    --max-width: 1200px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Unbounded', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Плавна прокрутка до якоря */
+}
+
+/* Hero Section */
+header {
+    background-image: url('path/to/your/hero-background.jpg'); /* Потрібно замінити на реальне зображення */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Щоб елементи вишикувалися вертикально */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+header > div { /* Застосовуємо до div всередині header */
+    position: relative;
+    z-index: 2;
+}
+header h1 {
+    font-size: 5.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+header p {
+    font-size: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: absolute; /* Розміщуємо абсолютно, щоб не заважав основному контенту */
+    top: 20px;
+    right: 20px;
+    z-index: 3; /* Вище фонового шару */
+}
+.language-switcher button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.language-switcher button:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+.language-switcher button.active {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border-color: var(--accent-color);
+}
+
+
+/* Загальні секції */
+section {
+    padding: var(--section-padding);
+    max-width: var(--max-width);
+    margin: auto;
+    text-align: center;
+}
+section h2 {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+section ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+section ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+.highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Стилізація зображень у секціях */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+/* Усі зображення мають масштабуватися */
+.image-container img,
+.centered-image-wrapper img {
+    max-width: 100%; /* Забезпечує, що зображення не виходять за межі батьківського контейнера */
+    height: auto; /* Зберігає пропорції зображення */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+/* Конкретні розміри для зображень героїв, адаптовані до загальної max-width: 100% */
+.image-container .hero-image {
+    width: 100%; /* щоб зображення займали всю ширину свого flex-item */
+    max-width: 400px; /* обмеження максимального розміру на великих екранах */
+}
+/* Для Аргіса та Зоряни, щоб їхні розміри були меншими за Олеся */
+.image-container .hero-image.small {
+    max-width: 300px;
+}
+
+
+.image-description {
+    font-size: 0.95rem;
+    color: var(--light-grey);
+    margin-top: 0.5rem;
+}
+.centered-image-wrapper { /* Style for centering images in eras section */
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    max-width: 600px; /* Обмежуємо ширину обгортки для зображень у секції епох */
+}
+
+
+/* Секції з описом епох */
+.era-section {
+    background-color: var(--darker-bg);
+    padding: var(--section-padding);
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    text-align: left;
+}
+.era-section h3 {
+    font-size: 2.2rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.era-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+.era-section ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+/* Call to Action (CTA) - тепер для всіх закликів */
+.cta {
+    text-align: center;
+    margin-top: 4rem;
+    padding: var(--section-padding);
+    background-color: var(--darker-bg);
+    border-radius: 10px;
+}
+.cta h2 {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+.cta p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+}
+/* Стиль для кнопки Приєднатися */
+.cta .main-cta-button {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin-bottom: 1.5rem; /* Відступ від кнопки до тексту */
+}
+.cta .main-cta-button:hover {
+    background-color: #e6c200;
+    transform: translateY(-3px);
+}
+
+/* Стиль для посилання на пошту, щоб воно було меншим */
+.cta .email-link {
+    font-size: 1.1rem; /* Зменшити розмір для посилання на пошту */
+    padding: 0.8rem 2rem; /* Менший паддінг */
+    background-color: var(--dark-bg); /* Інший фон для відмінності */
+    color: var(--accent-color); /* Колір тексту як акцентний */
+    border: 2px solid var(--accent-color); /* Обведення */
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem; /* Відступ від попереднього елемента */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.cta .email-link:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    transform: translateY(-2px);
+}
+
+/* НОВИЙ СТИЛЬ ДЛЯ ПОСИЛАНЬ НА ІСТОРІЇ ГЕРОЇВ */
+.hero-story-link {
+    display: inline-block; /* Щоб можна було застосовувати padding та трансформації */
+    background-color: var(--darker-bg); /* Темніший фон, щоб виділявся */
+    color: var(--accent-color); /* Золотий текст */
+    padding: 0.6rem 1.2rem; /* Невеликий внутрішній відступ */
+    text-decoration: none; /* Прибрати підкреслення */
+    border-radius: 25px; /* Заокруглені кути */
+    font-weight: bold; /* Жирний шрифт */
+    font-size: 0.95rem; /* Трохи менший шрифт */
+    border: 1px solid var(--accent-color); /* Тонка золота рамка */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Плавні переходи */
+    margin-top: 1rem; /* Відступ від опису зображення */
+}
+
+.hero-story-link:hover {
+    background-color: var(--accent-color); /* Золотий фон при наведенні */
+    color: var(--dark-bg); /* Темний текст при наведенні */
+    transform: translateY(-2px); /* Невеликий підйом кнопки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); /* Тінь при наведенні */
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: var(--darker-bg);
+    font-size: 0.95rem;
+    color: var(--light-grey);
+    margin-top: 3rem;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+    header p {
+        font-size: 1.2rem;
+    }
+    section {
+        padding: 2.5rem 1rem;
+    }
+    section h2 {
+        font-size: 2.2rem;
+    }
+    .era-section h3 {
+        font-size: 1.8rem;
+    }
+    .cta .main-cta-button {
+        font-size: 1.2rem;
+        padding: 1rem 2.5rem;
+    }
+    .cta .email-link {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.5rem;
+    }
+    /* На мобільних екранах обмежуємо максимальну ширину зображень героїв до 100% */
+    .image-container .hero-image,
+    .image-container .hero-image.small {
+        max-width: 100%;
+    }
+    .hero-story-link {
+        font-size: 0.85rem; /* Зменшити розмір шрифту на мобільних */
+        padding: 0.5rem 1rem; /* Зменшити паддінг на мобільних */
+    }
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+    }
+    .language-switcher button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        margin-left: 5px;
+    }
+}
