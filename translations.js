@@ -236,9 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
             if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
-            }
-        });
+            element.innerHTML = translations[lang][key]; // <-- Змінено на innerHTML
+    }
+});
 
         // Translate elements with data-translate-highlight attribute
         // This handles cases where only a part of the text within an element is highlighted
