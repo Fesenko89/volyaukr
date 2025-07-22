@@ -3,8 +3,8 @@
 /* Базові стилі */
 body {
     font-family: 'Unbounded', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a1a; /* Змінено: Темний фон для всього body */
+    color: #f0f0f0; /* Змінено: Світлий текст для темного фону */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -18,11 +18,11 @@ body {
 
 /* Header styles */
 header {
-    background-color: #333;
+    background-color: #000; /* Змінено: Чисто чорний фон для хедера */
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    position: relative; /* Для позиціонування language-switcher */
+    position: relative;
     margin-bottom: 30px;
 }
 
@@ -47,18 +47,18 @@ header p {
 
 /* Language Switcher */
 .language-switcher {
-    position: absolute; /* Позиціонуємо абсолютно */
-    top: 20px; /* Відступ від верху */
-    right: 20px; /* Відступ від правого краю */
-    display: flex; /* Для кнопок поруч */
-    gap: 10px; /* Відстань між кнопками */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
 }
 
 .language-switcher button {
     padding: 8px 15px;
     border: none;
-    background-color: #555;
-    color: #fff;
+    background-color: #ffd700; /* Змінено: Золотисто-жовтий колір для кнопок перемикання мови */
+    color: #1a1a1a; /* Змінено: Темний текст на жовтих кнопках */
     border-radius: 4px;
     cursor: pointer;
     font-family: 'Unbounded', sans-serif;
@@ -67,15 +67,15 @@ header p {
 }
 
 .language-switcher button:hover {
-    background-color: #777;
+    background-color: #e0b800; /* Змінено: Темніший жовтий при наведенні */
 }
 
 /* General button style (для CTA кнопок) */
 .main-cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #007bff; /* Приклад кольору, використайте ваш primary-color */
-    color: #fff;
+    background-color: #ffd700; /* Змінено: Золотисто-жовтий колір для головних CTA кнопок */
+    color: #1a1a1a; /* Змінено: Темний текст на жовтих кнопках */
     text-decoration: none;
     border-radius: 8px;
     font-size: 1.2em;
@@ -85,7 +85,7 @@ header p {
 }
 
 .main-cta-button:hover {
-    background-color: #0056b3; /* Темніший при наведенні */
+    background-color: #e0b800; /* Змінено: Темніший жовтий при наведенні */
     transform: translateY(-2px);
 }
 
@@ -93,26 +93,26 @@ header p {
 section {
     padding: 40px 20px;
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #2a2a2a; /* Змінено: Темніший фон для секцій */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Змінено: Темніша тінь */
 }
 
 section h2 {
     text-align: center;
     margin-bottom: 30px;
-    color: #333;
-    font-size: 2.2em;
-    border-bottom: 2px solid #eee;
+    color: #ffd700; /* Змінено: Жовтий колір для заголовків секцій */
+    border-bottom: 2px solid #555; /* Змінено: Темніша лінія */
     padding-bottom: 15px;
 }
 
 section p {
     margin-bottom: 15px;
+    color: #f0f0f0; /* Забезпечити, що текст видно на темному фоні */
 }
 
 .highlight {
-    color: #007bff; /* або інший ваш акцентний колір */
+    color: #ffd700; /* Змінено: Жовтий для виділеного тексту */
     font-weight: bold;
 }
 
@@ -125,10 +125,10 @@ section p {
 }
 
 #heroes .image-container > div {
-    background-color: #f9f9f9;
+    background-color: #3a3a3a; /* Змінено: Темніший фон для карток героїв */
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); /* Змінено: Темніша тінь */
     text-align: center;
 }
 
@@ -140,20 +140,20 @@ section p {
 }
 
 .hero-image.small {
-    max-width: 150px; /* Приклад, якщо є менші зображення */
+    max-width: 150px;
     display: block;
     margin: 0 auto 15px auto;
 }
 
 .image-description {
     font-size: 0.95em;
-    color: #555;
+    color: #ccc; /* Змінено: Світліший сірий для опису зображень */
     margin-bottom: 10px;
 }
 
 .hero-story-link {
     display: inline-block;
-    background-color: #6c757d; /* сірий для посилання на історію */
+    background-color: #555; /* Змінено: Темніший сірий для посилань на історію */
     color: #fff;
     padding: 8px 15px;
     border-radius: 5px;
@@ -162,34 +162,34 @@ section p {
 }
 
 .hero-story-link:hover {
-    background-color: #5a6268;
+    background-color: #777; /* Змінено: Світліший сірий при наведенні */
 }
 
 /* Roadmap specific styles */
 .roadmap-section {
     margin-bottom: 40px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #2a2a2a; /* Змінено: Темніший фон для секцій дорожньої карти */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .roadmap-section h2 {
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #555; /* Змінено: Темніша лінія */
     padding-bottom: 10px;
     margin-bottom: 20px;
-    color: #333;
-    text-align: left; /* Залишити вирівнювання зліва для підзаголовків дорожньої карти */
+    color: #ffd700; /* Змінено: Жовтий для заголовків секцій */
+    text-align: left;
 }
 
 .roadmap-item {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    border: 1px solid #eee;
+    border: 1px solid #444; /* Змінено: Темніша рамка */
     padding: 15px;
     border-radius: 6px;
-    background-color: #f9f9f9;
+    background-color: #333; /* Змінено: Ще темніший фон для елементів дорожньої карти */
 }
 
 .roadmap-item.planned {
@@ -201,7 +201,7 @@ section p {
     margin-right: 20px;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
 
 .roadmap-image img {
@@ -213,12 +213,13 @@ section p {
 
 .roadmap-content {
     flex: 1;
+    color: #f0f0f0; /* Забезпечити, що текст видно */
 }
 
 .roadmap-content h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #555;
+    color: #ffd700; /* Змінено: Жовтий для підзаголовків елементів дорожньої карти */
 }
 
 .features-list {
@@ -229,6 +230,7 @@ section p {
 
 .features-list li {
     margin-bottom: 5px;
+    color: #f0f0f0; /* Забезпечити, що текст видно */
 }
 
 .status {
@@ -241,28 +243,28 @@ section p {
 }
 
 .status.in-progress {
-    background-color: #2ecc71;
+    background-color: #2ecc71; /* Залишено зеленим, якщо підходить */
     color: #fff;
 }
 
 .status.planned {
-    background-color: #f39c12;
+    background-color: #f39c12; /* Залишено помаранчевим, якщо підходить */
     color: #fff;
 }
 
 .roadmap-updates {
     padding: 20px;
-    background-color: #fff;
+    background-color: #2a2a2a; /* Змінено: Темніший фон */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
 }
 
 .roadmap-updates h2 {
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #555; /* Змінено: Темніша лінія */
     padding-bottom: 10px;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffd700; /* Змінено: Жовтий */
 }
 
 .back-to-main {
@@ -279,14 +281,14 @@ section p {
 /* Секція CTA (Contact) */
 .cta {
     text-align: center;
-    background-color: #e0f2f7; /* Світло-блакитний фон для CTA */
+    background-color: #222; /* Змінено: Темніший фон для CTA */
     padding: 50px 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta h2 {
-    color: #007bff; /* Колір заголовка CTA */
+    color: #ffd700; /* Змінено: Жовтий колір заголовка CTA */
     border-bottom: none;
     padding-bottom: 0;
 }
@@ -294,10 +296,11 @@ section p {
 .cta p {
     font-size: 1.1em;
     margin-bottom: 25px;
+    color: #f0f0f0; /* Змінено: Світлий текст */
 }
 
 .email-link {
-    color: #007bff;
+    color: #ffd700; /* Змінено: Жовтий для посилання на email */
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
@@ -305,12 +308,12 @@ section p {
 }
 
 .email-link:hover {
-    color: #0056b3;
+    color: #e0b800; /* Змінено: Темніший жовтий при наведенні */
 }
 
 /* Footer styles */
 footer {
-    background-color: #333;
+    background-color: #000; /* Змінено: Чисто чорний футер */
     color: #fff;
     text-align: center;
     padding: 15px 0;
@@ -341,6 +344,6 @@ footer {
         max-width: 100%;
     }
     #heroes .image-container {
-        grid-template-columns: 1fr; /* Один стовпець на мобільних */
+        grid-template-columns: 1fr;
     }
 }
