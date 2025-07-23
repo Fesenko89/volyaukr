@@ -128,7 +128,7 @@ const translations = {
         vacanciesCommercialInfo: "🤝 Наразі не комерційний етап. Ми формуємо кістяк, щоб податись на гранти та краудфандинг (Kickstarter, GDC тощо). Тому шукаємо мотивованих людей, які готові інвестувати свій час у потенційно велику справу.",
         vacanciesContactInfo: "📨 Пиши коротко про себе та свою мотивацію на: ukrvolley@gmail.com",
         vacanciesCallToAction: "Якщо хочеш долучитись, але не знайшов свою роль — все одно пиши. Ми відкриті.",
-        vacanciesMotto: "🇺🇦 Разом ми створимо гру, яка залишить слід в серцях. Слава Україні!",
+        vacanciesMotto: "Разом ми створимо гру, яка залишить слід в серцях. Слава Україні!",
     },
     en: {
         pageTitle: "VOLYA — Epic Historical Game",
@@ -258,7 +258,7 @@ const translations = {
         vacanciesCommercialInfo: "🤝 Currently a non-commercial stage. We are forming the core team to apply for grants and crowdfunding (Kickstarter, GDC, etc.). Therefore, we are looking for motivated individuals willing to invest their time in a potentially significant endeavor.",
         vacanciesContactInfo: "📨 Write briefly about yourself and your motivation to: ukrvolley@gmail.com",
         vacanciesCallToAction: "If you want to join but haven't found your role — still write to us. We are open.",
-        vacanciesMotto: "🇺🇦 Together we will create a game that will leave a mark on hearts. Glory to Ukraine!",
+        vacanciesMotto: "Together we will create a game that will leave a mark on hearts. Glory to Ukraine!",
     }
 };
 
