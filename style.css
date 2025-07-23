@@ -383,6 +383,13 @@ footer {
         max-width: 900px; /* Зменшуємо max-width для 3 колонок */
     }
 }
+@media (max-width: 768px) {
+    /* Цей блок тепер також включає #heroes .image-container */
+    .language-switcher {
+        position: static;
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
     .header-content {
         padding-top: 60px;
     }
