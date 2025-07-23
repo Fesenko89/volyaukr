@@ -325,7 +325,87 @@ section p {
     padding: 12px 25px;
     font-size: 1.1em;
 }
+/* General Vacancies Page Styles */
+.vacancies-page {
+    padding: 60px 20px; /* Додати відступи */
+    max-width: 900px;  /* Обмежити ширину для читабельності */
+    margin: 0 auto;    /* Центрувати на сторінці */
+    color: #f0f0f0;    /* Колір тексту, якщо фон темний */
+    background-color: #1a1a1a; /* Темний фон для сторінки */
+    line-height: 1.6;
+}
 
+.vacancies-section h1,
+.vacancies-section h2 {
+    color: #ffd700; /* Жовті заголовки */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.vacancies-section h2 {
+    font-size: 2em;
+    margin-top: 50px;
+}
+
+.vacancies-section p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.role-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Відступи між ролями */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.role-item {
+    background-color: #2a2a2a; /* Темніший фон для блоку ролі */
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #ffd700; /* Жовта смужка зліва */
+}
+
+.role-item h3 {
+    color: #ffd700; /* Жовтий заголовок ролі */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.role-item p {
+    margin-bottom: 0; /* Прибрати зайвий відступ */
+    font-size: 1em;
+}
+
+.ukraine-moto {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 40px;
+    color: #ffd700; /* Жовтий колір для гасла */
+}
+
+/* Адаптація для мобільних пристроїв */
+@media (max-width: 768px) {
+    .vacancies-page {
+        padding: 40px 15px;
+    }
+
+    .vacancies-section h1 {
+        font-size: 1.8em;
+    }
+
+    .vacancies-section h2 {
+        font-size: 1.5em;
+    }
+
+    .role-item {
+        padding: 20px;
+    }
+}
 /* Секція CTA (Contact) */
 .cta {
     text-align: center;
