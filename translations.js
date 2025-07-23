@@ -111,6 +111,24 @@ const translations = {
         roadmapUpdatesText: "Після виходу основних епох ми плануємо регулярно випускати оновлення, що включатимуть нові квести, персонажів, ігрові механіки та, можливо, навіть додаткові історичні періоди, ґрунтуючись на відгуках спільноти та наших дослідженнях.",
         roadmapBackToMain: "← Повернутися на головну сторінку",
         footerText: "&copy; 2025 Проєкт \"ВОЛЯ\". Всі права захищені.",
+
+        //vacancies translate
+        vacanciesTitle: "Вакансії — ВОЛЯ",
+        vacanciesMainHeading: "🎮 Приєднуйся до команди \"ВОЛЯ\" — творимо гру, що змінить уявлення про Україну!",
+        vacanciesIntro: "Ми — невелика, але амбітна команда, яка створює епічну 3D Action-Adventure гру про українську історію, культуру, боротьбу та дух. Якщо ти шукаєш не просто роботу, а місце, де твої навички можуть залишити слід в культурі — це воно.",
+        vacanciesLookingFor: "🛠 Кого шукаємо зараз:",
+        roleAIEngineer: "🧠 AI Engineer / LLM інтегратор",
+        descAIEngineer: "— хочемо підключити GPT-подібні діалоги до персонажів гри. Якщо ти любиш експерименти, шариш у memory, prompt engineering, API, вмієш швидко тестити — пиши.",
+        roleArtist: "🎨 Художник (2D/3D)",
+        descArtist: "— створення концептів персонажів, середовища, референсів епох, знання Blender або подібного софту — великий плюс. Якщо ще й любиш стилістику, близьку до Kingdom Come, Hellblade, A Plague Tale — взагалі ідеально.",
+        roleDev: "👾 Unity / Unreal Dev",
+        descDev: "— поки що early stage, прототипи, навігація, бойова система, інтеграція діалогів і базової логіки. Потрібен хтось, хто може зібрати ігрову сцену без зайвого менеджменту над душею.",
+        roleGameDesigner: "🎮 Геймдизайнер",
+        descGameDesigner: "— механіки \"волі\", системи морального вибору, мультиепізодичний наратив і геймплейні цикли. Якщо гориш — пиши.",
+        vacanciesCommercialInfo: "🤝 Наразі не комерційний етап. Ми формуємо кістяк, щоб податись на гранти та краудфандинг (Kickstarter, GDC тощо). Тому шукаємо мотивованих людей, які готові інвестувати свій час у потенційно велику справу.",
+        vacanciesContactInfo: "📨 Пиши коротко про себе та свою мотивацію на: ukrvolley@gmail.com",
+        vacanciesCallToAction: "Якщо хочеш долучитись, але не знайшов свою роль — все одно пиши. Ми відкриті.",
+        vacanciesMotto: "🇺🇦 Разом ми створимо гру, яка залишить слід в серцях. Слава Україні!",
     },
     en: {
         pageTitle: "VOLYA — Epic Historical Game",
@@ -224,6 +242,23 @@ const translations = {
         roadmapUpdatesText: "After the release of the main eras, we plan to regularly release updates that will include new quests, characters, game mechanics, and possibly even additional historical periods, based on community feedback and our research.",
         roadmapBackToMain: "← Back to main page",
         footerText: "&copy; 2025 Project \"VOLYA\". All rights reserved.",
+    //vacancies tyranslate
+        vacanciesTitle: "Vacancies — VOLYA",
+        vacanciesMainHeading: "🎮 Join the \"VOLYA\" team — creating a game that will change perceptions of Ukraine!",
+        vacanciesIntro: "We are a small but ambitious team creating an epic 3D Action-Adventure game about Ukrainian history, culture, struggle, and spirit. If you're looking for more than just a job, but a place where your skills can leave a mark on culture — this is it.",
+        vacanciesLookingFor: "🛠 Who we are looking for now:",
+        roleAIEngineer: "🧠 AI Engineer / LLM Integrator",
+        descAIEngineer: "— we want to connect GPT-like dialogues to game characters. If you love experiments, understand memory, prompt engineering, API, and can quickly test — write to us.",
+        roleArtist: "🎨 Artist (2D/3D)",
+        descArtist: "— creating character concepts, environments, era references, knowledge of Blender or similar software is a big plus. If you also love a style similar to Kingdom Come, Hellblade, A Plague Tale — even better.",
+        roleDev: "👾 Unity / Unreal Dev",
+        descDev: "— currently early stage: prototypes, navigation, combat system, dialogue integration, and basic logic. We need someone who can assemble a game scene without excessive micromanagement.",
+        roleGameDesigner: "🎮 Game Designer",
+        descGameDesigner: "— \"volya\" mechanics, moral choice systems, multi-episode narrative, and gameplay loops. If you're passionate — write to us.",
+        vacanciesCommercialInfo: "🤝 Currently a non-commercial stage. We are forming the core team to apply for grants and crowdfunding (Kickstarter, GDC, etc.). Therefore, we are looking for motivated individuals willing to invest their time in a potentially significant endeavor.",
+        vacanciesContactInfo: "📨 Write briefly about yourself and your motivation to: ukrvolley@gmail.com",
+        vacanciesCallToAction: "If you want to join but haven't found your role — still write to us. We are open.",
+        vacanciesMotto: "🇺🇦 Together we will create a game that will leave a mark on hearts. Glory to Ukraine!",
     }
 };
 
