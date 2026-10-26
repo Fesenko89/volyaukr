@@ -610,3 +610,9 @@ kbd { display: inline-block; min-width: 1.6em; padding: 2px 7px; margin: 1px 2px
 .home-header .top-nav { position: absolute; top: 14px; left: 0; right: 0; z-index: 5; }
 .home-header .top-nav a { color: #e6e0d0; text-shadow: 0 1px 6px #000; }
 @media (max-width: 900px) { .home-header .top-nav { top: 0; } }
+/* demo block without the repeated hero art */
+.demo-section { grid-template-columns: 1fr; max-width: 900px; }
+.demo-section h2 { text-align: center; }
+.demo-body { text-align: left; }
+.demo-body .main-cta-button { display: table; margin: 20px auto 0; }
+.demo-body .note { text-align: center; }
