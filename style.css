@@ -602,3 +602,11 @@ kbd { display: inline-block; min-width: 1.6em; padding: 2px 7px; margin: 1px 2px
 #heroes .image-container { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); max-width: 1160px; }
 @media (max-width: 768px) { .roadmap-image img { max-height: 240px; object-fit: cover; } }
 .play-header .top-nav a { text-shadow: 0 1px 4px #000; color: #ddd; }
+/* inner pages: keep the menu centred over the title (symmetric room for the language switcher) */
+.top-nav { padding: 6px 260px 0; }
+@media (max-width: 900px) { .top-nav { padding: 56px 16px 0; } }
+/* the same menu on the home page, over the hero art */
+.home-header { position: relative; }
+.home-header .top-nav { position: absolute; top: 14px; left: 0; right: 0; z-index: 5; }
+.home-header .top-nav a { color: #e6e0d0; text-shadow: 0 1px 6px #000; }
+@media (max-width: 900px) { .home-header .top-nav { top: 0; } }
