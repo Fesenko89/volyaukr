@@ -8,162 +8,184 @@
         gtag('js', new Date());
         gtag('config', 'G-DDBP5R3S1B');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-translate="pageTitle">ВОЛЯ — Епічна Історична Гра</title>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="pageTitle">ВОЛЯ — гра про тисячолітню боротьбу України</title>
+    <meta name="description" content="ВОЛЯ — 3D action-adventure про історію України: від Трипілля до сьогодення. Складні двобої, кінний бій, вибори з наслідками. Спробуйте демо «Шлях воїна» у браузері." data-translate-content="metaDescription">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ВОЛЯ — гра про тисячолітню боротьбу України">
+    <meta property="og:description" content="ВОЛЯ — 3D action-adventure про історію України: від Трипілля до сьогодення. Складні двобої, кінний бій, вибори з наслідками. Спробуйте демо «Шлях воїна» у браузері.">
+    <meta property="og:image" content="https://fesenko89.github.io/volyaukr/assets/image_0ed175.jpg">
+    <meta property="og:url" content="https://fesenko89.github.io/volyaukr/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23ffd700' font-family='Arial' font-weight='700'%3EВ%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="top">
+    <header id="top" class="home-header">
+        <nav class="language-switcher" aria-label="Мова / Language">
+            <button type="button" data-lang="uk">Українська</button>
+            <button type="button" data-lang="en">English</button>
+        </nav>
         <div class="header-content fullscreen-hero">
             <h1 data-translate="mainHeading">ВОЛЯ</h1>
-            <p data-translate="heroSubtitle">Одна душа. Один народ. <br />Історія України крізь очі її воїнів.<br/>Епічна Action-Adventure гра.</p>
+            <p data-translate="heroSubtitle">Одна кров. Один народ. Тисячоліття боротьби.<br>3D action-adventure про історію України — від Трипілля до сьогодення.</p>
+            <div class="hero-actions">
+                <a href="play.html" class="main-cta-button" data-translate="heroCtaPlay">Грати демо</a>
+                <a href="roadmap.html" class="main-cta-button ghost" data-translate="heroCtaRoadmap">Дорожня карта</a>
+            </div>
         </div>
-        <nav class="language-switcher">
-            <button id="lang-uk" data-lang="uk">Українська</button>
-            <button id="lang-en" data-lang="en">English</button>
-        </nav>
     </header>
 
     <main>
         <section id="about">
-            <h2 data-translate="aboutHeading">Проєкт "ВОЛЯ": Епічна Сага, що Розвивається</h2>
-            <p data-translate="aboutText1">
-                <span class="highlight" data-translate-highlight="volyaHighlight1">ВОЛЯ</span> — це амбітний 3D Action-Adventure проєкт, що запрошує вас пережити тисячоліття боротьби українського народу за свою свободу. Це не просто гра, а <strong>необхідний інструмент у боротьбі за нашу спільну ідентичність</strong>. Ми прагнемо створити <strong>глибокий освітній досвід</strong>, який покаже світові нашу історію та культуру. Проєкт буде розроблятися за підтримки фахівців, зокрема із залученням істориків, щоб кожен елемент гри був максимально достовірним.
-            </p>
-            <p data-translate="aboutText2">
-                Проєкт розвиватиметься за <strong>унікальним модульним принципом</strong>, що дозволить нам додавати та вдосконалювати світи й механіки, реагуючи на відгуки гравців. Наша мета — запропонувати емоційно насичений досвід, де історія оживає завдяки інноваційним технологіям, а кожен вибір має значення. Гравець перевтілюється у ключових предків сучасного воїна, відкриваючи нерозривний зв'язок поколінь.
-            </p>
-            <div class="roadmap-cta-container">
-                <a href="roadmap.html" class="main-cta-button" data-translate="linkToRoadmapMainPage">Переглянути Дорожню Карту</a>
-            </div>
+            <h2 data-translate="aboutHeading">Проєкт «ВОЛЯ»</h2>
+            <p data-translate="aboutText1"><span class="highlight">ВОЛЯ</span> — лінійна 3D action-adventure, у якій ви проживаєте ключові епохи української історії очима тих, хто в них жив: воїнів, цілительок, майстрів, розвідників. Кожна епоха — окремий світ зі своїми героями, ворогами й правилами бою. Ми працюємо з істориками, щоб одяг, зброя, побут і події були якомога достовірнішими.</p>
+            <p data-translate="aboutText2">Гра виходитиме модулями — епоха за епохою. Перший модуль, <strong>«Шлях воїна»</strong>, переносить у скіфський степ 513 року до н.е., коли на скіфів пішов походом перський цар Дарій. Кожен модуль ми доводимо до ладу разом із гравцями: випускаємо демо, слухаємо відгуки, вдосконалюємо. Героїв пов'язує кров і пам'ять роду — нитка, що тягнеться від трипільського поселення до сучасного окопу.</p>
         </section>
 
         <section id="features">
-            <h2 data-translate="featuresHeading">Ключові Особливості та Інновації</h2>
-            <ul>
+            <h2 data-translate="featuresHeading">Ключові особливості</h2>
+            <ul class="feature-grid">
                 <li>
-                    <h3 data-translate="feature1Title"><span class="highlight" data-translate-highlight="feature1Highlight">Революційні ШІ-Діалоги:</span></h3>
-                    <p data-translate="feature1Text">Наша головна інновація — це інтеграція передової системи діалогів на основі штучного інтелекту. Це дозволить гравцям вести **глибокі та динамічні діалоги з ключовими персонажами**, використовуючи природну мову, що значно розширює можливості взаємодії. Ми впроваджуємо цю механіку **поступово**, дозволяючи вам відчути її еволюцію разом з грою.</p>
+                    <h3 class="highlight" data-translate="feature1Title">Кожен суперник — двобій</h3>
+                    <p data-translate="feature1Text">Бій у «ВОЛІ» — не натискання кнопок навмання. Витривалість, блок, парирування з рипостом, ухили й стійки, що змінюють ваші прийоми; суперники, які показують замах і карають за помилки. Навіть рядовий ворог може вбити необережного, тож кожна сутичка нагадує двобій у файтингу. Саме бій — серце гри: близько 60% часу ви проведете в бою, 30% — у дослідженні світу, 10% — у сюжетних сценах.</p>
                 </li>
                 <li>
-                    <h3 data-translate="feature2Title"><span class="highlight" data-translate-highlight="feature2Highlight">Механіка "Волі":</span></h3>
-                    <p data-translate="feature2Text">Ключова особливість, що відображає внутрішню силу та незламність духу героїв. "Воля" накопичується через ваші рішення, впливає на дипломатію та діалоги, і має прямий вплив на фінал гри. Ця механіка тісно переплітається з ШІ-діалогами, дозволяючи вам відчути **реальні наслідки своїх слів та дій**.</p>
+                    <h3 class="highlight" data-translate="feature2Title">Механіка «Волі»</h3>
+                    <p data-translate="feature2Text">Воля — внутрішня сила героя в межах його епохи. Вона зростає від сміливих і чесних вчинків, дотриманого слова й захисту слабших — і падає, коли герой зраджує себе. Воля відкриває нові варіанти в розмовах, впливає на союзників і на те, чим закінчиться епоха. До наступної епохи переходить не сама Воля, а <strong>спадок</strong> — те, що рід залишає нащадкам.</p>
                 </li>
                 <li>
-                    <h3 data-translate="feature3Title"><span class="highlight" data-translate-highlight="feature3Highlight">Динамічний Канон та Розвиток:</span></h3>
-                    <p data-translate="feature3Text">Ми віримо у **"живий канон"**: гра буде постійно оновлюватися та вдосконалюватися. Ваші улюблені персонажі можуть розвиватися, а сюжетні лінії – поглиблюватися чи навіть переосмислюватися, щоб забезпечити максимально захопливий та історично-відчутний досвід. <span class="highlight" data-translate-highlight="finalVersionCanonicalHighlight">Кожна нова версія гри, яку ми випустимо, буде вважатися канонічною.</span></p>
+                    <h3 class="highlight" data-translate="feature3Title">Кожна епоха грається по-своєму</h3>
+                    <p data-translate="feature3Text">Скіфський степ — це кінний бій, стрільба з лука на скаку (навіть назад, через плече) і тактика «вдар і відійди». Київська Русь — дружинний бій і оборона прикордонних фортець, козацька доба — шабля, чайки й морські походи, ХХ століття — підпілля й засідки. Кожна епоха складається з кількох місій із чіткою драматургією, без розмитого відкритого світу.</p>
                 </li>
                 <li>
-                    <h3 data-translate="feature4Title"><span class="highlight" data-translate-highlight="feature4Highlight">Еволюція Геймплею:</span></h3>
-                    <p data-translate="feature4Text">Кожен модуль представлятиме нові геймплейні механіки: від мирного будівництва та виживання, через складну бойову систему та стратегічне планування, до стелсу, глибокої дипломатії та інтенсивного сучасного екшену. Це створює постійну динаміку та тримає гравця у напрузі, адаптуючись до історичних реалій.</p>
+                    <h3 class="highlight" data-translate="feature4Title">Вибори, що мають ціну</h3>
+                    <p data-translate="feature4Text">Що важливіше — наказ чи совість? Свій рід чи чужі люди, які годували вас хлібом? Рішення в грі не поділяються на правильні й неправильні: кожне має ціну, змінює долі персонажів, Волю героя і фінал епохи.</p>
                 </li>
                 <li>
-                    <h3 data-translate="feature5Title"><span class="highlight" data-translate-highlight="feature5Highlight">Багаторівневі Моральні Вибори та Наслідки:</span></h3>
-                    <p data-translate="feature5Text">Гравцю доведеться робити важкі моральні вибори, які впливатимуть на розвиток сюжету, долю персонажів та, що найважливіше, на рівень "Волі" — ключової внутрішньої сили, яка веде до доленосного фіналу. Ваші рішення, зроблені на початкових етапах гри, вплинуть на кульмінацію тисячолітньої боротьби.</p>
+                    <h3 class="highlight" data-translate="feature5Title">Розмови зі ШІ (у розробці)</h3>
+                    <p data-translate="feature5Text">Ми експериментуємо з діалогами на основі штучного інтелекту: ключовим персонажам можна буде відповідати власними словами, а не лише обирати репліку зі списку. Співрозмовники пам'ятатимуть сказане й реагуватимуть з огляду на вашу Волю. Цю систему ми впроваджуємо поступово — лише там, де вона робить історію сильнішою.</p>
+                </li>
+                <li>
+                    <h3 class="highlight" data-translate="feature6Title">Живий канон</h3>
+                    <p data-translate="feature6Text">Гра постійно оновлюватиметься: персонажі розвиватимуться, сюжетні лінії поглиблюватимуться, а історичні деталі уточнюватимуться за новими дослідженнями. <span class="highlight">Канонічною вважається остання випущена версія гри.</span></p>
                 </li>
             </ul>
         </section>
 
+        <section id="demo" class="demo-section">
+            <div class="demo-media"><img src="assets/image_0ed175.jpg" alt="Скіфський вершник у бою" data-translate-alt="altDemo" loading="lazy"></div>
+            <div class="demo-body">
+                <h2 data-translate="demoHeading">Демо «Шлях воїна»: спробуй бойову систему</h2>
+                <p data-translate="demoText">Демо працює просто в браузері, без встановлення. Ви — скіфський воїн Аргіс: табір, степ, напад на перський обоз і серія двобоїв — з наставником, з перським чемпіоном, кулачний бій із силачем Тавром і поєдинок з амазонкою. Демо навмисно складне: кожен суперник вимагає уваги й терпіння.</p>
+                <ul class="check-list">
+                <li data-translate="demoPoint1">Стійки, серії в ритм, важкий удар, що ламає блок</li>
+                <li data-translate="demoPoint2">Блок, парирування й рипост, ухил перекатом</li>
+                <li data-translate="demoPoint3">Кулачний бій: голова, корпус і ноги, обхід, нокаут</li>
+                <li data-translate="demoPoint4">Арена з наставником, який навчить кожного прийому</li>
+                </ul>
+                <a href="play.html" class="main-cta-button" data-translate="demoButton">Грати демо</a>
+                <p class="note" data-translate="demoNote">Потрібен комп'ютер із клавіатурою та мишею. Текст демо поки що лише українською.</p>
+            </div>
+        </section>
+
         <section id="heroes">
-            <h2 data-translate="heroesHeading">Наші Герої: Від Предків до Нащадків</h2>
+            <h2 data-translate="heroesHeading">Герої: від пращурів до нащадка</h2>
             <div class="image-container">
-                <div>
-                    <img src="assets/image_e66d9d.jpg" alt="Олесь - Козак" class="hero-image">
-                    <p class="image-description" data-translate="heroOlesDescription">Олесь ("Козак") — сучасний воїн, що несе на собі тисячоліття боротьби за Волю.</p>
-                    <a href="oles_backstory.html" class="hero-story-link" data-translate="learnMoreOles">Дізнатися більше про Олеся</a>
+                <div class="hero-card">
+                    <a href="oles_backstory.html"><img src="assets/image_e66d9d.jpg" alt="Олесь, сучасний воїн" data-translate-alt="altOles" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroOlesDescription"><strong>Олесь</strong> — наш сучасник, розвідник. Останній нащадок роду, якому пам'ять крові відкриває життя пращурів.</p>
+                    <a href="oles_backstory.html" class="hero-story-link" data-translate="learnMoreOles">Історія Олеся →</a>
                 </div>
-                <div>
-                    <img src="assets/image_610fbc.jpg" alt="Зоряна - Трипілька" class="hero-image small">
-                    <p class="image-description" data-translate="heroZoryanaDescription">Зоряна — трипілька, чиє серце вперше відчуло невідомий поклик Волі, що з'єднав покоління.</p>
-                    <a href="zoryana_backstory.html" class="hero-story-link" data-translate="learnMoreZoryana">Дізнатися більше про Зоряну</a>
+                <div class="hero-card">
+                    <a href="zoryana_backstory.html"><img src="assets/image_610fbc.jpg" alt="Зоряна, трипільська цілителька" data-translate-alt="altZoryana" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroZoryanaDescription"><strong>Зоряна</strong> — трипільська цілителька. Та, з якої почався рід і перший поклик Волі.</p>
+                    <a href="zoryana_backstory.html" class="hero-story-link" data-translate="learnMoreZoryana">Історія Зоряни →</a>
                 </div>
-                <div>
-                    <img src="assets/image_50ac3f.jpg" alt="Аргіс - Скіфський воїн" class="hero-image small">
-                    <p class="image-description" data-translate="heroArgisDescription">Аргіс — скіфський воїн, що втілює дух свободи та безмежного степу.</p>
-                    <a href="argis_backstory.html" class="hero-story-link" data-translate="learnMoreArgis">Дізнатися більше про Аргіса</a>
+                <div class="hero-card">
+                    <a href="argis_backstory.html"><img src="assets/image_50ac3f.jpg" alt="Аргіс, скіфський воїн" data-translate-alt="altArgis" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroArgisDescription"><strong>Аргіс</strong> — скіфський вершник і розвідник, син вождя. Герой першого модуля «Шлях воїна».</p>
+                    <a href="argis_backstory.html" class="hero-story-link" data-translate="learnMoreArgis">Історія Аргіса →</a>
                 </div>
-                <div>
-                    <img src="assets/image_e4f08e.jpg" alt="Радим - Слов'янський гончар-дипломат" class="hero-image small">
-                    <p class="image-description" data-translate="heroRadymDescription">Радим — слов'янський гончар-дипломат, що згуртував народ у боротьбі з кочовиками.</p>
-                    <a href="radym_backstory.html" class="hero-story-link" data-translate="learnMoreRadym">Дізнатися більше про Радима</a>
+                <div class="hero-card">
+                    <a href="radym_backstory.html"><img src="assets/image_e4f08e.jpg" alt="Радим, слов'янський гончар" data-translate-alt="altRadym" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroRadymDescription"><strong>Радим</strong> — слов'янський гончар, який словом, а не мечем згуртував племена проти набігів.</p>
+                    <a href="radym_backstory.html" class="hero-story-link" data-translate="learnMoreRadym">Історія Радима →</a>
                 </div>
-                <div>
-                    <img src="assets/image_ac3072.jpg" alt="Володимир - Воїн Київської Русі" class="hero-image">
-                    <p class="image-description" data-translate="heroVolodymyrDescription">Володимир — воїн Київської Русі, що стояв на захисті хрещеної землі та нової віри.</p>
-                    <a href="volodymyr_backstory.html" class="hero-story-link" data-translate="learnMoreVolodymyr">Дізнатися більше про Володимира</a>
+                <div class="hero-card">
+                    <a href="volodymyr_backstory.html"><img src="assets/image_ac3072.jpg" alt="Володимир, воєвода Русі" data-translate-alt="altVolodymyr" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroVolodymyrDescription"><strong>Володимир</strong> — воєвода ранньої Русі, оборонець південного порубіжжя від печенігів.</p>
+                    <a href="volodymyr_backstory.html" class="hero-story-link" data-translate="learnMoreVolodymyr">Історія Володимира →</a>
                 </div>
-                <div>
-                    <img src="assets/image_miroslav.jpg" alt="Мирослав - Воїн-дипломат Київської Русі" class="hero-image">
-                    <p class="image-description" data-translate="heroMyroslavDescription">Мирослав — воїн-дипломат Київської Русі, що об'єднував князів перед лицем спільної загрози.</p>
-                    <a href="miroslav_backstory.html" class="hero-story-link" data-translate="learnMoreMyroslav">Дізнатися більше про Мирослава</a>
+                <div class="hero-card">
+                    <a href="miroslav_backstory.html"><img src="assets/image_miroslav.jpg" alt="Мирослав, дружинник-посланець" data-translate-alt="altMyroslav" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroMyroslavDescription"><strong>Мирослав</strong> — дружинник і посланець, що зупинив братовбивчу битву князів перед половецькою загрозою.</p>
+                    <a href="miroslav_backstory.html" class="hero-story-link" data-translate="learnMoreMyroslav">Історія Мирослава →</a>
                 </div>
-                <div>
-                    <img src="assets/image_sviatoslav.jpg" alt="Святослав - Богатир Київської Русі" class="hero-image">
-                    <p class="image-description" data-translate="heroSviatoslavDescription">Святослав — непереможний богатир, що уособлював незламний дух Русі перед монгольською навалою.</p>
-                    <a href="sviatoslav_backstory.html" class="hero-story-link" data-translate="learnMoreSviatoslav">Дізнатися більше про Святослава</a>
+                <div class="hero-card">
+                    <a href="sviatoslav_backstory.html"><img src="assets/image_sviatoslav.jpg" alt="Святослав, богатир" data-translate-alt="altSviatoslav" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroSviatoslavDescription"><strong>Святослав</strong> — богатир, який стояв до останнього на Калці в 1223 році.</p>
+                    <a href="sviatoslav_backstory.html" class="hero-story-link" data-translate="learnMoreSviatoslav">Історія Святослава →</a>
                 </div>
-                <div>
-                    <img src="assets/image_ivan.jpg" alt="Іван - Звичайний козак" class="hero-image">
-                    <p class="image-description" data-translate="heroIvanDescription">Іван — звичайний козак доби Сагайдачного, втілення незламної волі до свободи.</p>
-                    <a href="ivan_backstory.html" class="hero-story-link" data-translate="learnMoreIvan">Дізнатися більше про Івана</a>
+                <div class="hero-card">
+                    <a href="ivan_backstory.html"><img src="assets/image_ivan.jpg" alt="Іван, запорозький козак" data-translate-alt="altIvan" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroIvanDescription"><strong>Іван</strong> — рядовий запорожець доби Сагайдачного, учасник походу на Кафу.</p>
+                    <a href="ivan_backstory.html" class="hero-story-link" data-translate="learnMoreIvan">Історія Івана →</a>
                 </div>
-                <div>
-                    <img src="assets/image_orest.jpg" alt="Орест - Старшина-розвідник Чорної Ради" class="hero-image">
-                    <p class="image-description" data-translate="heroOrestDescription">Орест — мудрий полковник-розвідник, що боровся за єдність України під час Руїни.</p>
-                    <a href="orest_backstory.html" class="hero-story-link" data-translate="learnMoreOrest">Дізнатися більше про Ореста</a>
+                <div class="hero-card">
+                    <a href="orest_backstory.html"><img src="assets/image_orest.jpg" alt="Орест, полковник-розвідник" data-translate-alt="altOrest" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroOrestDescription"><strong>Орест</strong> — полковник-розвідник, що боровся за єдність Гетьманщини на Чорній раді 1663 року.</p>
+                    <a href="orest_backstory.html" class="hero-story-link" data-translate="learnMoreOrest">Історія Ореста →</a>
                 </div>
-                <div>
-                    <img src="assets/image_kalyna.jpg" alt="Калина - Дідо-повстанець УПА" class="hero-image">
-                    <p class="image-description" data-translate="heroKalynaDescription">Калина — простий повстанець УПА, втілення вікової, незламної Волі українського народу.</p>
-                    <a href="kalyna_backstory.html" class="hero-story-link" data-translate="learnMoreKalyna">Дізнатися більше про Калину</a>
+                <div class="hero-card">
+                    <a href="kalyna_backstory.html"><img src="assets/image_kalyna.jpg" alt="Калина, повстанець УПА" data-translate-alt="altKalyna" class="hero-image" loading="lazy"></a>
+                    <p class="image-description" data-translate="heroKalynaDescription"><strong>Калина</strong> — старий повстанець УПА, чий спокій тримав молодий загін у першому бою.</p>
+                    <a href="kalyna_backstory.html" class="hero-story-link" data-translate="learnMoreKalyna">Історія Калини →</a>
                 </div>
             </div>
-            <p data-translate="heroesSummary">Кожен герой — це пращур Олеся, втілення унікального аспекту "Волі" та носій автентичних геймплейних механік. Через їхні долі гравець переживе багатовікову історію незламного духу українського народу.</p>
+            <p class="section-summary" data-translate="heroesSummary">Усі герої — один рід, а Олесь — його нащадок у наші дні. Через пам'ять крові він бачить життя пращурів, а ви їх проживаєте: у кожного героя своя епоха, свій стиль бою і своя ціна свободи.</p>
         </section>
 
         <section id="eras">
-            <h2 data-translate="erasHeading">Епохи "ВОЛІ": Подорож Крізь Тисячоліття</h2>
-            <p data-translate="erasIntro">
-                Зануртесь у тисячоліття боротьби українського народу, що розгортатиметься через **докорінно різні, але взаємопов'язані історичні епохи**. Кожна доба — це унікальний ігровий світ, що пропонує нові виклики, персонажів та можливості. Ми плануємо поступово відкривати для вас такі періоди, як Трипілля, Скіфська Доба, Давні Слов'яни, Київська Русь, Козацька Доба, XX століття (Визвольна Боротьба) та героїчна Сучасність.
-            </p>
-            <p data-translate="erasSummary">
-                Кожна епоха є важливою главою у великій сазі "ВОЛІ", де минуле формує сьогодення, а дії кожного предка відгукуються у фінальному протистоянні за Волю нації. Більш детальна інформація про послідовність виходу та вміст епох буде представлена в нашій Дорожній Карті.
-            </p>
+            <h2 data-translate="erasHeading">Епохи «ВОЛІ»</h2>
+            <p data-translate="erasIntro">Гра охопить сім епох: <strong>Трипілля, скіфську добу, давніх слов'ян, Київську Русь, козацьку добу, ХХ століття і сучасність</strong>. Це дуже різні світи — з різною зброєю, ворогами й способом життя, — але в кожному з них хтось із роду обирає між власним спокоєм і свободою свого народу.</p>
+            <p data-translate="erasSummary">Кожна епоха — окремий розділ великої саги, а спадок кожного предка відгукнеться у фіналі. Порядок виходу та вміст епох — на сторінці <a href="roadmap.html">дорожньої карти</a>.</p>
         </section>
 
         <section id="volya-mechanics">
-            <h2 data-translate="mechanicsHeading">Механіка "Волі" та Дипломатія</h2>
-            <p data-translate="mechanicsIntro">Ключовою особливістю гри є механіка <span class="highlight" data-translate-highlight="volyaHighlight2">"Волі"</span> — це інтегрована частина геймплею, що відображає внутрішню силу, рішучість та незламність духу героїв, впливаючи на сюжет та взаємодії.</p>
-            <ul>
-                <li data-translate="mechanicsPoint1">**Вплив на Діалоги:** Накопичена "Воля" може розблоковувати унікальні діалогові опції, дозволяючи переконувати NPC, змінювати їхнє ставлення та впливати на хід подій.</li>
-                <li data-translate="mechanicsPoint2">**Дипломатична Перевага:** "Воля" надає перевагу в переговорах, допомагає знаходити компроміси та мирні вирішення конфліктів, що є критично важливим для багатьох історичних сценаріїв.</li>
-                <li data-translate="mechanicsPoint3">**Кульмінація Сюжету:** Рівень накопиченої "Волі" протягом усіх епох безпосередньо вплине на фінал гри, дозволяючи Олесю закликати духовних провідників та мудреців з минулого для вирішального протистояння.</li>
+            <h2 data-translate="mechanicsHeading">Воля, спадок і дипломатія</h2>
+            <p data-translate="mechanicsIntro"><span class="highlight">Воля</span> — не шкала здібностей і не суперудар. Це міра того, наскільки герой лишається собою, коли доводиться вибирати.</p>
+            <ul class="plain-list">
+                <li data-translate="mechanicsPoint1"><strong>Розмови.</strong> Висока Воля відкриває сміливіші й чесніші відповіді: переконати, примирити, відмовити сильнішому.</li>
+                <li data-translate="mechanicsPoint2"><strong>Союзники.</strong> Люди йдуть за тим, хто тримає слово. Від Волі залежить, хто стане поруч у вирішальну мить — і хто відвернеться.</li>
+                <li data-translate="mechanicsPoint3"><strong>Спадок.</strong> Наприкінці епохи Воля героя стає спадком — річчю, звичаєм або пам'яттю, що переходить до наступного покоління. У фіналі Олесь спирається на все, що залишили йому пращури.</li>
             </ul>
         </section>
 
         <section id="team">
-            <h2 data-translate="teamHeading">Наша Команда: Створюючи Майбутнє Ігор</h2>
-            <p data-translate="teamText1">Ми — команда інноваторів та ентузіастів, об'єднаних спільною мрією: створити гру, яка не лише розважатиме, а й змінить уявлення про наративні ігри, розповівши світові про незламний дух та багатовікову історію України.</p>
-            <p data-translate="teamText2">Наразі ми активно шукаємо талановитих фахівців, що готові прийняти виклик розробки гри з проривними ШІ-технологіями та глибоким змістом. Якщо ви маєте пристрасть до ігор, історії, інновацій та вірите у силу українського духу, ми запрошуємо вас приєднатися до створення чогось справді великого!</p>
+            <h2 data-translate="teamHeading">Команда</h2>
+            <p data-translate="teamText1">«ВОЛЮ» створює невелика команда ентузіастів, які люблять ігри й історію і хочуть розповісти світові про Україну мовою, зрозумілою кожному гравцеві.</p>
+            <p data-translate="teamText2">Ми шукаємо однодумців: розробників, художників, аніматорів, сценаристів, істориків, фахівців зі штучного інтелекту. Якщо вам близька ця ідея — долучайтеся.</p>
         </section>
 
         <section class="cta" id="contact">
-            <h2 data-translate="ctaHeading">Стань частиною "ВОЛІ"!</h2>
-            <p data-translate="ctaText">Приєднуйся до команди розробників, ШІ-спеціалістів, художників, сценаристів, істориків чи інвесторів. Разом ми створимо гру, що назавжди закарбує ім'я України в ігровій індустрії та встановить нові стандарти занурення.</p>
-            <a href="vacancies.html" class="main-cta-button" data-translate="ctaButton">Переглянути Вакансії</a>
-            <p style="margin-top: 1.5rem; font-size: 1.1rem; color: var(--text-color);" data-translate="ctaOrContact">або зв'яжіться з нами напряму:</p>
+            <h2 data-translate="ctaHeading">Стань частиною «ВОЛІ»</h2>
+            <p data-translate="ctaText">Розробники, художники, сценаристи, історики, інвестори — разом ми зробимо гру, яка покаже українську історію так, як її ще не показували.</p>
+            <a href="vacancies.html" class="main-cta-button" data-translate="ctaButton">Вакансії</a>
+            <p class="cta-or" data-translate="ctaOrContact">або напишіть нам напряму:</p>
             <a href="mailto:ukrvolley@gmail.com" class="email-link">ukrvolley@gmail.com</a>
         </section>
-
     </main>
 
     <footer>
-        <p data-translate="footerText">&copy; 2025 Проєкт "ВОЛЯ". Всі права захищені.</p>
+        <p data-translate="footerText">© 2025–2026 Проєкт «ВОЛЯ». Усі права захищені.</p>
+        <p class="footer-mail"><a href="mailto:ukrvolley@gmail.com">ukrvolley@gmail.com</a></p>
     </footer>
-
     <script src="translations.js"></script>
 </body>
 </html>
