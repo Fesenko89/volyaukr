@@ -10,108 +10,131 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="roadmapPageTitle">Дорожня карта "ВОЛІ" — Епічна Історична Гра</title>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <title data-translate="roadmapPageTitle">Дорожня карта — ВОЛЯ</title>
+    <meta name="description" content="ВОЛЯ — 3D action-adventure про історію України: від Трипілля до сьогодення. Складні двобої, кінний бій, вибори з наслідками. Спробуйте демо «Шлях воїна» у браузері." data-translate-content="metaDescription">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Дорожня карта — ВОЛЯ">
+    <meta property="og:description" content="ВОЛЯ — 3D action-adventure про історію України: від Трипілля до сьогодення. Складні двобої, кінний бій, вибори з наслідками. Спробуйте демо «Шлях воїна» у браузері.">
+    <meta property="og:image" content="https://fesenko89.github.io/volyaukr/assets/scythians_era_image.jpg">
+    <meta property="og:url" content="https://fesenko89.github.io/volyaukr/roadmap.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23ffd700' font-family='Arial' font-weight='700'%3EВ%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 data-translate="roadmapMainHeading">Дорожня карта Проєкту "ВОЛЯ"</h1>
-            <p data-translate="roadmapSubtitle">Наш план розвитку гри: від ранніх епох до майбутніх звершень.</p>
-            <nav class="language-switcher">
-                <button id="lang-uk" data-lang="uk">Українська</button>
-                <button id="lang-en" data-lang="en">English</button>
-            </nav>
+
+    <header class="page-header">
+        <nav class="language-switcher" aria-label="Мова / Language">
+            <button type="button" data-lang="uk">Українська</button>
+            <button type="button" data-lang="en">English</button>
+        </nav>
+        <nav class="top-nav"><a href="index.html" data-translate="navHome">Головна</a><a href="play.html" data-translate="navPlay">Грати демо</a><a href="roadmap.html" class="active" data-translate="navRoadmap">Дорожня карта</a><a href="vacancies.html" data-translate="navJoin">Команда</a></nav>
+        <div class="header-content">
+            <h1 data-translate="roadmapMainHeading">Дорожня карта</h1>
+            <p data-translate="roadmapSubtitle">Як «ВОЛЯ» зростатиме: епоха за епохою.</p>
         </div>
     </header>
 
     <main class="container">
         <section class="roadmap-section">
-            <h2 data-translate="roadmapEarlyAccess">Ранній Доступ та Перші Епохи</h2>
+            <h2 data-translate="roadmapEarlyAccess">Зараз у роботі</h2>
             <div class="roadmap-item">
-                <div class="roadmap-image">
-                    <img src="assets/scythians_era_image.jpg" alt="Епоха Скіфів" data-translate="altScythiansImage">
-                </div>
+                <div class="roadmap-image"><img src="assets/scythians_era_image.jpg" alt="Скіфський вершник у степу" data-translate-alt="altScythiansImage" loading="lazy"></div>
                 <div class="roadmap-content">
-                    <h3 data-translate="roadmapScythiansTitle">Епоха Скіфів: "Шлях Воїна"</h3>
-                    <p data-translate="roadmapScythiansDescription">Перший модуль гри, що занурить гравців у світ скіфських племен. Лінійний сюжет, дослідження степу, перші механіки бою та діалогів.</p>
+                    <h3 data-translate="roadmapScythiansTitle">Скіфська доба: «Шлях воїна»</h3>
+                    <p data-translate="roadmapScythiansDescription">513 рік до н.е. Перський цар Дарій переходить Дунай, щоб підкорити скіфів. Аргіс, син вождя Спаргапіса, — розвідник і вершник, на очах якого степ стає полем війни.</p>
                     <ul class="features-list">
-                        <li data-translate="scythiansFeature1">Дослідження світу скіфів.</li>
-                        <li data-translate="scythiansFeature2">Початкова бойова система.</li>
-                        <li data-translate="scythiansFeature3">Зародження механіки "Волі".</li>
-                        <li data-translate="scythiansFeature4">Перші сюжетні лінії та персонажі.</li>
+                        <li data-translate="scythiansFeature1">Кінний бій і стрільба з лука на скаку, зокрема назад через плече.</li>
+                        <li data-translate="scythiansFeature2">Двобої в стилі souls-like: витривалість, парирування, стійки, складні суперники.</li>
+                        <li data-translate="scythiansFeature3">Розвідка, засідки, напади на обози й тактика випаленої землі.</li>
+                        <li data-translate="scythiansFeature4">Перші вибори з наслідками та механіка Волі.</li>
                     </ul>
-                    <span class="status in-progress" data-translate="statusInProgress">В розробці</span>
+                    <span class="status in-progress" data-translate="statusInProgress">У розробці · демо доступне</span>
+                    <a href="play.html" class="inline-link" data-translate="roadmapDemoLink">Грати демо →</a>
                 </div>
             </div>
         </section>
 
         <section class="roadmap-section">
-            <h2>Майбутні Епохи та Розвиток</h2>
+            <h2 data-translate="roadmapFutureEras">Майбутні епохи</h2>
+            <p class="note centered" data-translate="roadmapOrderNote">Епохи подано в хронологічному порядку; порядок виходу може відрізнятися.</p>
             <div class="roadmap-item planned">
-                <div class="roadmap-image">
-                    <img src="assets/image_kievska_rus.jpg" alt="Епоха Київської Русі" data-translate="altKyivanRusImage">
-                </div>
+                <div class="roadmap-image"><img src="assets/image_503f29.jpg" alt="Трипільське поселення" data-translate-alt="altTrypilliaImage" loading="lazy"></div>
                 <div class="roadmap-content">
-                    <h3 data-translate="roadmapKyivanRusTitle">Епоха Київської Русі: "Земля Героїв"</h3>
-                    <p data-translate="roadmapKyivanRusDescription">Розширення ігрового світу до часів Київської Русі. Нові персонажі, складніша політична система, елементи дипломатії та масштабні битви.</p>
+                    <h3 data-translate="roadmapTrypilliaTitle">Трипілля: «Поклик серця»</h3>
+                    <p data-translate="roadmapTrypilliaDescription">Поселення-гіганти, посуха і перші чужинці на обрії. Цілителька Зоряна вчиться захищати свою громаду там, де звичні обряди вже не допомагають.</p>
                     <ul class="features-list">
-                        <li data-translate="kyivanRusFeature1">Величні міста Київської Русі.</li>
-                        <li data-translate="kyivanRusFeature2">Розширена бойова система з облогою міст.</li>
-                        <li data-translate="kyivanRusFeature3">Розвиток механіки "Волі" через політичні рішення.</li>
-                        <li data-translate="kyivanRusFeature4">Інтеграція історичних подій та постатей.</li>
+                        <li data-translate="trypilliaFeature1">Життя найбільших поселень тогочасної Європи.</li>
+                        <li data-translate="trypilliaFeature2">Травництво й цілительство як ігрова механіка.</li>
+                        <li data-translate="trypilliaFeature3">Перша оборона мирного народу.</li>
                     </ul>
                     <span class="status planned" data-translate="statusPlanned">Заплановано</span>
                 </div>
             </div>
-
             <div class="roadmap-item planned">
-                <div class="roadmap-image">
-                    <img src="assets/image_cossacks.jpg" alt="Козацька Доба" data-translate="altCossackImage">
-                </div>
+                <div class="roadmap-image"><img src="assets/image_sloviani.jpg" alt="Слов'янське городище" data-translate-alt="altSlavsImage" loading="lazy"></div>
                 <div class="roadmap-content">
-                    <h3 data-translate="roadmapCossackTitle">Козацька Доба: "Вільний Дух"</h3>
-                    <p data-translate="roadmapCossackDescription">Епоха козацтва, боротьба за незалежність, степові походи, морські авантюри та розвиток особистості головного героя через випробування.</p>
+                    <h3 data-translate="roadmapSlavsTitle">Давні слов'яни: «Сила єднання»</h3>
+                    <p data-translate="roadmapSlavsDescription">Розрізнені племена й набіги зі сходу. Гончар Радим іде від громади до громади, щоб із розрізнених дружин зібрати спільне ополчення.</p>
                     <ul class="features-list">
-                        <li data-translate="cossackFeature1">Великі козацькі січі та битви.</li>
-                        <li data-translate="cossackFeature2">Морські подорожі та козацькі чайки.</li>
-                        <li data-translate="cossackFeature3">Глибока система розвитку персонажа та навичок.</li>
-                        <li data-translate="cossackFeature4">Вплив "Волі" на лідерські якості та авторитет.</li>
+                        <li data-translate="slavsFeature1">Подорожі між племенами, торгівля й переговори.</li>
+                        <li data-translate="slavsFeature2">Дипломатія, де Воля важить більше за меч.</li>
+                        <li data-translate="slavsFeature3">Оборона поселень від кочовиків.</li>
                     </ul>
                     <span class="status planned" data-translate="statusPlanned">Заплановано</span>
                 </div>
             </div>
-
             <div class="roadmap-item planned">
-                <div class="roadmap-image">
-                    <img src="assets/image_upa.jpg" alt="XX Століття (Визвольна Боротьба)" data-translate="alt20thCenturyImage">
-                </div>
+                <div class="roadmap-image"><img src="assets/image_kievska_rus.jpg" alt="Київська Русь" data-translate-alt="altKyivanRusImage" loading="lazy"></div>
                 <div class="roadmap-content">
-                    <h3 data-translate="roadmap20thCenturyTitle">XX Століття: "Шлях до Незалежності"</h3>
-                    <p data-translate="roadmap20thCenturyDescription">Період визвольних змагань, світових воєн, боротьби за самовизначення та складних моральних виборів, що формують сучасну Україну.</p>
+                    <h3 data-translate="roadmapKyivanRusTitle">Київська Русь: «Земля героїв»</h3>
+                    <p data-translate="roadmapKyivanRusDescription">Три покоління захисників Русі: прикордонні фортеці проти печенігів, князівські чвари перед половецькою загрозою і трагедія битви на Калці.</p>
                     <ul class="features-list">
-                        <li data-translate="century20thFeature1">Участь у ключових історичних подіях XX століття.</li>
-                        <li data-translate="century20thFeature2">Сучасні види зброї та тактики бою (відповідно до епохи).</li>
-                        <li data-translate="century20thFeature3">Моральні дилеми та їхній вплив на рівень "Волі".</li>
-                        <li data-translate="century20thFeature4">Зустріч з видатними постатями епохи.</li>
+                        <li data-translate="kyivanRusFeature1">Дружинний бій, щит і сокира, оборона фортець.</li>
+                        <li data-translate="kyivanRusFeature2">Переговори між князями й ціна розбрату.</li>
+                        <li data-translate="kyivanRusFeature3">Історичні битви й постаті епохи.</li>
                     </ul>
                     <span class="status planned" data-translate="statusPlanned">Заплановано</span>
                 </div>
             </div>
-
             <div class="roadmap-item planned">
-                <div class="roadmap-image">
-                    <img src="assets/image_present_day.jpg" alt="Сучасність" data-translate="altModernEraImage">
-                </div>
+                <div class="roadmap-image"><img src="assets/image_cossacks.jpg" alt="Козацька доба" data-translate-alt="altCossackImage" loading="lazy"></div>
                 <div class="roadmap-content">
-                    <h3 data-translate="roadmapModernEraTitle">Сучасність: "Загартована Воля"</h3>
-                    <p data-translate="roadmapModernEraDescription">Фінальна епоха, де гравець у ролі сучасного воїна використовує знання та "Волю", накопичену предками, у вирішальній битві за майбутнє України.</p>
+                    <h3 data-translate="roadmapCossackTitle">Козацька доба: «Вільний дух»</h3>
+                    <p data-translate="roadmapCossackDescription">Січ, морські походи на чайках і похід на Кафу 1616 року — а потім Чорна рада 1663-го, де свобода вирішується не шаблею, а інтригою.</p>
                     <ul class="features-list">
-                        <li data-translate="modernEraFeature1">Сучасні бойові дії та технології.</li>
-                        <li data-translate="modernEraFeature2">Використання механіки "Волі" для стратегічних переваг.</li>
-                        <li data-translate="modernEraFeature3">Зустріч з відголосками минулих епох.</li>
-                        <li data-translate="modernEraFeature4">Кілька можливих фіналів, залежно від накопиченої "Волі".</li>
+                        <li data-translate="cossackFeature1">Шабельний бій і абордаж.</li>
+                        <li data-translate="cossackFeature2">Морські походи на чайках.</li>
+                        <li data-translate="cossackFeature3">Розвідка, стелс і політичні інтриги.</li>
+                    </ul>
+                    <span class="status planned" data-translate="statusPlanned">Заплановано</span>
+                </div>
+            </div>
+            <div class="roadmap-item planned">
+                <div class="roadmap-image"><img src="assets/image_upa.jpg" alt="ХХ століття, повстанці" data-translate-alt="alt20thCenturyImage" loading="lazy"></div>
+                <div class="roadmap-content">
+                    <h3 data-translate="roadmap20thCenturyTitle">ХХ століття: «Шлях до незалежності»</h3>
+                    <p data-translate="roadmap20thCenturyDescription">Повстанський рух 1940-х: лісові бази, засідки й ціна вибору між двома тоталітарними режимами.</p>
+                    <ul class="features-list">
+                        <li data-translate="twentiethFeature1">Партизанська тактика й бій у лісі.</li>
+                        <li data-translate="twentiethFeature2">Моральні дилеми та відповідальність за молодших.</li>
+                        <li data-translate="twentiethFeature3">Зброя й спорядження відповідно до епохи.</li>
+                    </ul>
+                    <span class="status planned" data-translate="statusPlanned">Заплановано</span>
+                </div>
+            </div>
+            <div class="roadmap-item planned">
+                <div class="roadmap-image"><img src="assets/image_present_day.jpg" alt="Сучасність" data-translate-alt="altModernEraImage" loading="lazy"></div>
+                <div class="roadmap-content">
+                    <h3 data-translate="roadmapModernEraTitle">Сучасність: «Загартована воля»</h3>
+                    <p data-translate="roadmapModernEraDescription">Фінал саги. Розвідник Олесь — на війні, яку Україна веде зараз. Пам'ять крові поєднує його з пращурами, а їхній спадок стає його опорою.</p>
+                    <ul class="features-list">
+                        <li data-translate="modernFeature1">Сучасний бій, розвідка й робота в групі.</li>
+                        <li data-translate="modernFeature2">Спадок пращурів у вирішальний момент.</li>
+                        <li data-translate="modernFeature3">Кілька фіналів залежно від зібраного спадку.</li>
                     </ul>
                     <span class="status planned" data-translate="statusPlanned">Заплановано</span>
                 </div>
@@ -119,19 +142,17 @@
         </section>
 
         <section class="roadmap-updates">
-            <h2 data-translate="roadmapUpdatesTitle">Оновлення та Додатковий Контент</h2>
-            <p data-translate="roadmapUpdatesText">Після виходу основних епох ми плануємо регулярно випускати оновлення, що включатимуть нові квести, персонажів, ігрові механіки та, можливо, навіть додаткові історичні періоди, ґрунтуючись на відгуках спільноти та наших дослідженнях.</p>
+            <h2 data-translate="roadmapUpdatesTitle">Оновлення</h2>
+            <p data-translate="roadmapUpdatesDescription">Кожен модуль ми оновлюватимемо й після виходу: нові місії, суперники, механіки та виправлення — з огляду на відгуки гравців і нові історичні дослідження.</p>
         </section>
 
-        <div class="back-to-main">
-            <a href="index.html" class="main-cta-button" data-translate="roadmapBackToMain">← Повернутися на головну сторінку</a>
-        </div>
+        <div class="back-to-main"><a href="index.html" class="main-cta-button" data-translate="backToMain">← На головну</a></div>
     </main>
 
     <footer>
-        <p data-translate="footerText">&copy; 2025 Проєкт "ВОЛЯ". Всі права захищені.</p>
+        <p data-translate="footerText">© 2025–2026 Проєкт «ВОЛЯ». Усі права захищені.</p>
+        <p class="footer-mail"><a href="mailto:ukrvolley@gmail.com">ukrvolley@gmail.com</a></p>
     </footer>
-
     <script src="translations.js"></script>
 </body>
 </html>

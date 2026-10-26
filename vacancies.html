@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-       <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDBP5R3S1B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DDBP5R3S1B');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDBP5R3S1B"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-DDBP5R3S1B');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="vacanciesTitle">Вакансії — ВОЛЯ</title>
+    <title data-translate="vacanciesPageTitle">Вакансії — ВОЛЯ</title>
+    <meta name="description" content="ВОЛЯ — 3D action-adventure про історію України: від Трипілля до сьогодення. Складні двобої, кінний бій, вибори з наслідками. Спробуйте демо «Шлях воїна» у браузері." data-translate-content="metaDescription">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Вакансії — ВОЛЯ">
+    <meta property="og:description" content="ВОЛЯ — 3D action-adventure про історію України: від Трипілля до сьогодення. Складні двобої, кінний бій, вибори з наслідками. Спробуйте демо «Шлях воїна» у браузері.">
+    <meta property="og:image" content="https://fesenko89.github.io/volyaukr/assets/image_0ed175.jpg">
+    <meta property="og:url" content="https://fesenko89.github.io/volyaukr/vacancies.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23ffd700' font-family='Arial' font-weight='700'%3EВ%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <nav class="language-switcher">
-        <button id="lang-uk" data-lang="uk">Українська</button>
-        <button id="lang-en" data-lang="en">English</button>
-    </nav>
-    <header>
-        </header>
 
-    <main class="vacancies-page"> <section class="vacancies-section">
-            <h1 data-translate="vacanciesMainHeading">🎮 Приєднуйся до команди "ВОЛЯ" — творимо гру, що змінить уявлення про Україну!</h1>
-            <p data-translate="vacanciesIntro">Ми — невелика, але амбітна команда, яка створює епічну 3D Action-Adventure гру про українську історію, культуру, боротьбу та дух. Якщо ти шукаєш не просто роботу, а місце, де твої навички можуть залишити слід в культурі — це воно.</p>
+    <header class="page-header">
+        <nav class="language-switcher" aria-label="Мова / Language">
+            <button type="button" data-lang="uk">Українська</button>
+            <button type="button" data-lang="en">English</button>
+        </nav>
+        <nav class="top-nav"><a href="index.html" data-translate="navHome">Головна</a><a href="play.html" data-translate="navPlay">Грати демо</a><a href="roadmap.html" data-translate="navRoadmap">Дорожня карта</a><a href="vacancies.html" class="active" data-translate="navJoin">Команда</a></nav>
+        <div class="header-content">
+            <h1 data-translate="vacanciesMainHeading">Приєднуйся до команди «ВОЛІ»</h1>
+        </div>
+    </header>
 
-            <h2 data-translate="vacanciesLookingFor">🛠 Кого шукаємо зараз:</h2>
-
+    <main class="container vacancies-page">
+        <section class="vacancies-section">
+            <p class="lead" data-translate="vacanciesIntro">Ми — невелика команда, що створює 3D action-adventure про українську історію. Якщо ви шукаєте не просто роботу, а справу, у якій ваші навички залишать слід у культурі, — нам по дорозі.</p>
+            <h2 data-translate="vacanciesWhoWeAreLookingFor">Кого ми шукаємо</h2>
             <div class="role-list">
                 <div class="role-item">
-                    <h3 data-translate="roleAIEngineer">🧠 AI Engineer / LLM інтегратор</h3>
-                    <p data-translate="descAIEngineer">— хочемо підключити GPT-подібні діалоги до персонажів гри. Якщо ти любиш експерименти, шариш у memory, prompt engineering, API, вмієш швидко тестити — пиши.</p>
+                    <h3 data-translate="roleAIEngineer">🧠 AI Engineer / LLM-інтегратор</h3>
+                    <p data-translate="descAIEngineer">Діалоги персонажів на основі мовних моделей: пам'ять, промпти, обмеження, інтеграція з ігровою логікою. Вмієте швидко прототипувати й чесно тестувати — пишіть.</p>
                 </div>
                 <div class="role-item">
-                    <h3 data-translate="roleArtist">🎨 Художник (2D/3D)</h3>
-                    <p data-translate="descArtist">— створення концептів персонажів, середовища, референсів епох, знання Blender або подібного софту — великий плюс. Якщо ще й любиш стилістику, близьку до Kingdom Come, Hellblade, A Plague Tale — взагалі ідеально.</p>
+                    <h3 data-translate="roleArtist">🎨 Художник 2D/3D</h3>
+                    <p data-translate="descArtist">Концепти персонажів, середовищ і зброї, референси епох; Blender або аналоги. Близька стилістика Kingdom Come, Hellblade, A Plague Tale — ідеально.</p>
                 </div>
                 <div class="role-item">
-                    <h3 data-translate="roleDev">👾 Unity / Unreal Dev</h3>
-                    <p data-translate="descDev">— поки що early stage, прототипи, навігація, бойова система, інтеграція діалогів і базової логіки. Потрібен хтось, хто може зібрати ігрову сцену без зайвого менеджменту над душею.</p>
+                    <h3 data-translate="roleAnimator">🥋 Аніматор бою</h3>
+                    <p data-translate="descAnimator">Анімації ударів, блоків, ухилів і реакцій для двобоїв у стилі souls-like; досвід із mocap або ретаргетингом — великий плюс.</p>
+                </div>
+                <div class="role-item">
+                    <h3 data-translate="roleDeveloper">👾 Розробник Unreal / Unity</h3>
+                    <p data-translate="descDeveloper">Прототипи, бойова система, ШІ ворогів, інтеграція діалогів. Потрібна людина, яка вміє зібрати ігрову сцену без зайвої бюрократії.</p>
                 </div>
                 <div class="role-item">
                     <h3 data-translate="roleGameDesigner">🎮 Геймдизайнер</h3>
-                    <p data-translate="descGameDesigner">— механіки "волі", системи морального вибору, мультиепізодичний наратив і геймплейні цикли. Якщо гориш — пиши.</p>
+                    <p data-translate="descGameDesigner">Бойовий баланс, механіка Волі, системи вибору й побудова місій. Якщо горите ідеєю — пишіть.</p>
+                </div>
+                <div class="role-item">
+                    <h3 data-translate="roleHistorian">📜 Історик-консультант</h3>
+                    <p data-translate="descHistorian">Допомога з достовірністю: зброя, одяг, побут, події та мова кожної епохи.</p>
                 </div>
             </div>
-
-            <p data-translate="vacanciesCommercialInfo">🤝 Наразі не комерційний етап. Ми формуємо кістяк, щоб податись на гранти та краудфандинг (Kickstarter, GDC тощо). Тому шукаємо мотивованих людей, які готові інвестувати свій час у потенційно велику справу.</p>
-
-            <p data-translate="vacanciesContactInfo">📨 Пиши коротко про себе та свою мотивацію на: <strong>ukrvolley@gmail.com</strong></p>
-
-            <p data-translate="vacanciesCallToAction"><em>Якщо хочеш долучитись, але не знайшов свою роль — все одно пиши. Ми відкриті.</em></p>
-
-            <p class="ukraine-moto" data-translate="vacanciesMotto"> Разом ми створимо гру, яка залишить слід в серцях. Слава Україні!</p>
+            <p data-translate="vacanciesCommercialInfo">🤝 Зараз проєкт некомерційний. Ми формуємо команду, щоб подаватися на гранти та краудфандинг, тому шукаємо людей, готових вкласти свій час у справу, що може стати великою.</p>
+            <p data-translate="vacanciesContactInfo">📨 Коротко напишіть про себе й свою мотивацію на <a href="mailto:ukrvolley@gmail.com">ukrvolley@gmail.com</a>.</p>
+            <p data-translate="vacanciesCallToAction">Не знайшли своєї ролі, але хочете долучитися? Все одно пишіть — ми відкриті.</p>
+            <p class="ukraine-moto" data-translate="vacanciesMotto">Разом ми зробимо гру, яка залишить слід у серцях. Слава Україні!</p>
         </section>
-           <div class="back-to-main">
-            <a href="index.html" class="main-cta-button" data-translate="roadmapBackToMain">← Повернутися на головну сторінку</a>
-        </div>
+        <div class="back-to-main"><a href="index.html" class="main-cta-button" data-translate="backToMain">← На головну</a></div>
     </main>
 
     <footer>
-        </footer>
-
+        <p data-translate="footerText">© 2025–2026 Проєкт «ВОЛЯ». Усі права захищені.</p>
+        <p class="footer-mail"><a href="mailto:ukrvolley@gmail.com">ukrvolley@gmail.com</a></p>
+    </footer>
     <script src="translations.js"></script>
 </body>
 </html>
