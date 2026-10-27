@@ -6737,12 +6737,12 @@ FEAT.DIET=DIET; DIET.refs=dietRefs;
    Head, body and legs take damage apart: a beaten body tires, beaten legs slow, a rocked head goes down.
    ====================================================================== */
 const FMOVES={
-  fj:{n:'Джеб',arm:'L',kind:'jab',dur:0.24,hk:0.45,dmg:4,st:4,reach:1.75},
-  fc:{n:'Крос',arm:'R',kind:'cross',dur:0.32,hk:0.5,dmg:7,st:6,reach:1.8},
-  fhl:{n:'Хук',arm:'L',kind:'hook',dur:0.38,hk:0.55,dmg:8,st:8,reach:1.45},
-  fhr:{n:'Хук',arm:'R',kind:'hook',dur:0.4,hk:0.55,dmg:9,st:8,reach:1.45},
-  ful:{n:'Аперкот',arm:'L',kind:'upper',dur:0.38,hk:0.55,dmg:9,st:8,reach:1.35},
-  fur:{n:'Аперкот',arm:'R',kind:'upper',dur:0.4,hk:0.55,dmg:10,st:8,reach:1.35},
+  fj:{n:'Джеб',arm:'L',kind:'jab',dur:0.24,hk:0.45,dmg:4,st:4,reach:1.5},
+  fc:{n:'Крос',arm:'R',kind:'cross',dur:0.32,hk:0.5,dmg:7,st:6,reach:1.55},
+  fhl:{n:'Хук',arm:'L',kind:'hook',dur:0.38,hk:0.55,dmg:8,st:8,reach:1.3},
+  fhr:{n:'Хук',arm:'R',kind:'hook',dur:0.4,hk:0.55,dmg:9,st:8,reach:1.3},
+  ful:{n:'Аперкот',arm:'L',kind:'upper',dur:0.38,hk:0.55,dmg:9,st:8,reach:1.2},
+  fur:{n:'Аперкот',arm:'R',kind:'upper',dur:0.4,hk:0.55,dmg:10,st:8,reach:1.2},
   fkl:{n:'Лоу-кік',leg:'R',kind:'low',dur:0.44,hk:0.55,dmg:6,st:10,reach:2.0,zone:2},
   fkm:{n:'Мідл-кік',leg:'R',kind:'mid',dur:0.52,hk:0.58,dmg:9,st:12,reach:2.0,zone:1},
   fkh:{n:'Хай-кік',leg:'R',kind:'high',dur:0.6,hk:0.62,dmg:14,st:16,reach:2.0,zone:0},
@@ -6754,7 +6754,7 @@ function fParse(id){ const m=/^(f[a-z]+?)(b?)(p?)$/.exec(String(id||'')); if(!m|
 function fistActive(){ return (NET.on&&NET.lo==='fist')||(D.on&&D.cfg&&D.cfg.key==='fist'); }
 function fistReset(){ Object.assign(FIST,{head:100,body:100,legs:100,sta:100,pH:0,pB:0,pL:0,act:null,stunT:0,counterT:0,slipT:0}); if(FIST.mode==='net'){ P.hp=100; P.fst=100; } }
 function fistStart(mode){ try{ stHud.setAttribute('data-fisthide',''); }catch(err){} FIST.prevW=P.weapon==='fists'?FIST.prevW:P.weapon; FIST.on=true; FIST.mode=mode; fistReset(); document.body.classList.toggle('fist-duel',mode==='duel'); FIST.camInit=false; document.body.classList.add('fist-on'); P.weapon='fists'; P.archer=false; P.drawing=false; P.block=false; showWeapon();
-  const kh=$('#keyhint'); if(kh){ FIST.khOld=kh.innerHTML; kh.innerHTML='<span><kbd>A</kbd><kbd>D</kbd>вперед / назад, двічі — ривок</span><span><kbd>W</kbd><kbd>S</kbd>обхід</span><span><kbd>ЛКМ</kbd>джеб</span><span><kbd>ПКМ</kbd>крос</span><span><kbd>Q</kbd>+ хук</span><span><kbd>E</kbd>+ аперкот</span><span><kbd>C</kbd>+ корпус</span><span><kbd>Shift</kbd>+ силовий</span><span><kbd>R</kbd>лоу-кік</span><span><kbd>F</kbd>хай-кік</span><span><kbd>Пробіл</kbd>блок</span><span><kbd>X</kbd>нирок</span><span><kbd>G</kbd>поштовх</span><span><kbd>Esc</kbd>меню</span>'; }
+  const kh=$('#keyhint'); if(kh){ FIST.khOld=kh.innerHTML; kh.innerHTML='<span><kbd>A</kbd><kbd>D</kbd>вперед / назад, двічі — ривок</span><span><kbd>W</kbd><kbd>S</kbd>обхід</span><span><kbd>ЛКМ</kbd>джеб</span><span><kbd>ПКМ</kbd>крос</span><span><kbd>Q</kbd>+ хук</span><span><kbd>E</kbd>+ аперкот</span><span><kbd>C</kbd>+ корпус</span><span><kbd>Shift</kbd>+ силовий</span><span><kbd>Пробіл</kbd>блок</span><span><kbd>X</kbd>нирок</span><span><kbd>Esc</kbd>меню</span>'; }
   fistHud.hidden=false; }
 function fistStop(){ if(!FIST.on) return; FIST.on=false; FIST.mode=null; FIST.act=null; document.body.classList.remove('fist-on'); document.body.classList.remove('fist-duel'); if(FIST.prevW&&FIST.prevW!=='fists'){ P.weapon=FIST.prevW; showWeapon(); } fistHud.hidden=true; P.block=false; const kh=$('#keyhint'); if(kh&&FIST.khOld!==undefined) kh.innerHTML=FIST.khOld; CAM.soft=1.4; camera.fov=55; camera.updateProjectionMatrix(); }
 // the opponent: in the ring the nearest bare-handed player, else the bag; in camp the strongman
@@ -6816,7 +6816,9 @@ function fistAvatarPose(e,p,dt){ const N=e.net, f=N.f|0; if(N.fmv){ N.fmv.t+=dt;
   fistPose(p,{block:!!(f&1),low:!!(f&256),rocked:!!(f&512),act:N.fmv?{M:N.fmv.M,t:N.fmv.t,dur:N.fmv.dur,hk:N.fmv.hk,body:N.fmv.body,power:N.fmv.power}:null}); e.h.stance=!SKEL; }
 // ---------- starting a move ----------
 function fistDo(base){ if(!FIST.on||G.state!=='play'||P.dead) return; const M=FMOVES[base]; if(!M) return;
-  if(FIST.act&&FIST.act.t<FIST.act.dur*0.8) { FIST.buf={base,t:G.clock}; return; } if(FIST.stunT>0) return;
+  const ca=FIST.act, flow=ca&&ca.hit&&ca.M.arm&&M.arm&&ca.M.arm!==M.arm&&ca.t>=ca.dur*ca.hk;   // 1-2, 2-3...: the other hand goes as soon as the first one lands
+  if(ca&&!flow&&ca.t<ca.dur*0.8) { FIST.buf={base,t:G.clock}; return; } if(FIST.stunT>0) return;
+  FIST.combo=(flow||(G.clock-(FIST.lastPunchT||-9))<0.35)&&M.arm?(FIST.combo||1)+1:1; if(M.arm) FIST.lastPunchT=G.clock;
   const k=FIST.k, kind=M.kind; let id=base;
   if(M.arm){ if(k.KeyQ) id=M.arm==='L'?'fhl':'fhr'; else if(k.KeyE) id=M.arm==='L'?'ful':'fur'; }
   if(base==='fkh'&&k.KeyC) id='fkm';
@@ -6826,13 +6828,15 @@ function fistDo(base){ if(!FIST.on||G.state!=='play'||P.dead) return; const M=FM
   FIST.sta=Math.max(0,FIST.sta-cost); FIST.staT=0.7;
   const slow=(power?1.3:1)*(tired?1.2:1)*((FIST.head<30)?1.15:1)*(MM.leg&&FIST.legs<40?1.2:1);
   const wasBlock=FIST.block; FIST.block=false; P.block=false; FIST.reblock=wasBlock;
-  FIST.act={id:fz(id,body?1:0,power),M:MM,t:0,dur:MM.dur*slow,hk:MM.hk,hit:false,power,body,counter:FIST.counterT>0}; if(FIST.counterT>0) FIST.counterT=0;
+  const cmb=MM.arm?Math.min(FIST.combo||1,5):1;
+  FIST.act={id:fz(id,body?1:0,power),M:MM,t:0,dur:MM.dur*slow*(cmb>1?0.85:1),hk:MM.hk,hit:false,power,body,counter:FIST.counterT>0,combo:cmb}; if(FIST.counterT>0) FIST.counterT=0;
+  if(cmb>=2){ FIST.sta=Math.min(100,FIST.sta+cost*0.3); try{ TUT.ev('combo'); }catch(err){} if(cmb>=3) floatText(P.pos.x,P.pos.y+2.9,P.pos.z,'Серія ×'+cmb,'info'); }
   if(MM.kind==='slip'){ FIST.slipT=MM.dur*0.85; P.iframes=Math.max(P.iframes,MM.dur*0.8); if(FIST.mode==='duel'&&D.foe&&D.foe.cstate==='atk'){ FIST.counterT=1.0; } }
   NET.strike=[++NET.strikeSeq,0,r2(FIST.act.dur),power?1:0,FIST.act.id]; NET.dirty=true;
   if(MM.leg||power) noise(0.12,700,1500,1.2,0.07); else noise(0.06,1400,2600,1.4,0.05); }
 // ---------- a blow lands (or misses) ----------
 function fistHit(){ const A=FIST.act, M=A.M; const o=FIST.opp; if(M.kind==='slip') return;
-  const zone=M.zone!=null?M.zone:(A.body?1:0); let dmg=M.dmg*(A.power?1.6:1)*(A.counter?1.5:1)*(FIST.sta<20?0.6:1)*(FIST.head<30?0.8:1)*(M.leg&&FIST.legs<40?0.75:1);
+  const zone=M.zone!=null?M.zone:(A.body?1:0); let dmg=M.dmg*(A.power?1.6:1)*(A.counter?1.5:1)*(1+0.08*Math.max(0,(A.combo||1)-1))*(FIST.sta<20?0.6:1)*(FIST.head<30?0.8:1)*(M.leg&&FIST.legs<40?0.75:1);
   if(!o){ FIST.sta=Math.max(0,FIST.sta-2); return; }
   const dx=o.pos.x-P.pos.x, dz=o.pos.z-P.pos.z, d=Math.hypot(dx,dz), ang=Math.abs(angDiff(P.heading,Math.atan2(dx,dz)));
   if(d>M.reach+(o.radius>0.7?0.4:0.1)||ang>0.85){ FIST.sta=Math.max(0,FIST.sta-3); floatText(P.pos.x,P.pos.y+2.4,P.pos.z,'Мимо','block'); return; }
@@ -6878,7 +6882,7 @@ function fistTakeDamage(zone,dmg,heavy,fx,fzz,att){ if(dmg<=0) return; const per
 const FIST_KEYS=['Space','KeyQ','KeyE','KeyR','KeyF','KeyC','KeyX','KeyG','KeyV','KeyT','KeyJ','KeyK','Tab','Digit1','Digit2','Digit3','Enter','KeyL'];
 window.addEventListener('keydown',e=>{ if(!FIST.on||G.state!=='play') return; if(!FIST_KEYS.includes(e.code)) return; e.preventDefault(); e.stopImmediatePropagation(); if(e.repeat) return; FIST.k[e.code]=true;
   if(e.code==='Space'){ FIST.block=true; FIST.blockT=0; FIST.low=!!FIST.k.KeyC; P.block=true; P.blockT=0; }
-  else if(e.code==='KeyR') fistDo('fkl'); else if(e.code==='KeyF') fistDo('fkh'); else if(e.code==='KeyG') fistDo('fpush');
+  else if(e.code==='KeyR'||e.code==='KeyF'||e.code==='KeyG'){ /* boxing: no kicks, no shove */ }
   else if(e.code==='KeyX'){ if(FIST.slipCd>0) return; FIST.slipCd=0.8; const sd=(keys.KeyD?1:0)-(keys.KeyA?1:0); fistDo(sd>0?'fslipr':sd<0?'fslipl':'fslip'); }
   else if(e.code==='KeyC'&&FIST.block) FIST.low=true; },true);
 window.addEventListener('keyup',e=>{ if(!FIST.on) return; if(!FIST_KEYS.includes(e.code)) return; FIST.k[e.code]=false; e.stopImmediatePropagation();
@@ -6930,7 +6934,7 @@ const _fc=new V();
 try{ lockEl.id='lockMark'; }catch(err){}
 { const _dhuF=duelHudUpdate; let _inF=false; duelHudUpdate=function(){ _dhuF(); const f=!!(D.on||(NET&&NET.on)); if(f!==_inF){ _inF=f; document.body.classList.toggle('in-fight',f); } }; }
 const fistHud=(()=>{ const d=document.createElement('div'); d.id='fistHud'; d.hidden=true;
-  const side=c=>'<div class="fs '+c+'"><b data-n></b><div class="zr"><span>Голова</span><i><u data-h></u></i></div><div class="zr"><span>Корпус</span><i><u data-b></u></i></div><div class="zr"><span>Ноги</span><i><u data-l></u></i></div><div class="zr st"><span>Сили</span><i><u data-s></u></i></div><em data-x></em></div>';
+  const side=c=>'<div class="fs '+c+'"><b data-n></b><div class="zr"><span>Голова</span><i><u data-h></u></i></div><div class="zr"><span>Корпус</span><i><u data-b></u></i></div><div class="zr st"><span>Сили</span><i><u data-s></u></i></div><em data-x></em></div>';
   d.innerHTML=side('me')+'<div class="vs">ПРОТИ</div>'+side('op'); document.body.appendChild(d); return d; })();
 { const st=document.createElement('style'); st.textContent=
   '.fist-on #netBoard,.fist-on .vitals,.fist-on [data-fisthide],.fist-on #hud .objective,.fist-on #willBox,.fist-on #army,.fist-on #reticle,.fist-on #lockMark,.in-fight #hud .objective,.in-fight #willBox,.in-fight #army{display:none!important}'
@@ -6967,7 +6971,7 @@ const NET_LO={
   sagaris:{w:'sagaris',shield:true,name:'Сагаріс і щит',sub:'Повільна сокира: фініш — оберт, важкий удар пробиває блок'},
   spear:{w:'spear',shield:true,name:'Спис і щит',sub:'Найдовший удар: 3-й — підсічка, фініш — пробій щита'},
   bow:{w:'akinak',shield:false,bow:true,name:'Лук і акінак',sub:'Стріли здалеку; Q: акінак із тією ж серією'},
-  fist:{w:'fists',shield:false,fist:true,name:'Без зброї',sub:'Окремий режим: кулаки й ноги за правилами ММА, нокаут перемагає'}};
+  fist:{w:'fists',shield:false,fist:true,name:'Без зброї',sub:'Окремий режим: кулачний бій, близький до боксу, нокаут перемагає'}};
 const NET_COLS=['#8e3b24','#2f5f8f','#5e6e3a','#7a2a5a','#c9a227','#3a3a3a'];
 const NET_SAVE=(()=>{ try{ return JSON.parse(localStorage.getItem('volya_net')||'{}')||{}; }catch(err){ return {}; } })();
 Object.assign(NET,{on:false,status:'idle',room:null,arena:null,conn:false,me:null,
@@ -7209,17 +7213,17 @@ arenaScr.innerHTML='<div class="panel"><div class="eyebrow">Онлайн · ті
  +'<div class="row"><label class="nm">Ім\'я <input data-name maxlength="18" autocomplete="off" spellcheck="false"></label><div class="cols" data-cols></div></div>'
  +'<div class="weaps" data-weaps></div>'
  +'<div class="actions"><button class="btn" type="button" data-go>До бою</button><button class="btn ghost" type="button" data-spar title="Без навчання: наставник б\'ється одразу">Одразу спаринг</button><button class="btn ghost" type="button" data-back>Назад</button></div>'
- +'<div class="moves fmoves"><div class="mh">Без зброї · бій за правилами ММА</div>'
+ +'<div class="moves fmoves"><div class="mh">Без зброї · кулачний бій, близький до боксу</div>'
  +'<div><kbd>A</kbd> / <kbd>D</kbd><span>вперед і назад по лінії бою, обличчям до суперника; двічі — ривок</span></div>'+'<div><kbd>W</kbd> / <kbd>S</kbd><span>обхід: крок з лінії вглиб або до себе — прямі удари проходять повз, хуки й ноги ловлять</span></div>'
  +'<div><kbd>ЛКМ</kbd> / <kbd>ПКМ</kbd><span>джеб / крос</span></div>'
  +'<div><kbd>Q</kbd>+удар · <kbd>E</kbd>+удар<span>хук · аперкот</span></div>'
  +'<div><kbd>C</kbd>+удар<span>по корпусу: забирає сили</span></div>'
  +'<div><kbd>Shift</kbd>+удар<span>силовий: повільніший, дорожчий, сильніший</span></div>'
- +'<div><kbd>R</kbd> · <kbd>F</kbd> · <kbd>C</kbd>+<kbd>F</kbd><span>лоу-кік по нозі · хай-кік у голову · мідл-кік у корпус</span></div>'
+ +'<div><kbd>ЛКМ</kbd> → <kbd>ПКМ</kbd><span>серія: друга рука летить, щойно влучила перша — швидше й сильніше</span></div>'
  +'<div><kbd>Пробіл</kbd> · <kbd>C</kbd>+<kbd>Пробіл</kbd><span>блок голови · блок корпусу; вчасний блок відкриває контратаку</span></div>'
  +'<div><kbd>X</kbd> (+<kbd>A</kbd>/<kbd>D</kbd>)<span>нирок: ухил від удару в голову, контратака сильніша</span></div>'
- +'<div><kbd>G</kbd><span>поштовх: відкинути й збити блок</span></div>'
- +'<div class="mh">Голова, корпус і ноги мають окремі шкали. Побитий корпус погано відновлює сили, побиті ноги сповільнюють, при потрясінні сильний удар у голову — нокаут.</div></div>'
+ 
+ +'<div class="mh">Голова й корпус мають окремі шкали. Удари в корпус забирають сили й повільно відновлюються; потрясіння голови плюс сильний удар — нокаут. Удар, що не дістає, пролітає повз: відходь — і суперник промахнеться.</div>'
  +'<div class="moves wmoves"><div class="mh">Стійки · клавіші 1, 2, 3 або V</div>'
  +'<div><kbd>1</kbd> Рівновага<span>серія з фінішем, найкраще відновлення сил</span></div>'
  +'<div><kbd>2</kbd> Натиск<span>швидкі удари; частина шкоди проходить крізь щит; удари дорожчі, парирувати важче</span></div>'
@@ -7361,7 +7365,7 @@ const TUT_F=[
   {t:'Хук: тримай <kbd>Q</kbd> і бий <kbd>ЛКМ</kbd>/<kbd>ПКМ</kbd>',ev:'hook',n:2,bot:'still'},
   {t:'Аперкот: тримай <kbd>E</kbd> і бий',ev:'upper',n:1,bot:'still'},
   {t:'Наставник закрив голову. Бий у корпус: тримай <kbd>C</kbd> і бий',ev:'body',n:2,bot:'block'},
-  {t:'Ноги: <kbd>R</kbd> — лоу-кік, <kbd>F</kbd> — хай-кік',ev:'kick',n:2,bot:'still'},
+  {t:'Серія: джеб і одразу крос (<kbd>ЛКМ</kbd> → <kbd>ПКМ</kbd>) — друга рука летить, щойно влучила перша',ev:'combo',n:2,bot:'still'},
   {t:'Наставник б\'є. Тримай <kbd>Пробіл</kbd> — блок голови',ev:'block',n:2,bot:'attack'},
   {t:'Нирок: натисни <kbd>X</kbd>, коли кулак уже летить у голову',ev:'dodge',n:1,bot:'attack'},
   {t:'Обхід: <kbd>W</kbd> або <kbd>S</kbd>, коли він б\'є прямим — кулак пройде повз',ev:'side',n:1,bot:'attack'},
@@ -7407,10 +7411,10 @@ netDummy=function(){ if(NET.dummy) return; const x=NETA.x+NETA.R*0.55, z=NETA.z,
 function botBusy(){ return [...NET.av.values()].some(x=>!x.dummy&&!x.dead&&x.hostile); }
 function botStartAtk(e,mode){ const B=e.bs, tut=mode!=='free';
   if(B.fist){ let id='fj', zone=0;
-    if(mode==='free'){ const r=Math.random(); id=r<0.3?'fj':r<0.55?'fc':r<0.72?'fhr':r<0.86?'fkl':'fj'; zone=id==='fkl'?2:(r>0.86?1:0); }
+    if(mode==='free'){ const r=Math.random(); id=r<0.32?'fj':r<0.56?'fc':r<0.72?'fhr':r<0.82?'fhl':r<0.9?'fur':'fj'; zone=r>0.9?1:0; }
     else id=Math.random()<0.5?'fj':'fc';
     const M=FMOVES[id], W=tut?0.75:0.38;
-    B.atk={id,M,zone,kick:!!M.leg,dur:W/M.hk,hk:M.hk,dmg:M.dmg*(tut?0.6:0.85),reach:M.reach+0.15,heavy:false,gb:false,hit:false};
+    B.atk={id,M,zone,kick:false,dur:W/M.hk,hk:M.hk,dmg:M.dmg*(tut?0.6:0.85),reach:M.reach,heavy:false,gb:false,hit:false};
     e.net.fmv={M,t:0,dur:B.atk.dur,hk:M.hk,body:zone===1,power:false}; B.st='strike'; B.t=0;
     floatText(e.pos.x,e.pos.y+2.7,e.pos.z,'!','info'); return; }
   const gb=mode==='gb'||(mode==='free'&&Math.random()<0.22), id=B.ids[Math.random()<0.5?0:1], M=MOVES[id];
@@ -7418,7 +7422,7 @@ function botStartAtk(e,mode){ const B=e.bs, tut=mode!=='free';
   B.st='wind'; B.t=0; floatText(e.pos.x,e.pos.y+2.7,e.pos.z,gb?'!!':'!',gb?'hurt':'info'); if(gb) tone('sawtooth',180,120,0.25,0.06); }
 function botDeliver(e){ const B=e.bs, A=B.atk; if(!A||A.hit) return; A.hit=true;
   const dx=P.pos.x-e.pos.x, dz=P.pos.z-e.pos.z, d=Math.hypot(dx,dz);
-  if(d>A.reach+(B.fist?0.25:0.4)||P.dead){ floatText(e.pos.x,e.pos.y+2.4,e.pos.z,'Мимо','block'); return; }
+  if(d>A.reach+(B.fist?0.1:0.4)||P.dead){ floatText(e.pos.x,e.pos.y+2.4,e.pos.z,'Мимо','block'); return; }
   let dmg=A.dmg, fl=0;
   if(B.fist){ fl=512|(A.zone<<10)|(A.kick?16384:0); if(A.zone===0) dmg=Math.min(dmg,Math.max(0,FIST.head-12)); }
   else { fl=(A.heavy?2:0)|(A.gb?4:0); dmg=Math.min(dmg,Math.max(0,(P.hp-10)/1.45)); }
@@ -7474,7 +7478,7 @@ function botTick(e,dt){ const B=e.bs, N=e.net;
   let face=Math.atan2(dx,dz), sp=0, mx=0, mz=0;
   if(B.paused){ const hx=B.home.x-B.x, hz=B.home.z-B.z, hd=Math.hypot(hx,hz); if(hd>0.3){ mx=hx/hd; mz=hz/hd; sp=1.8; face=Math.atan2(hx,hz); } B.st='idle'; B.atk=null; B.block=false; }
   else {
-    const want=B.fist?1.45:B.reach-0.45;
+    const want=B.fist?1.25:B.reach-0.45;
     if(B.st==='idle'&&B.stun<=0){
       if(d>want+0.3){ mx=ux; mz=uz; sp=free?2.6:1.8; }
       else if(d<want-0.55){ mx=-ux; mz=-uz; sp=1.4; }
@@ -7487,6 +7491,7 @@ function botTick(e,dt){ const B=e.bs, N=e.net;
     if(B.st==='wind'){ face=Math.atan2(dx,dz); if(B.t>=B.atk.W){ const A=B.atk; B.st='strike'; B.t=0; clipOn(e.h,A.M.clip,{ts:cd(A.M.clip)/A.dur,dur:A.dur}); N.mv={M:A.M,t:0,dur:A.dur}; sfx.swing(); if(A.gb&&B.fist===false){ mx=ux; mz=uz; sp=5; } } }
     else if(B.st==='strike'){ const A=B.atk, hk=B.fist?A.hk:(A.M.hk||HITF[A.M.clip]||0.42);
       if(!B.fist&&B.t<A.dur*hk&&A.gb){ mx=ux; mz=uz; sp=4; }
+      if(B.fist&&B.t<A.dur*hk&&d>1.05){ mx=ux; mz=uz; sp=1.6; }   // a boxer's step into the punch — you can still step out
       if(!A.hit&&B.t>=A.dur*hk) botDeliver(e);
       if(B.atk&&B.t>=A.dur){ B.st='recover'; B.t=0; } }
     else if(B.st==='recover'){ if(B.t>=(free?0.45:0.7)){ B.st='idle'; B.atk=null; B.cd=free?0.8+Math.random()*1.4:2.0+Math.random()*0.8; } }
@@ -7541,7 +7546,7 @@ window.addEventListener('keydown',e=>{ if(!FIST.on||G.state!=='play'||P.mounted|
     if(FW.dash){ const D=FW.dash; D.t+=dt; const k=Math.min(1,D.t/D.dur), ax=fwAxis(), v=Math.sin(k*Math.PI)*Math.PI/2*D.dist/D.dur;
       P.pos.x+=ax.ux*D.sign*v*dt; P.pos.z+=ax.uz*D.sign*v*dt; p.by=(p.by||0)-0.06*Math.sin(k*Math.PI); p.ux=(p.ux||0)+(D.sign>0?0.12:-0.1)*Math.sin(k*Math.PI); if(k>=1) FW.dash=null; } }; }
 // a step off the line beats a straight blow
-{ const _ft=fistTakeHit; fistTakeHit=function(att,h){ if(FIST.on&&FIST.mode==='net'&&G.clock<FW.evadeUntil&&!P.dead){ const fl=h[3]|0, kick=!!(fl&16384), push=!!(fl&32768), mv=att&&att.net&&att.net.fmv, kind=mv&&mv.M?mv.M.kind:'jab';
+{ const _ft=fistTakeHit; fistTakeHit=function(att,h){ { const mv=att&&att.net&&att.net.fmv, d=att&&att.pos?Math.hypot(att.pos.x-P.pos.x,att.pos.z-P.pos.z):0; if(mv&&mv.M&&mv.M.reach&&d>mv.M.reach+0.35&&FIST.on&&!P.dead){ floatText(att.pos.x,att.pos.y+2.4,att.pos.z,'Мимо','block'); NET.rs.push({a:[++NET.rsId,att.net.peer,'dodge',0],t:G.clock}); NET.dirty=true; return; } } if(FIST.on&&FIST.mode==='net'&&G.clock<FW.evadeUntil&&!P.dead){ const fl=h[3]|0, kick=!!(fl&16384), push=!!(fl&32768), mv=att&&att.net&&att.net.fmv, kind=mv&&mv.M?mv.M.kind:'jab';
       if(!kick&&!push&&kind!=='hook'){ FIST.counterT=0.8; try{ TUT.ev('side'); }catch(err){} floatText(P.pos.x,P.pos.y+3,P.pos.z,'Обхід! Бий','info'); edgeFlash('rgba(255,255,255,.35)',0.25); netSpirit&&netSpirit(8);
         NET.rs.push({a:[++NET.rsId,att.net.peer,'dodge',0],t:G.clock}); NET.dirty=true; return; } }
     return _ft(att,h); }; }
