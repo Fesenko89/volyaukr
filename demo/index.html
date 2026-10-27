@@ -1224,7 +1224,7 @@ let sayQ=[], sayTimer=0, sayDone=null;
 function sayShow(who,text,dur){ ui.say.innerHTML=''; const em=document.createElement('em'); em.textContent=who; ui.say.appendChild(em); ui.say.appendChild(document.createTextNode(text)); ui.say.classList.add('on'); sayTimer=dur||Math.max(3,text.length*0.06); FEAT.voice(who,text,sayTimer); }
 function lines(arr,done){ if(sayDone){ const d=sayDone; sayDone=null; try{ d(); }catch(err){} } sayQ=arr.slice(); sayDone=done||null; const f=sayQ.shift(); sayShow(f[0],f[1],f[2]); }
 function bark(who,text,dur){ if(sayQ.length||sayDone) return; sayShow(who,text,dur); }
-function updateSay(dt){ if(G.talk&&!G.talk.until&&G.state==='play'&&sayTimer<=0&&!sayQ.length&&!sayDone&&G.phase!=='talk'){ G.talkIdle=(G.talkIdle||0)+dt; if(G.talkIdle>0.8){ if(G.talk.e) G.talk.e.talking=false; G.talk=null; G.talkIdle=0; } } else G.talkIdle=0;
+function updateSay(dt){ if(G.talk&&G.talk.until&&G.time>G.talk.until+0.5){ if(G.talk.e) G.talk.e.talking=false; G.talk=null; } if(G.talk&&!G.talk.until&&G.state==='play'&&sayTimer<=0&&!sayQ.length&&!sayDone&&G.phase!=='talk'){ G.talkIdle=(G.talkIdle||0)+dt; if(G.talkIdle>0.8){ if(G.talk.e) G.talk.e.talking=false; G.talk=null; G.talkIdle=0; } } else G.talkIdle=0;
   if(sayTimer>0){ sayTimer-=dt; if(sayTimer<=0){ if(sayQ.length){ const f=sayQ.shift(); sayShow(f[0],f[1],f[2]); } else { ui.say.classList.remove('on'); if(sayDone){ const d=sayDone; sayDone=null; d(); } } } } }
 function flashDeny(el){ el.classList.remove('deny'); void el.offsetWidth; el.classList.add('deny'); }
 
@@ -3159,7 +3159,7 @@ function updateNight(dt){
   // dogs smell a rider or a running man from far, a creeping one only up close
   for(const d of NIGHT.dogs){ const dd=Math.hypot(d.pos.x-P.pos.x,d.pos.z-P.pos.z), R0=(P.mounted||P.speed>4.5)?16:6; if(dd<R0&&!P.dead){ G.sus=Math.min(1,G.sus+dt*0.55); NIGHT.barkT-=dt; d.lie=false; if(NIGHT.barkT<=0){ NIGHT.barkT=0.6; noise(0.12,500,1400,2,0.18); } if(!NIGHT.dogWarn){ NIGHT.dogWarn=true; bark('Аргіс','Собаки! Тихіше, пішки й повільно.',2.8); } } else d.lie=true; }
   if(G.alarm&&!NIGHT.alarmed) nightAlarm();
-  if(G.sus>=1&&!NIGHT.alarmed) nightAlarm();
+  if(G.sus>=0.98&&!NIGHT.alarmed) nightAlarm(); // the meter decays a hair every frame, so a strict 1 was never reached
   susEl.hidden=NIGHT.alarmed||NIGHT.cut&&dP(PL)>60; const bar=susEl.lastChild.firstChild; bar.style.width=(G.sus*100).toFixed(0)+'%'; bar.style.background=G.sus>0.6?'#d8452c':'#e0b04a';
   for(const e of NIGHT.sentries){ if(e.torch) e.torch.userData.gl.material.opacity=0.75+0.25*Math.sin(G.clock*13+e.phase); }
   // freed horses follow Argis in a loose bunch; riders can win some back
@@ -7636,6 +7636,27 @@ function fistIKSolve(h){ const I=h.ik; h.ik=null; if(!I||!h.ikB) return; if(!h._
     P.h.ik={act:A?{M:A.M,t:A.t,dur:A.dur,hk:A.hk,body:A.body,power:A.power}:null,blk:FIST.block,low:FIST.low,rocked:FIST.head<30,opp:FIST.opp}; }; }
 { const _fap=fistAvatarPose; fistAvatarPose=function(e,p,dt){ _fap(e,p,dt); if(!e.h||!e.h.ikB||e.dead) return; const N=e.net, f=N.f|0;
     e.h.ik={act:N.fmv?{M:N.fmv.M,t:N.fmv.t,dur:N.fmv.dur,hk:N.fmv.hk,body:N.fmv.body,power:N.fmv.power}:null,blk:!!(f&1),low:!!(f&256),rocked:!!(f&512),opp:fistOppOf(e)}; }; }
+
+// ===================== 40. QUIET TELEMETRY: errors and progress go to the site's Google Analytics (no-op elsewhere) =====================
+(function(){
+  const has=()=>typeof window.gtag==='function';
+  let sent=0; const once={};
+  function ev(name,params){ if(!has()||sent>40) return; sent++; try{ window.gtag('event',name,params||{}); }catch(e){} }
+  function where(){ try{ return {phase:String(G.phase||''),state:String(G.state||''),duel:D&&D.on&&D.cfg?String(D.cfg.key||''):'',arena:!!(NET&&NET.on)}; }catch(e){ return {}; } }
+  function errEv(desc){ const k=desc.slice(0,120); if(once[k]) return; once[k]=1; const w=where(); ev('exception',{description:(k+' | '+w.phase+'/'+w.state).slice(0,150),fatal:false}); ev('game_error',Object.assign({msg:k},w)); }
+  window.addEventListener('error',e=>{ if(e&&e.message) errEv(String(e.message)+' @'+(e.lineno||0)); });
+  try{ const _dw=duelWin; duelWin=function(e){ try{ ev('game_duel',{duel:String(D.cfg&&D.cfg.key||''),result:'win'}); }catch(err){} return _dw.apply(this,arguments); }; }catch(err){}
+  try{ const _dl=FEAT.duelLose; FEAT.duelLose=function(){ try{ ev('game_duel',{duel:String(D.cfg&&D.cfg.key||''),result:'lose'}); }catch(err){} return _dl.apply(this,arguments); }; }catch(err){}
+  window.addEventListener('unhandledrejection',e=>{ errEv('promise: '+String(e.reason&&e.reason.message||e.reason)); });
+  let lastPhase=null, lastState=null, deaths=0, cineT=0, lastT=performance.now();
+  setInterval(()=>{ try{
+    const now=performance.now(), dt=(now-lastT)/1000; lastT=now;
+    if(G.phase!==lastPhase){ lastPhase=G.phase; ev('game_phase',{phase:String(G.phase)}); }
+    if(G.state!==lastState){ if(G.state==='dead'){ deaths++; ev('game_death',Object.assign({n:deaths},where())); } if(G.state==='win') ev('game_win',{will:Math.round(P.will||0),deaths}); lastState=G.state; }
+    if(!isFinite(P.pos.x)||!isFinite(P.pos.z)) errEv('anomaly: player position NaN');
+    if(G.cine&&G.state==='play'&&!document.hidden){ cineT+=dt; if(cineT>90) errEv('anomaly: cutscene stuck'); } else cineT=0;
+  }catch(e){} },1000);
+})();
 
 requestAnimationFrame(frame);
 
