@@ -656,3 +656,8 @@ kbd { display: inline-block; min-width: 1.6em; padding: 2px 7px; margin: 1px 2px
 @media (max-width: 768px) {
     .scythia-page h3 { font-size: 1em; }
 }
+
+/* bare Herodotus references (IV.17) read as "Herodotus, IV.17" in the page language */
+html[lang="uk"] .src.hdt::before { content: "Геродот, "; }
+html[lang="en"] .src.hdt::before { content: "Herodotus, "; }
+.cite-note { max-width: 760px; margin: -8px auto 24px; }
