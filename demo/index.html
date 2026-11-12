@@ -290,7 +290,7 @@ a.link:hover{border-color:var(--gold)}
     <div class="eyebrow">Ігрове демо · Частина I · Місія «Обоз»</div>
     <h1>ВОЛЯ</h1>
     <h2>Шлях воїна</h2>
-    <div class="meta"><span>Місце: <b>Скіфський степ</b></span><span>Час: <b>513 р. до н. е.</b></span><span>Герой: <b>Аргіс</b></span></div>
+    <div class="meta"><span>Місце: <b>Скіфський степ</b></span><span>Час: <b>близько 513 р. до н. е.</b></span><span>Герой: <b>Аргіс</b></span></div>
     <p>Військо перського царя Дарія I перейшло Дунай. Скіфи не дають йому генеральної битви. Вони б'ють і відходять, забирають у ворога хліб, воду й коней, доки імперська армія не зможе йти далі.</p>
     <p>Поведи загін через ріку до кургану предків, знайди перську колону, підпали обоз і заведи погоню туди, де на неї чекає засідка. Перед походом зазирни до людей табору: комусь потрібна твоя допомога.</p>
     <div class="willnote">
@@ -1961,11 +1961,11 @@ function buildCamp(){
   // ---- more people: inside the yurts and around the camp ----
   { const inY=(Y,lx,lz)=>{ const w=yWorld(Y,lx,lz); return {x:w.x,z:w.z}; }, Yf=Y=>Y.f;
     const [Y1,Y2,Y3,Y4]=G.yurts;
-    npc('npc',inY(Y1,-2.2,-2.0),Yf(Y1)+0.5,{tunic:'#8a4a5a',pants:'#5a4a3a',skin:'#e0ad86',hat:'wrap',hatC:'#e8dcc0',belt:'#d9a441'},{job:'stir',who:'Дружина старійшини',line:'Він не спав усю ніч. Думає про персів.',reply:'Я принесу йому добрі вісті.'});
-    const guard=npc('npc',inY(Y1,2.3,3.6),Yf(Y1)+Math.PI*0.75,{tunic:'#5a3a24',pants:'#3e4b57',skin:'#d0a07c',hat:'hood',hatC:'#3a2a20',belt:'#c9a227',beard:'#2a1a10'},{who:'Охоронець',line:'Старійшина чекає тебе, Аргісе. Заходь.',reply:'Дякую, брате.'}); guard.h.handR.add(weaponSpear(2.6,'#b9bec2'));
+    npc('npc',inY(Y1,-2.2,-2.0),Yf(Y1)+0.5,{tunic:'#8a4a5a',pants:'#5a4a3a',skin:'#e0ad86',hat:'wrap',hatC:'#e8dcc0',belt:'#d9a441'},{job:'stir',who:'Дружина Спаргапіса',line:'Він не спав усю ніч. Думає про персів.',reply:'Я принесу йому добрі вісті.'});
+    const guard=npc('npc',inY(Y1,2.3,3.6),Yf(Y1)+Math.PI*0.75,{tunic:'#5a3a24',pants:'#3e4b57',skin:'#d0a07c',hat:'hood',hatC:'#3a2a20',belt:'#c9a227',beard:'#2a1a10'},{who:'Охоронець',line:'Батько чекає тебе, Аргісе. Заходь.',reply:'Дякую, брате.'}); guard.h.handR.add(weaponSpear(2.6,'#b9bec2'));
     npc('kid',inY(Y2,1.6,-2.2),Yf(Y2)-0.5,{tunic:'#5a2a3a',pants:'#3a3028',skin:'#e0ad86',hat:'wrap',hatC:'#3e3a4a',belt:'#d9a441'},{scale:0.72,job:'sit',who:'Учениця віщунки',line:'Я вже вмію читати дим. Він каже, що ти повернешся.',reply:'Хай твій дим не бреше.'});
     npc('npc',inY(Y3,-2.0,-2.6),Yf(Y3)+0.4,{tunic:'#6a5a8a',pants:'#5a4a3a',skin:'#d9a27a',hat:'wrap',hatC:'#d8c7a3',belt:'#e0b04a'},{job:'sit',who:'Молода мати',line:'Тихо, мала спить. Перси її не розбудять, правда?',reply:'Не розбудять. Обіцяю.'});
-    npc('npc',inY(Y3,2.4,-2.2),Yf(Y3)-0.6,{tunic:'#7a6a5a',pants:'#4a3d30',skin:'#c99070',hat:'hood',hatC:'#a89a80',belt:'#6a4426',beard:'#d8d2c4'},{job:'sit',who:'Дід Ортагов',line:'Мій онук Ортаг їде з тобою. Пильнуй його, він гарячий.',reply:'Пильнуватиму, діду.'});
+    npc('npc',inY(Y3,2.4,-2.2),Yf(Y3)-0.6,{tunic:'#7a6a5a',pants:'#4a3d30',skin:'#c99070',hat:'hood',hatC:'#a89a80',belt:'#6a4426',beard:'#d8d2c4'},{job:'sit',who:'Дід Табіта',line:'Мій онук Табіт уперше їде так далеко від дому. Пильнуй його, він гарячий.',reply:'Пильнуватиму, діду.'});
     const kc=inY(Y4,0,-0.8); npc('kid',kc,0,SCY[3],{scale:0.58,job:'circle',center:kc,rad:1.9,spd:2.2,ang:0}); npc('kid',kc,0,SCY[1],{scale:0.55,job:'circle',center:kc,rad:1.9,spd:2.2,ang:3.1,who:'Дівчинка',line:'Ми граємо в персів і скіфів! Я завжди скіф.',reply:'Правильно робиш.'});
     // outside
     const gr=C(9,-40); npc('npc',gr,Math.PI*0.9,{tunic:'#d8c7a3',pants:'#8a7a5a',skin:'#d9a27a',hat:'wrap',hatC:'#30508f',belt:'#30508f',beard:'#3a2414'},{who:'Грек Ніканор',line:'Вино з Ольвії, олія, мальовані чаші! Для героя ціна особлива.',reply:'Після походу, Ніканоре. Тепер не до вина.'});
@@ -2616,13 +2616,13 @@ function renderOpts(){ ui.objOpt.innerHTML=''; for(const o of opts){ const li=do
 let objTarget=null;
 function setObjective(text,target){ ui.objMain.textContent=text; objTarget=target; }
 const ELDER_LATER={
-  mount:['Ортаг, Савлій і Мадій чекають біля твого коня. Не барися, Аргісе.','Вже їду, батьку.'],
+  mount:['Борт, Аршак, Табіт і Токсаріс чекають біля твого коня. Не барися, сину.','Вже їду, батьку.'],
   camp:['Рід готується до кочівлі. Іди, коли будеш готовий.','Я готовий.'],
   free:['Ти повернувся живим, і це найкраща вість для роду. Відпочинь.','Дякую, батьку. Степ ще неспокійний.']};
 function interactables(){
   const list=[];
-  if(G.phase==='camp'&&G.race.state==='none') list.push({x:elder.pos.x,z:elder.pos.z,r:5,label:'Говорити зі старійшиною',go:talkElder});
-  else if(elder&&!elder.dead&&!G.talk&&!sayDone&&G.phase!=='talk'&&!elder.talking) list.push({x:elder.pos.x,z:elder.pos.z,r:4.2,label:'Говорити: старійшина',go:()=>{ const L=ELDER_LATER[G.phase]||ELDER_LATER.free; elder.line=L[0]; elder.reply=L[1]; elder.who='Старійшина'; startTalk(elder); }});
+  if(G.phase==='camp'&&G.race.state==='none') list.push({x:elder.pos.x,z:elder.pos.z,r:5,label:'Говорити з батьком',go:talkElder});
+  else if(elder&&!elder.dead&&!G.talk&&!sayDone&&G.phase!=='talk'&&!elder.talking) list.push({x:elder.pos.x,z:elder.pos.z,r:4.2,label:'Говорити: Спаргапіс',go:()=>{ const L=ELDER_LATER[G.phase]||ELDER_LATER.free; elder.line=L[0]; elder.reply=L[1]; elder.who='Спаргапіс'; startTalk(elder); }});
   if(G.arch.state==='lost'&&G.archer&&!P.mounted) list.push({x:G.archer.pos.x,z:G.archer.pos.z,r:4.8,label:'Позмагатися з лучником ще раз',go:()=>{ G.arch.state='ready'; G.arch.pts=0; CT.ring.visible=true; contestCrowd(true); bark('Лучник','Реванш? Ставай у коло.',2.8); trialUI(); }});
   if(G.phase==='scout') list.push({x:LOOK.x,z:LOOK.z,r:8,label:'Оглянути степ з кургану',go:scoutReveal});
   if(G.phase==='raid'||G.phase==='retreat'){ for(const w of pWagons) if(!w.burned && G.phase==='raid') list.push({x:w.x,z:w.z,r:4.6,label:'Підпалити віз',go:()=>burnWagon(w)}); }
@@ -2664,12 +2664,12 @@ function startTalk(e){
   lines([[e.who,e.line,Math.max(3,e.line.length*0.06)],['Аргіс',e.reply,Math.max(2.6,e.reply.length*0.06)]],()=>{ e.talking=false; G.talk=null; });
 }
 function talkElder(){
-  G.phase='talk'; G.talk={e:elder}; setObjective('Слухай старійшину',null);
+  G.phase='talk'; G.talk={e:elder}; setObjective('Слухай батька',null);
   lines([
-    ['Старійшина','Аргісе. Вісники кажуть: перси перейшли Дунай. Їх більше, ніж трави в степу.',4.5],
-    ['Старійшина','Ми не станемо з ними на прямий бій. Їдь на південь, за ріку, до кургану предків. Звідти побачиш їхню колону.',4.8],
-    ['Старійшина','Хліб, вода і коні. Забери в них це, і вони підуть самі.',4],
-    ['Старійшина','Візьми з собою Ортага, Савлія й Мадія. Вони чекають біля твого коня.',4],
+    ['Спаргапіс','Аргісе. Вісники кажуть: перси перейшли Дунай. Їх більше, ніж трави в степу.',4.5],
+    ['Спаргапіс','Ми не станемо з ними на прямий бій. Їдь на південь, за ріку, до кургану предків. Звідти побачиш їхню колону.',4.8],
+    ['Спаргапіс','Хліб, вода і коні. Забери в них це, і вони підуть самі.',4],
+    ['Спаргапіс','Візьми з собою Борта, Аршака, Табіта й Токсаріса. Вони чекають біля твого коня.',4],
     ['Аргіс','Зроблю. Ведіть рід на північ.',2.5]
   ],()=>{ G.talk=null; G.phase='mount'; spawnSquad(); setObjective(isTouch?'Сідай на коня: кнопка коня':'Сідай на коня: клавіша R',HS.pos); toast(isTouch?'Кнопка коня: сісти в сідло або покликати коня':'R: сісти на коня або свистом покликати його'); toast('У таборі ще є кому допомогти: шукай знак «!»'); });
 }
@@ -2682,7 +2682,7 @@ function scoutReveal(){
   lines([
     ['Аргіс','Ось вони. Стали на привал біля старого шляху. Обоз у колі возів.',3.6],
     ['Аргіс','Попереду стіна щитів. Щити дивляться на північ, отже бити треба збоку.',3.6]
-  ].concat(G.warned?[['Ортаг','Дозор таки доніс. Дивись: варти вдвічі більше.',3.6]]:[]),()=>{
+  ].concat(G.warned?[['Табіт','Дозор таки доніс. Дивись: варти вдвічі більше.',3.6]]:[]),()=>{
     G.cine=null; ui.army.hidden=false; G.phase='raid'; G.checkpoint={x:LOOK.x+6,z:LOOK.z-12};
     banner('Обоз Дарія','Хліб, вода і коні',3);
     setObjective('Підпали перський обоз: 0 / 4',{x:PCAMP.x,z:PCAMP.z});
@@ -2772,14 +2772,15 @@ const J={}; G.q={saiga:'none',saigaN:0,race:'none',kid:'none',seer:'none',bard:'
 let sideTarget=null;
 function optText(id,t){ const o=opts.find(o=>o.id===id); if(o){ o.text=t; renderOpts(); } }
 const dP=q=>Math.hypot(q.x-P.pos.x,q.z-P.pos.z);
-/* --- the squad: three riders who go with Argis --- */
+/* --- the squad: four riders who go with Argis --- */
 G.squad=[];
-const SQUAD_DEF=[['Ортаг',{tunic:'#6a3a24',pants:'#3e4b57',skin:'#d9a27a',hat:'hood',hatC:'#4a3020',belt:'#c9a227',beard:'#3a2414'},'#5a3a22',{side:-3.4,back:3.2}],
-  ['Савлій',{tunic:'#4e5e34',pants:'#4a3d30',skin:'#e0ad86',hat:'wrap',hatC:'#d8c7a3',belt:'#6a4426',beard:'#6a4426'},'#a07850',{side:3.4,back:3.2}],
-  ['Мадій',{tunic:'#8a5a2c',pants:'#3a4650',skin:'#d0a07c',hat:'hood',hatC:'#8e2f22',belt:'#e0b04a',beard:'#2a1a10'},'#2e2420',{side:0,back:6.8}]];
+const SQUAD_DEF=[['Табіт',{tunic:'#6a3a24',pants:'#3e4b57',skin:'#d9a27a',hat:'hood',hatC:'#4a3020',belt:'#c9a227',beard:'#3a2414'},'#5a3a22',{side:-3.4,back:3.2}],
+  ['Борт',{tunic:'#4e5e34',pants:'#4a3d30',skin:'#e0ad86',hat:'wrap',hatC:'#d8c7a3',belt:'#6a4426',beard:'#6a4426'},'#a07850',{side:3.4,back:3.2}],
+  ['Аршак',{tunic:'#8a5a2c',pants:'#3a4650',skin:'#d0a07c',hat:'hood',hatC:'#8e2f22',belt:'#e0b04a',beard:'#2a1a10'},'#2e2420',{side:0,back:6.8}],
+  ['Токсаріс',{tunic:'#3a3430',pants:'#4a3d30',skin:'#c99070',hat:'hood',hatC:'#5a4a3a',belt:'#2a1d14',beard:'#2a1a10'},'#4a3a2c',{side:0,back:10.2}]];
 function spawnSquad(){
   if(G.squad.length) return;
-  SQUAD_DEF.forEach((q,k)=>{ const x=CAMP.x+[-12,-15,-10][k], z=CAMP.z+[19,15.5,14][k];
+  SQUAD_DEF.forEach((q,k)=>{ const x=CAMP.x+[-12,-15,-10,-13][k], z=CAMP.z+[19,15.5,14,12][k];
     const e=mkEnt('scy',x,z,2.4,{look:q[1],coat:q[2],mode:'hold',hold:{x,z},holdFace:2.6,slot:q[3],who:q[0]}); G.squad.push(e); });
 }
 function squadFollow(){ for(const e of G.squad) e.mode='follow'; }
@@ -2796,7 +2797,7 @@ function startRefugees(){
   J.ref='active';
   for(let i=0;i<4;i++){ const x=REFUGE.x+82+i*3, z=REFUGE.z-26+i*4; const r=mkEnt('rider',x,z,-1.6,{hostile:true,hp:40,free:true,refRider:true,coat:'#2a2018',cloth:'#b8443a'}); r.state='hunt'; r.huntList=refugees; refRiders.push(r); }
   addOpt('ref','Захисти біженців від перського роз\'їзду');
-  lines([['Біженка','Рятуйте! Перси женуться за нами!',2.8],['Ортаг','Роз\'їзд іде прямо на возик! Аргісе, вдаримо збоку!',3.4]]);
+  lines([['Біженка','Рятуйте! Перси женуться за нами!',2.8],['Табіт','Роз\'їзд іде прямо на возик! Аргісе, вдаримо збоку!',3.4]]);
 }
 function refAggro(){ if(J.ref!=='active'||J.refAggro) return; J.refAggro=true; for(const r of refRiders) if(!r.dead&&r.state==='hunt') r.state='chase'; }
 function updateRefugees(dt){
@@ -2824,10 +2825,10 @@ function updateDozor(dt){
   if(J.dozorDone) return;
   for(const e of dozor){ if(e.dead) continue;
     if(e.state==='patrol'&&G.phase==='scout'&&dP(e.pos)<46) e.state='warn';
-    if(e.state==='warn'&&!J.dozorWarn){ J.dozorWarn=true; addOpt('dozor','Не дай дозору дістатися перського табору'); bark('Ортаг','Дозор нас помітив! Не дай їм дістатися табору!',3.4); }
+    if(e.state==='warn'&&!J.dozorWarn){ J.dozorWarn=true; addOpt('dozor','Не дай дозору дістатися перського табору'); bark('Табіт','Дозор нас помітив! Не дай їм дістатися табору!',3.4); }
     if(e.state==='warn'&&(Math.hypot(e.pos.x-PCAMP.x,e.pos.z-PCAMP.z)<40||dP(e.pos)>170)){ G.warned=true; J.dozorDone=true; setOpt('dozor','fail'); toast('Дозор доніс про вас у перський табір',true); dozor.forEach(x=>{ if(!x.dead) removeEnt(x); }); return; } }
   if(dozor.every(e=>e.dead)){ J.dozorDone=true; if(J.dozorWarn){ setOpt('dozor','done'); } else addOpt('dozor','Не дай дозору дістатися перського табору'), setOpt('dozor','done');
-    addWill(10,'перехопив дозор'); bark('Савлій','Дозор мовчатиме. Перси нічого не знатимуть.',3.4); }
+    addWill(10,'перехопив дозор'); bark('Борт','Дозор мовчатиме. Перси нічого не знатимуть.',3.4); }
 }
 /* --- a herd of wild tarpans --- */
 const tarp={horses:[],c:new V(TARP.x,0,TARP.z),heading:rand(0,TAU),speed:0,panic:0,rideT:0,turn:0};
@@ -2855,7 +2856,7 @@ function updateTarpans(dt){
     h.H.root.position.set(h.pos.x,groundH(h.pos.x,h.pos.z),h.pos.z); h.H.root.rotation.y=h.facing; animHorse(h.H,dt,h.speed,h.speed<0.4);
     if(h.speed>9){ h.dust=(h.dust||0)+dt*h.speed*0.35; if(h.dust>1){ h.dust=0; hoofDust(h.pos,h.facing,h.speed); } } }
   if(G.state==='play'&&!J.tarpDone&&P.mounted&&d<22&&P.speed>8&&tarp.panic>0){ tarp.rideT+=dt;
-    if(!tarp.cheer&&tarp.rideT>1.2){ tarp.cheer=true; bark('Мадій','Так! Тримайся поруч із табуном!',2.4); }
+    if(!tarp.cheer&&tarp.rideT>1.2){ tarp.cheer=true; bark('Аршак','Так! Тримайся поруч із табуном!',2.4); }
     if(tarp.rideT>4){ J.tarpDone=true; if(!J.tarpSeen) addOpt('tarp','Проскач разом із табуном тарпанів'); setOpt('tarp','done'); addWill(6,'скакав із тарпанами'); bark('Аргіс','Вільні, як степ. Як і ми.',3); } }
 }
 /* --- saigas east of the camp, for the cook's cauldron --- */
@@ -3046,19 +3047,19 @@ function updateRace(dt){
 }
 /* --- ancestors' shrine, the ford --- */
 function honorShrine(){ J.shrineDone=true; if(!J.shrineSeen) addOpt('shrine','Вшануй предків на кургані біля шляху'); setOpt('shrine','done'); P.hp=100; P.arrows=MAXA; addWill(6,'вшанував предків');
-  lines([['Аргіс','Діди й прадіди, ви тримали цей степ до мене. Дайте сили втримати його й мені.',4.4],[G.squad.length?'Мадій':'Аргіс',G.squad.length?'Чуєш? Вітер стих. Предки слухають.':'Вітер стих. Предки слухають.',3]]); }
-function drinkHorse(){ P.stamina=100; P.tired=false; sfx.dig(); if(!J.drunk){ J.drunk=true; if(!J.ford) addOpt('drink','Напої коня біля броду'); setOpt('drink','done'); toast('Кінь напився: сили повні'); bark('Ортаг','Добре. Тепер до самого кургану без зупинок.',3); } }
+  lines([['Аргіс','Діди й прадіди, ви тримали цей степ до мене. Дайте сили втримати його й мені.',4.4],[G.squad.length?'Аршак':'Аргіс',G.squad.length?'Чуєш? Вітер стих. Предки слухають.':'Вітер стих. Предки слухають.',3]]); }
+function drinkHorse(){ P.stamina=100; P.tired=false; sfx.dig(); if(!J.drunk){ J.drunk=true; if(!J.ford) addOpt('drink','Напої коня біля броду'); setOpt('drink','done'); toast('Кінь напився: сили повні'); bark('Табіт','Добре. Тепер до самого кургану без зупинок.',3); } }
 /* --- journey triggers --- */
 function updateJourney(dt){
   const sq=G.squad.length>0;
   if(G.phase==='scout'){
-    if(!J.leave&&dP(CAMP)>50){ J.leave=true; G.checkpoint={x:CAMP.x,z:CAMP.z-46}; if(sq) lines([['Ортаг','Курган предків за рікою, на півдні. Коні свіжі, до вечора дійдемо.',4],['Савлій','Тримайся стежки, Аргісе. Вона виведе до броду.',3.4]]); }
-    if(!J.shrineSeen&&dP(SHRINE)<80){ J.shrineSeen=true; addOpt('shrine','Вшануй предків на кургані біля шляху'); if(sq) bark('Мадій','Глянь, святилище предків. Старі кажуть: хто вклониться тут, тому стріла летить пряміше.',4.4); }
-    if(!J.ford&&P.pos.z>FORD.z&&P.pos.z-riverZ(P.pos.x)<45){ J.ford=true; addOpt('drink','Напої коня біля броду'); if(sq) bark('Ортаг','Брід попереду. Напоїмо коней: далі до самих персів води не буде.',4); }
-    if(!J.crossed&&P.pos.z<riverZ(P.pos.x)-14){ J.crossed=true; G.checkpoint={x:FORD.x,z:FORD.z-24}; if(sq) bark('Савлій','Все. Далі земля їхня. Поки ми її не відберемо.',3.6); }
+    if(!J.leave&&dP(CAMP)>50){ J.leave=true; G.checkpoint={x:CAMP.x,z:CAMP.z-46}; if(sq) lines([['Табіт','Курган предків за рікою, на півдні. Коні свіжі, до вечора дійдемо.',4],['Борт','Тримайся стежки, Аргісе. Вона виведе до броду.',3.4],['Токсаріс','Кожен наконечник я перевірив сам. Не підведуть.',3.2]]); }
+    if(!J.shrineSeen&&dP(SHRINE)<80){ J.shrineSeen=true; addOpt('shrine','Вшануй предків на кургані біля шляху'); if(sq) bark('Аршак','Глянь, святилище предків. Старі кажуть: хто вклониться тут, тому стріла летить пряміше.',4.4); }
+    if(!J.ford&&P.pos.z>FORD.z&&P.pos.z-riverZ(P.pos.x)<45){ J.ford=true; addOpt('drink','Напої коня біля броду'); if(sq) bark('Табіт','Брід попереду. Напоїмо коней: далі до самих персів води не буде.',4); }
+    if(!J.crossed&&P.pos.z<riverZ(P.pos.x)-14){ J.crossed=true; G.checkpoint={x:FORD.x,z:FORD.z-24}; if(sq) bark('Борт','Все. Далі земля їхня. Поки ми її не відберемо.',3.6); }
     if(!J.ref&&dP(REFUGE)<80) startRefugees();
-    if(!J.tarpSeen&&dP(tarp.c)<75){ J.tarpSeen=true; addOpt('tarp','Проскач разом із табуном тарпанів'); if(sq) bark('Мадій','Тарпани! Дикий табун. Проскач поруч, якщо не боїшся.',3.6); }
-    if(!J.dozorSeen){ for(const e of dozor) if(!e.dead&&dP(e.pos)<95){ J.dozorSeen=true; if(sq&&e.state==='patrol') bark('Ортаг','Вершники на пагорбі. Перський дозор! Підберися тихо або бий швидко.',4.2); break; } }
+    if(!J.tarpSeen&&dP(tarp.c)<75){ J.tarpSeen=true; addOpt('tarp','Проскач разом із табуном тарпанів'); if(sq) bark('Аршак','Тарпани! Дикий табун. Проскач поруч, якщо не боїшся.',3.6); }
+    if(!J.dozorSeen){ for(const e of dozor) if(!e.dead&&dP(e.pos)<95){ J.dozorSeen=true; if(sq&&e.state==='patrol') bark('Табіт','Вершники на пагорбі. Перський дозор! Підберися тихо або бий швидко.',4.2); break; } }
     if(J.crossed&&!J.lookLine&&dP(LOOK)<90){ J.lookLine=true; G.checkpoint={x:LOOK.x+10,z:LOOK.z+30}; bark('Аргіс','Ось і курган предків. Звідти буде видно весь степ.',3.4); }
   }
   updateRefugees(dt); updateDozor(dt);
@@ -3145,7 +3146,7 @@ function startNight(){
     fadeEl.style.opacity=0; susEl.hidden=false;
     banner('Глава II · Ніч','Перські коні на прив\'язі',4);
     setObjective('Підкрадися до перських коней',PL); addOpt('n_silent','Не підніми тривоги');
-    lines([['Ортаг','Перси думають, що ми втекли. А біля їхнього табору стоїть табун на прив\'язі.',4.2],['Аргіс','Без коней перс не воїн. Чекайте тут. Піду пішки, так тихіше.',3.8],['Савлій','Стережися вартових із смолоскипами й собак. Вартового бий ззаду, тоді не крикне.',4.4]]);
+    lines([['Табіт','Перси думають, що ми втекли. А біля їхнього табору стоїть табун на прив\'язі.',4.2],['Аргіс','Без коней перс не воїн. Чекайте тут. Піду пішки, так тихіше.',3.8],['Борт','Стережися вартових із смолоскипами й собак. Вартового бий ззаду, тоді не крикне.',4.4]]);
   },1300);
 }
 function nightAlarm(){ if(NIGHT.alarmed) return; NIGHT.alarmed=true; G.sus=1; raiseAlarm(); setOpt('n_silent','fail'); bark('Вартовий','Тривога! Скіфи біля коней!',3);
@@ -3177,7 +3178,7 @@ function updateNight(dt){
 }
 function finishNight(n){
   NIGHT.done=true; G.nightDone=true; G.nightHorses=n; susEl.hidden=true; hitRes('horses',n*5); addWill(6+n*2,'вивів перських коней'); if(!NIGHT.alarmed){ setOpt('n_silent','done'); addWill(10,'жодної тривоги'); }
-  lines([['Ортаг','Аргісе! Скільки їх... '+n+' коней!',3],['Савлій','Тепер у Дарія на '+n+' вершників менше. Степ сміється.',3.6],['Аргіс','Женемо їх до роду. На світанку будемо вдома.',3.4]]);
+  lines([['Табіт','Аргісе! Скільки їх... '+n+' коней!',3],['Борт','Тепер у Дарія на '+n+' вершників менше. Степ сміється.',3.6],['Аргіс','Женемо їх до роду. На світанку будемо вдома.',3.4]]);
   G.phase='end'; setObjective('Місію виконано',null); G.endT=8; }
 /* ================= Player update ================= */
 const ARENA_R=165;
@@ -3343,7 +3344,7 @@ function toggleHorse(){
   if(G.duelOn){ toast('Двобій триває: тільки пішки'); return; }
   if(NET.on){ toast('На арені б\'ються пішки'); return; }
   if(P.mounted){ dismountHorse(); if(!P.mounted&&FEAT.dismountAnim) FEAT.dismountAnim(); return; }
-  if(!canRide()){ toast('Спершу поговори зі старійшиною'); return; }
+  if(!canRide()){ toast('Спершу поговори з батьком'); return; }
   if(contestBusy()){ toast('Змагаються пішки. Кінь почекає.'); return; }
   if(horseDist()<3.6){ if(FEAT.mountAnim) FEAT.mountAnim(); else mountHorse(); }
   else { HS.called=true; tone('sine',1400,2100,0.18,0.12); tone('sine',2100,1500,0.22,0.1,0.2); toast('Аргіс свистом кличе коня'); }
@@ -3527,7 +3528,7 @@ $('#startBtn').addEventListener('click',()=>{
   lockMouse(); ac(); if(AC&&AC.state==='suspended') AC.resume(); startWind(); musicInit();
   if(started){ return; } started=true;
   G.state='play'; showOnly(null); hud.hidden=false; $('#touch').hidden=!isTouch; $('#keyhint').hidden=isTouch;
-  setObjective('Поговори зі старійшиною в його кибитці',{x:elder.pos.x,z:elder.pos.z});
+  setObjective('Поговори з батьком, старійшиною Спаргапісом, у його кибитці',{x:elder.pos.x,z:elder.pos.z});
   lines([['Аргіс','Звідусіль дим. Наші палять пасовища, щоб чужинцю не лишилось трави.',4]]);
   canvas.focus();
 });
@@ -3801,7 +3802,7 @@ try{ const m=localStorage.getItem('volya_voice'); if(m) VOICE.mode=m; }catch(err
 function pickVoice(){ try{ const vs=speechSynthesis.getVoices(); VOICE.uk=vs.find(v=>/^uk/i.test(v.lang))||null; VOICE.ready=true; }catch(err){} }
 try{ if(window.speechSynthesis){ pickVoice(); speechSynthesis.onvoiceschanged=pickVoice; } }catch(err){}
 const FEMALE=/Аміт|савромат|вождин|віщун|мати|жінк|дружин|пастушк|бабус|дівчин|ткал|доярк|сестр|Табіті|Апі/i, KIDS=/малий|скіла|хлоп|пастушок|дит/i;
-function speakerKind(who){ if(!who) return 'm'; if(KIDS.test(who)) return 'k'; if(FEMALE.test(who)) return 'f'; if(/старійшин|старий|ойор|коваль|співець/i.test(who)) return 'o'; return 'm'; }
+function speakerKind(who){ if(!who) return 'm'; if(KIDS.test(who)) return 'k'; if(FEMALE.test(who)) return 'f'; if(/старійшин|спаргап|старий|ойор|коваль|співець/i.test(who)) return 'o'; return 'm'; }
 const VOWF={a:[800,1250],o:[500,850],u:[350,700],e:[480,1850],i:[300,2200],y:[420,1500]};
 function formant(base,vowel,dur,vol,t0,pan){ if(!AC||muted) return; const t=AC.currentTime+(t0||0), f=VOWF[vowel]||VOWF.a; const o=AC.createOscillator(); o.type='sawtooth'; o.frequency.setValueAtTime(base*1.08,t); o.frequency.linearRampToValueAtTime(base*0.92,t+dur);
   const g=AC.createGain(); g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(vol,t+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
@@ -3812,7 +3813,7 @@ function shout(){ }
 FEAT.shout=shout;
 function babble(who,text){ const k=speakerKind(who), base={m:118,o:96,f:215,k:300}[k], n=Math.min(16,Math.max(3,Math.round(text.length/7))), vs='aoeyiu';
   for(let i=0;i<n;i++){ const ch=text.charCodeAt((i*7)%text.length)||97; formant(base*(1+((ch%7)-3)*0.03),vs[ch%6],0.09+((ch>>2)%3)*0.03,0.035,i*0.13); } }
-const MAIN_CAST=/^(Аргіс|Старійшина|Ортаг|Савлій|Мадій|Мисливець)$/;
+const MAIN_CAST=/^(Аргіс|Спаргапіс|Табіт|Борт|Аршак|Токсаріс|Мисливець)$/;
 const ARGIS_MAIN=new Set(["Зроблю. Ведіть рід на північ.", "Ось вони. Стали на привал біля старого шляху. Обоз у колі возів.", "Попереду стіна щитів. Щити дивляться на північ, отже бити треба збоку.", "Ця криниця поїла й наших коней. Тепер вона не дасть води нікому.", "Обоз горить. Тепер вони кинуться за мною. Веду їх у балку, до лісу.", "Вони тікають. Хай розкажуть своєму цареві про степ.", "Одним ворогом менше.", "Іди. Тут тобі нічого не знайти, крім смерті.", "Іди до свого царя. Скажи йому: степ бачить кожен ваш крок.", "Ось і курган предків. Звідти буде видно весь степ.", "Без коней перс не воїн. Чекайте тут. Піду пішки, так тихіше.", "Тихо, коники, тихо... За мною.", "Собаки! Тихіше, пішки й повільно.", "Верхи мене почують. Далі пішки.", "Женемо їх до роду. На світанку будемо вдома.", "Фуражири! Без них перси залишаться без сіна й зерна.", "Звідусіль дим. Наші палять пасовища, щоб чужинцю не лишилось трави."]);
 FEAT.voice=function(who,text,dur){ if(VOICE.mode==='off'||!MAIN_CAST.test(String(who||'').trim())) return; if(String(who).trim()==='Аргіс'&&!ARGIS_MAIN.has(text)) return;
   try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(err){}
@@ -3984,15 +3985,15 @@ const OATH={busy:false,cup:null};
 function bloodOath(){ if(OATH.busy||G.oath) return; OATH.busy=true; P.speed=0; const al=CC(-2,11), y=groundH(al.x,al.z);
   OATH.cup=goldProp('cup'); OATH.cup.scale.setScalar(1.3); OATH.cup.position.set(al.x,y+1.15,al.z);
   G.cine={t:0,dur:99,pos:new V(al.x+3.4,y+2.4,al.z-3.2),look:new V(al.x,y+1.1,al.z)}; G.talk={e:G.squad[0]||G.storyteller};
-  lines([['Ортаг','Перш ніж рушати, Аргісе, поклянімося, як клялися наші батьки.',3.8],
-    ['Ортаг','Вино в чашу, і в нього по краплі нашої крові.',3.2],
-    ['Ортаг','Тепер занурюємо в чашу акінак, стріли, сокиру й списа. І промовляємо слова.',4.4],
+  lines([['Табіт','Перш ніж рушати, Аргісе, поклянімося, як клялися наші батьки.',3.8],
+    ['Табіт','Вино в чашу, і в нього по краплі нашої крові.',3.2],
+    ['Табіт','Тепер занурюємо в чашу акінак, стріли, сокиру й списа. І промовляємо слова.',4.4],
     ['Аргіс','Твоя кров тепер моя кров. Твій ворог мій ворог.',3.4],
-    ['Ортаг','Поки дихаю, спину твою прикриваю. П\'ємо.',3.2]],()=>{ OATH.busy=false; G.oath=true; G.cine=null; G.talk=null; if(OATH.cup){ scene.remove(OATH.cup); OATH.cup=null; } addWill(8,'побратався з Ортагом'); setOpt('oath','done'); toast('Побратимство: страх приходить повільніше'); }); }
+    ['Табіт','Поки дихаю, спину твою прикриваю. П\'ємо.',3.2]],()=>{ OATH.busy=false; G.oath=true; G.cine=null; G.talk=null; if(OATH.cup){ scene.remove(OATH.cup); OATH.cup=null; } addWill(8,'побратався з Табітом'); setOpt('oath','done'); toast('Побратимство: страх приходить повільніше'); }); }
 FEAT.oathUpdate=function(dt){ if(!OATH.busy||!OATH.cup) return; const c=OATH.cup.position; if(Math.random()<dt*12) sparks.emit(c.x+rand(-0.2,0.2),c.y+0.4,c.z+rand(-0.2,0.2),rand(-0.3,0.3),rand(0.6,1.4),rand(-0.3,0.3),rand(0.5,0.9),0.9,0.12,0.08,-0.4); OATH.cup.rotation.y+=dt*0.4; };
 FEAT.inter=function(list){
   const st=G.storyteller; if(st&&!LEG.busy&&LEG.n<LEGENDS.length&&!G.talk&&!G.cine&&['camp','mount','free'].includes(G.phase)&&G.race.state==='none') list.push({x:st.pos.x,z:st.pos.z,r:4.2,label:'Послухати легенду: '+LEGENDS[LEG.n].title.toLowerCase(),go:tellLegend});
-  if(G.phase==='mount'&&!G.oath&&!OATH.busy&&G.squad.length&&!P.mounted){ const al=CC(-2,11); if(!G.oathOpt){ G.oathOpt=true; addOpt('oath','Поклянися на крові з Ортагом біля жертовника'); bark('Ортаг','Аргісе! Перед дорогою поклянімося на крові, біля жертовника.',3.6); }
+  if(G.phase==='mount'&&!G.oath&&!OATH.busy&&G.squad.length&&!P.mounted){ const al=CC(-2,11); if(!G.oathOpt){ G.oathOpt=true; addOpt('oath','Поклянися на крові з Табітом біля жертовника'); bark('Табіт','Аргісе! Перед дорогою поклянімося на крові, біля жертовника.',3.6); }
     if(dP(al)<4.2) list.push({x:P.pos.x,z:P.pos.z,r:1,label:'Скласти клятву побратимства',go:bloodOath}); }
   if(!D.on&&!P.mounted&&!G.night&&G.race.state==='none') for(const k in DUELS){ const c=DUELS[k], e=c.foe; if(!e||e.dead||e.cstate!=='wait') continue; const r=c.arena.R+2.5; if(dP(c.arena)>r) continue;
     const lab=c.train?'Тренування таймінгу':k==='veteran'?(c.won?'Виклик+ '+Math.min(5,c.won)+': Савмак':'Бій зі старим Савмаком'):k==='amazon'?(c.won?'Виклик+ '+Math.min(5,c.won)+': Аміта':'Випробування Аміти'):(c.won&&k!=='persian')?(k==='spar'?'Виклик+ '+Math.min(5,c.won)+': наставник':'Виклик+ '+Math.min(5,c.won)+': Тавр'):k==='persian'?(c.lost?'Знову кинути виклик Аршамі':'Прийняти виклик на двобій'):k==='spar'?(c.won?'Ще раз на дерев\'яних мечах':'Навчальний бій з наставником'):(c.won?'Ще раз поборотися з Тавром':'Кулачний бій з Тавром');
@@ -4695,7 +4696,7 @@ FEAT.update=function(dt,real){
 };
 FEAT.post=function(real){ FEAT.coreHud(); if(FEAT.polish) FEAT.polish(G.state==='play'?real*(G.slow>0?0.4:1):0,real); FEAT.weather(real); FEAT.sound(real); FEAT.flowers(camera.position.x,camera.position.z); if(G.state!=='play'){ focusEl.hidden=true; focusVeil.style.opacity=0; } };
 FEAT.legacy=function(L){
-  if(G.oath) L.push('Аргіс і Ортаг побраталися на крові біля жертовника.');
+  if(G.oath) L.push('Аргіс і Табіт побраталися на крові біля жертовника.');
   if(DUELS.veteran.won) L.push('Старий Савмак передав Аргісу кіммерійську науку і свою флягу.');
   if(DUELS.spar.won) L.push('Аргіс переміг наставника Скопасія на дерев\'яних мечах.');
   if(DUELS.fist.won) L.push('У кулачному бою Аргіс поборов силача Тавра.');
@@ -5664,9 +5665,9 @@ const _post23=FEAT.post; FEAT.post=function(real){ _post23(real);
 // ---------- the Chronicle: short historical notes that open as Argis sees things ----------
 const CODEX=[
  {id:'wagon',t:'Кибитки',s:'Гіппократ, «Про повітря, води й місцевості», 18',x:'Скіфи не мали міст і жили у возах. Найменші вози мали чотири колеса, більші шість. Їх вкривали повстю й будували, як хатки, на дві або три кімнати, що не пропускали ні дощу, ні снігу, ні вітру. Тягли вози дві-три пари безрогих волів.'},
- {id:'ring',t:'Табір із возів',s:'Геродот, IV.46; археологія степових кочовищ',x:'На довгій стоянці вози ставили колом і закидали проміжки хмизом і терном. Таке коло захищало худобу, жінок і дітей від нічного нападу й ворожої кінноти.'},
+ {id:'ring',t:'Табір із возів',s:'Реконструкція за Геродотом (IV.46) і Гіппократом',x:'На довгій стоянці вози ставили колом і закидали проміжки хмизом і терном. Таке коло захищало худобу, жінок і дітей від нічного нападу й ворожої кінноти.'},
  {id:'oxen',t:'Безрогі воли',s:'Геродот, IV.29',x:'Геродот пише, що скіфська худоба безрога, і пояснює це холодом. Гіппократ теж згадує безрогих волів, що тягли вози-житла.'},
- {id:'felt',t:'Повсть',s:'Знахідки з Пазирикських курганів',x:'Повсть валяли з овечої вовни: розкладали на циновці, поливали гарячою водою, скручували й довго качали. З неї робили покриття кибиток, килими, сідла, одяг і навіть ляльки. Візерунки звіриного стилю нашивали аплікацією.'},
+ {id:'felt',t:'Повсть',s:'Близька аналогія: Пазирикські кургани (Алтай, IV–III ст. до н. е.)',x:'Повсть валяли з овечої вовни: розкладали на циновці, поливали гарячою водою, скручували й довго качали. З неї робили покриття кибиток, килими, сідла, одяг і навіть ляльки. Візерунки звіриного стилю нашивали аплікацією.'},
  {id:'ares',t:'Святилище Ареса',s:'Геродот, IV.62',x:'Арес був єдиним богом, якому скіфи ставили святилища: величезні купи хмизу з пласким верхом, а на них старовинний залізний меч-акінак. Йому щороку приносили в жертву коней і худобу.'},
  {id:'hemp',t:'Конопляна парна',s:'Геродот, IV.73–75',x:'Скіфи ставили курінь із трьох жердин, вкривали його повстю й кидали насіння конопель на розпечене каміння. Від пари, пише Геродот, вони «вили від радості». Таке приладдя знайшли в Пазирикських курганах.'},
  {id:'stela',t:'Кам\'яні воїни',s:'Археологія, VII–IV ст. до н.е.',x:'На вершинах курганів скіфи ставили кам\'яні стели воїнів: з ритоном у руці, з акінаком і горитом на поясі, з гривнею на шиї. Їх знаходять по всьому Північному Причорномор\'ю.'},
@@ -5674,9 +5675,9 @@ const CODEX=[
  {id:'cauldron',t:'Бронзовий казан',s:'Геродот, IV.61',x:'Скіфи варили м\'ясо в бронзових казанах на високій конусній ніжці. Там, де не вистачало дерева, під казаном палили кістки жертовної тварини.'},
  {id:'kumis',t:'Кобиляче молоко',s:'Геродот, IV.2',x:'Скіфи пили кобиляче молоко і робили з нього кумис, збиваючи в дерев\'яних посудинах. Геродот описує, як для цього доїли кобил.'},
  {id:'oath',t:'Клятва на крові',s:'Геродот, IV.70',x:'Укладаючи союз, скіфи наливали в чашу вино, змішане з кров\'ю обох, вмочали в неї стріли, сокиру, спис і акінак і пили разом із тими, хто був свідком.'},
- {id:'tabiti',t:'Табіті',s:'Геродот, IV.59',x:'Найбільше скіфи шанували Табіті, богиню вогнища. Їй присягали, а віщуни ворожили на вербових прутах.'},
+ {id:'tabiti',t:'Табіті',s:'Геродот, IV.59, IV.67–68',x:'Найбільше скіфи шанували Табіті, богиню вогнища (IV.59). Найурочистішою була клятва вогнищем царя (IV.68), а віщуни ворожили на вербових прутах (IV.67).'},
  {id:'greek',t:'Торгівля з греками',s:'Геродот, IV.17–18; Ольвія',x:'Грецькі міста на узбережжі, як-от Ольвія, міняли зі скіфами вино, олію й розписний посуд на зерно, хутро, мед і рабів. Амфори часто знаходять у скіфських курганах.'},
- {id:'darius',t:'Похід Дарія',s:'Геродот, IV.120–142',x:'Близько 513 р. до н.е. перський цар Дарій переправився через Дунай зі стотисячним військом. Скіфи не дали генеральної битви: відступали, засипали криниці, палили траву й нападали на фуражирів. Зрештою Дарій мусив повернутися.'},
+ {id:'darius',t:'Похід Дарія',s:'Геродот, IV.87–142',x:'Близько 513 р. до н.е. перський цар Дарій переправився через Дунай. Геродот пише про 700 000 воїнів і 600 кораблів; історики вважають це перебільшенням, але військо було величезним. Скіфи не дали генеральної битви: відступали, засипали криниці, палили траву й нападали на фуражирів. Зрештою Дарій мусив повернутися.'},
  {id:'akinak',t:'Акінак',s:'Археологія',x:'Короткий залізний меч із метелико- чи серцеподібним перехрестям. Його носили на правому стегні в піхвах із золотими накладками. Акінак був і зброєю, і знаком гідності воїна.'}];
 let CODEX_SEEN={}; try{ CODEX_SEEN=JSON.parse(localStorage.getItem('volya_codex')||'{}')||{}; }catch(err){}
 function codexOpen(id){ if(CODEX_SEEN[id]) return; const e=CODEX.find(c=>c.id===id); if(!e) return; CODEX_SEEN[id]=1; try{ localStorage.setItem('volya_codex',JSON.stringify(CODEX_SEEN)); }catch(err){} toast('Літопис поповнено: '+e.t+' (L)'); }
@@ -6064,9 +6065,9 @@ CODEX.push({id:'berkut',t:'Беркут: художня вільність',s:'�
   list.push({x:HS.pos.x,z:HS.pos.z,r:3.4,label:'Сісти на коня'+(isTouch?'':' (або R)'),go:toggleHorse}); }catch(err){} }; }
 const NAMEP=(()=>{ const d=document.createElement('div'); d.style.cssText='position:fixed;left:0;top:0;z-index:6;pointer-events:none;transform:translate(-50%,-100%);font:600 15px/1.2 Georgia,"Times New Roman",serif;color:#f2d68a;letter-spacing:.04em;text-shadow:0 1px 2px #000,0 0 6px rgba(0,0,0,.85);white-space:nowrap;opacity:0;transition:opacity .25s;text-align:center';
   const n=document.createElement('div'), r=document.createElement('div'); r.style.cssText='font:500 11px/1.2 system-ui,sans-serif;color:#e8dcc0;opacity:.85;letter-spacing:0'; d.append(n,r); document.body.appendChild(d); return {d,n,r,e:null,t:0,list:[]}; })();
-const ROLE28=e=>{ if(e===elder) return 'старійшина роду'; if(e===G.seer) return 'віщунка'; if(G.squad&&G.squad.includes(e)) return 'побратим, загін Аргіса'; if(e===G.storyteller) return 'оповідач легенд'; if(e===G.bard) return 'співець';
+const ROLE28=e=>{ if(e===elder) return 'вождь і старійшина роду, батько Аргіса'; if(e===G.seer) return 'віщунка'; if(G.squad&&G.squad.includes(e)) return 'побратим, загін Аргіса'; if(e===G.storyteller) return 'оповідач легенд'; if(e===G.bard) return 'співець';
   if(VET.npc===e) return 'старий воїн'; if(FALC&&e===FALC.e) return 'ловчий'; for(const k in DUELS) if(DUELS[k].foe===e) return DUELS[k].title&&DUELS[k].title.includes(',')?DUELS[k].title.split(',')[1].trim():''; return ''; };
-const NAME28=e=>{ if(e===elder) return e.who&&e.who!=='Старійшина'?e.who:'Старійшина'; for(const k in DUELS) if(DUELS[k].foe===e) return DUELS[k].who||BNAME[k]||e.who; return e.who; };
+const NAME28=e=>{ if(e===elder) return 'Спаргапіс'; for(const k in DUELS) if(DUELS[k].foe===e) return DUELS[k].who||BNAME[k]||e.who; return e.who; };
 function nameCands(){ const L=[elder,G.seer,G.cook,G.archer,G.mother,G.bard,G.storyteller,VET.npc,G.champ,FALC&&FALC.e].concat(G.squad||[]); for(const k in DUELS){ const f=DUELS[k].foe; if(f&&k!=='persian'&&k!=='pair') L.push(f); }
   for(const e of campNPC) if(e&&e.quest) L.push(e); return [...new Set(L.filter(e=>e&&e.pos&&e.root))]; }
 const _nf=new V(), _nv=new V();
